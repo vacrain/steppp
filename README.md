@@ -1,11 +1,11 @@
-# mow
+# vue3-naiveui-step
 
-main of writing. a note and reminder app
+> step by step , let learn up and use up naive-ui ,gogogo!
 
-- vite
-- vue3
-- naive
-- router
-
-npm i @types/node -D 才能用下面的
-import { resolve } from 'path'
+-   vue3
+-   vite2
+-   naiveui
+-   router
+-   pinia
+-   typescript
+-
