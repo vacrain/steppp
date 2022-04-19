@@ -9,7 +9,8 @@
 -   pinia
 -   typescript
 -   xicon
--   
+-   scss
+-
 
 ```
 
@@ -19,34 +20,21 @@ pnpm run dev
 
 ```
 
-
-
 ## thought
 
-主要内容内，留一个条，用于系统tip。。
-
-
-
-
+主要内容内，留一个条，用于系统 tip。。
 
 ## 结构目录说明
 
-- public
-- src
-- 
-
-
+-   public
+-   src
+-
 
 ## tasts
 
-- [ ] Layout pc
-- [ ] 
-
-
-
-
+-   [ ] Layout pc
+-   [ ]
 
 ## Thanks ~
 
 https://github.com/TuSimple/naive-ui
-
