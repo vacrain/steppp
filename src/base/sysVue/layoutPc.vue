@@ -9,33 +9,18 @@ import {
 import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
 
-import { useConfig } from "@/base/config/useConfig";
-// import LAYOUT_ITEMS from "@/base/d/appConstant";
-const LAYOUT_ITEMS = [
-    {
-        label: "Home",
-        key: "/",
-    },
-    {
-        label: "Home2",
-        key: "/home2",
-    },
-];
-
-// const LAYOUT_ITEMS = [
-//     {
-//         label: "Home",
-//         key: "/",
-//     },
-// ];
+// mount something
+import { useConfig } from "@/base/utils/hooks/useConfig";
+import { MENU_ITEMS, APP_NAME } from "../config/appConstant";
 
 const router = useRouter();
+
 // mount on window
 window.$message = useMessage();
 window.$dialog = useDialog();
 window.$notification = useNotification();
 window.$loadingBar = useLoadingBar();
-const layoutOptions = ref<MenuOption[]>(LAYOUT_ITEMS);
+const layoutOptions = ref<MenuOption[]>(MENU_ITEMS);
 const collapsed = ref(false);
 const activeName = ref("/");
 const handleMenuSelect = (value: string) => {
@@ -65,7 +50,7 @@ const showLang = computed(() => {
             @collapse="collapsed = true"
             @expand="collapsed = false"
         >
-            <span class="app-layout-sider__title"> naive ui step</span>
+            <span class="app-layout-sider__title"> {{ APP_NAME }}</span>
             <n-menu
                 :value="activeName"
                 :options="layoutOptions"

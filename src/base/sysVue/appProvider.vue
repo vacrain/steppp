@@ -7,7 +7,7 @@ import {
     NLoadingBarProvider,
     GlobalThemeOverrides,
 } from "naive-ui";
-import { useConfig } from "@/base/config/useConfig";
+import { useConfig } from "@/base/utils/hooks/useConfig";
 import LayoutPc from "./layoutPc.vue";
 
 const themeOverrides: GlobalThemeOverrides = {

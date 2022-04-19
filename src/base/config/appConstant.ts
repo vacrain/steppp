@@ -1,4 +1,8 @@
-export const LAYOUT_ITEMS = [
+// appName
+export const APP_NAME = "~ Naive UI Steppp ~";
+
+//
+export const MENU_ITEMS = [
     {
         label: "Home",
         key: "/",
