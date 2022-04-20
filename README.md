@@ -1,3 +1,12 @@
+<!--
+ * @Author: your name
+ * @Date: 2022-04-19 05:30:43
+ * @LastEditTime: 2022-04-21 06:21:27
+ * @LastEditors: your name
+ * @Description: 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+ * @FilePath: /naive-ui-steppp/README.md
+-->
+
 # vue3-naiveui-steppp
 
 > step by step by step , let learn up and use up naive app ,gogogo!
@@ -37,4 +46,24 @@ pnpm run dev
 
 ## Thanks ~
 
+-   naive ui：https://github.com/naive-ui/awesome-naive
+
+https://github.com/Talljack/naive-ui-provider
+
+https://github.com/honghuangdc/soybean-admin
+
 https://github.com/TuSimple/naive-ui
+
+-   Vant3
+
+https://github.com/vincentzyc/vue3-demo.git
+
+-   element
+
+https://github.com/XPoet/vite-vue3-starter
+
+https://github.com/someGenki/vue-lite-admin
+
+-   others
+
+https://github.com/vincentzyc/vue3-demo
