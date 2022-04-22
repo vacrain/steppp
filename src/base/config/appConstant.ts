@@ -8,7 +8,7 @@ export const MENU_ITEMS = [
         key: "/",
     },
     {
-        label: "Home2",
-        key: "/home2",
+        label: "Field1",
+        key: "/field1",
     },
 ];

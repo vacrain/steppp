@@ -1,8 +1,17 @@
+/*
+ * @Author: vacrain
+ * @Date: 2022-04-17 14:23:14
+ * @LastEditors: vacrain
+ * @LastEditTime: 2022-04-22 21:18:01
+ * @FilePath: /naive-ui-steppp/src/base/config/router.ts
+ * @Description:
+ *
+ */
 import { createRouter, createWebHistory } from "vue-router";
 
 // spec views
-import Home from "@/spec/stepHome/stepHomeMain.vue";
-import Home2 from "@/spec/stepField1/stepField1Main.vue";
+import Home from "@/spec/home/homeMain.vue";
+import Field1 from "@/spec/field1/field1Main.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -12,8 +21,8 @@ const router = createRouter({
             component: Home,
         },
         {
-            path: "/home2",
-            component: Home2,
+            path: "/field1",
+            component: Field1,
         },
     ],
 });

@@ -1,5 +1,26 @@
+<!--
+ * @Author: vacrain
+ * @Date: 2022-04-22 20:24:21
+ * @LastEditors: vacrain
+ * @LastEditTime: 2022-04-22 20:24:21
+ * @FilePath: /naive-ui-steppp/src/spec/pinia/homeMain.vue
+ * @Description: 
+ * 
+-->
+<!--
+ * @Author: vacrain
+ * @Date: 2022-04-17 14:24:17
+ * @LastEditors: vacrain
+ * @LastEditTime: 2022-04-22 20:22:07
+ * @FilePath: /naive-ui-steppp/src/spec/home/homeMain.vue
+ * @Description: 
+ * 
+-->
 <script setup lang="ts">
 import { getMockInfo } from "@/base/utils/request";
+
+import { mainStore } from "@/base/pinia/pinia";
+const store = mainStore();
 
 const reminders = [];
 for (let i = 0; i < 10; i++) {
@@ -8,8 +29,8 @@ for (let i = 0; i < 10; i++) {
     });
 }
 
-const handleShowMessage = () => {
-    window.$message.success("I can use message");
+const handleShowMessage = (aMsg: string) => {
+    window.$message.success(aMsg);
 };
 const handleShowDialog = () => {
     window.$dialog.success({
@@ -38,8 +59,14 @@ const handleRequest = async () => {
 <template>
     <n-space vertical>
         <n-card>
+            <h3>Pinia</h3>
+            <n-button type="primary" @click="handleShowMessage(store.msg)">
+                usePinia
+            </n-button>
+        </n-card>
+        <n-card>
             <h3>Message</h3>
-            <n-button type="primary" @click="handleShowMessage">
+            <n-button type="primary" @click="handleShowMessage('just a msg')">
                 useMessage
             </n-button>
         </n-card>
