@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-04-17 13:41:29
  * @LastEditors: vacrain
- * @LastEditTime: 2022-04-22 21:18:57
+ * @LastEditTime: 2022-04-23 10:15:13
  * @FilePath: /naive-ui-steppp/src/main.ts
  * @Description:
  *
@@ -14,8 +14,8 @@ import naiveUI from "naive-ui";
 import { createPinia } from "pinia";
 
 // local
-import Provider from "@/base/sysVue/appProvider.vue";
-import router from "@/base/config/router";
+import Provider from "@/base/layout/sysProvider.vue";
+import router from "@/base/entry/router";
 
 // 创建Vue应用实例app
 const appProvider = createApp(Provider);
@@ -25,6 +25,5 @@ const pinia = createPinia();
 
 appProvider.use(router);
 appProvider.use(naiveUI);
-// 应用以插件形式挂载Pinia实例
 appProvider.use(pinia);
 appProvider.mount("#app");

@@ -2,8 +2,8 @@
  * @Author: vacrain
  * @Date: 2022-04-22 20:24:21
  * @LastEditors: vacrain
- * @LastEditTime: 2022-04-22 20:24:21
- * @FilePath: /naive-ui-steppp/src/spec/pinia/homeMain.vue
+ * @LastEditTime: 2022-04-23 07:10:17
+ * @FilePath: /naive-ui-steppp/src/spec/pinia/piniaMain.vue
  * @Description: 
  * 
 -->
@@ -17,9 +17,8 @@
  * 
 -->
 <script setup lang="ts">
-import { getMockInfo } from "@/base/utils/request";
-
-import { mainStore } from "@/base/pinia/pinia";
+import { getMockInfo } from "@/base/api/request";
+import { mainStore } from "@/base/config/pinia";
 const store = mainStore();
 
 const reminders = [];

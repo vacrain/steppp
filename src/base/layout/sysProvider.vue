@@ -1,3 +1,12 @@
+<!--
+ * @Author: vacrain
+ * @Date: 2022-04-19 06:26:50
+ * @LastEditors: vacrain
+ * @LastEditTime: 2022-04-23 07:02:41
+ * @FilePath: /naive-ui-steppp/src/base/providers/sysProvider.vue
+ * @Description: 
+ * 
+-->
 <script setup lang="ts">
 import {
     NConfigProvider,
@@ -7,8 +16,9 @@ import {
     NLoadingBarProvider,
     GlobalThemeOverrides,
 } from "naive-ui";
-import { useConfig } from "@/base/utils/hooks/useConfig";
-import LayoutPc from "./layoutPc.vue";
+
+import { useConfig } from "@/base/hooks/useConfig";
+import LayoutPc from "@/base/layout/layoutNaive.vue";
 
 const themeOverrides: GlobalThemeOverrides = {
     common: {

@@ -10,8 +10,8 @@ import { ref, computed } from "vue";
 import { useRouter } from "vue-router";
 
 // mount something
-import { useConfig } from "@/base/utils/hooks/useConfig";
-import { MENU_ITEMS, APP_NAME } from "../config/appConstant";
+import { useConfig } from "@/base/hooks/useConfig";
+import { MENU_ITEMS, APP_NAME } from "@/base/entry/appConst";
 
 const router = useRouter();
 
