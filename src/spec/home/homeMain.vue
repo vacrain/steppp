@@ -2,14 +2,15 @@
  * @Author: vacrain
  * @Date: 2022-04-17 14:24:17
  * @LastEditors: vacrain
- * @LastEditTime: 2022-04-23 15:14:19
- * @FilePath: /naive-ui-steppp/src/spec/home/homeMain.vue
+ * @LastEditTime: 2022-04-30 08:17:27
+ * @FilePath: /steppp/src/spec/home/homeMain.vue
  * @Description: 
  * 
 -->
 <script setup lang="ts">
 import { getMockInfo } from "@/base/utils/api/request";
 import { mainStore } from "@/base/entry/store";
+import Home1 from "./home1.vue";
 const store = mainStore();
 
 const reminders = [];
@@ -48,6 +49,10 @@ const handleRequest = async () => {
 </script>
 <template>
     <n-space vertical>
+        <n-card>
+            <h3>home - 1</h3>
+            <Home1 />
+        </n-card>
         <n-card>
             <h3>Pinia</h3>
             <n-button type="primary" @click="handleShowMessage(store.msg)">

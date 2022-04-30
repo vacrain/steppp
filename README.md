@@ -1,37 +1,15 @@
-.
-├── LICENSE
-├── README.md
-├── index.html
-├── node_modules
-│   ├── @babel
-│   ├── @types
-│   ├── @vicons
-│   ├── @vitejs
-│   ├── doctypes -> .pnpm/registry.npmmirror.com+doctypes@1.1.0/node_modules/doctypes
-│   ├── naive-ui -> .pnpm/registry.npmmirror.com+naive-ui@2.28.0_vue@3.2.33/node_modules/naive-ui
-│   ├── pinia -> .pnpm/registry.npmmirror.com+pinia@2.0.13_typescript@4.6.3+vue@3.2.33/node_modules/pinia
-│   ├── typescript -> .pnpm/registry.npmmirror.com+typescript@4.6.3/node_modules/typescript
-│   ├── vite -> .pnpm/registry.npmmirror.com+vite@2.9.5/node_modules/vite
-│   ├── vscode-languageserver-types -> .pnpm/registry.npmmirror.com+vscode-languageserver-types@3.16.0/node_modules/vscode-languageserver-types
-│   ├── vscode-typescript-languageservice -> .pnpm/registry.npmmirror.com+vscode-typescript-languageservice@0.29.8/node_modules/vscode-typescript-languageservice
-│   ├── vue -> .pnpm/registry.npmmirror.com+vue@3.2.33/node_modules/vue
-│   ├── vue-router -> .pnpm/registry.npmmirror.com+vue-router@4.0.14_vue@3.2.33/node_modules/vue-router
-│   └── vue-tsc -> .pnpm/registry.npmmirror.com+vue-tsc@0.29.8_typescript@4.6.3/node_modules/vue-tsc
-├── package.json
-├── pnpm-lock.yaml
-├── src
-│   ├── assets
-│   ├── base
-│   ├── main.ts
-│   └── spec
-├── steppp-docs
-│   └── steppp-main.md
-├── tsconfig.json
-├── tsconfig.node.json
-└── vite.config.ts
+<!--
+ * @Author: vacrain
+ * @Date: 2022-04-30 07:58:35
+ * @LastEditors: vacrain
+ * @LastEditTime: 2022-04-30 08:31:39
+ * @FilePath: /steppp/README.md
+ * @Description:
+ *
+-->
 
-20 directories, 10 files
+# Steppp
 
-
-
-2022/4/25 测试代码
+> 基于 vue3 vite2 naive-ui 的常用 layout 开箱即用框架
+> 注释全，适合学习
+> 已经配置好了 vite 的基本设置 alias、build、跨域等，还有 eslint、prettier、mock、cdn、gzip 等
