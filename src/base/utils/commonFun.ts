@@ -1,21 +1,30 @@
+/*
+ * @Author: vacrain
+ * @Date: 2022-04-30 07:58:35
+ * @LastEditors: vacrain
+ * @LastEditTime: 2022-04-30 15:52:22
+ * @FilePath: /steppp/src/base/utils/commonFun.ts
+ * @Description:
+ *
+ */
 /* eslint-disable no-console */
 
 ///////////////////////////////
 //console.ts
 /** 打印log */
 export const consoleLog = (message?: any, ...optionalParams: any[]) => {
-    console.log(message, ...optionalParams);
-};
+    console.log(message, ...optionalParams)
+}
 
 /** 打印警告 */
 export const consoleWarn = (message?: any, ...optionalParams: any[]) => {
-    console.warn(message, ...optionalParams);
-};
+    console.warn(message, ...optionalParams)
+}
 
 /** 打印错误 */
 export const consoleError = (message?: any, ...optionalParams: any[]) => {
-    console.error(message, ...optionalParams);
-};
+    console.error(message, ...optionalParams)
+}
 
 ///////////////////////////////
 // 克隆对象
@@ -34,28 +43,28 @@ export const consoleError = (message?: any, ...optionalParams: any[]) => {
 //     return newObj;
 // };
 
-export function deepMerge(...objs: any[]): any {
-    const result = Object.create(null);
-    objs.forEach((obj) => {
-        if (obj) {
-            Object.keys(obj).forEach((key) => {
-                const val = obj[key];
-                if (isPlainObject(val)) {
-                    // 递归
-                    if (isPlainObject(result[key])) {
-                        result[key] = deepMerge(result[key], val);
-                    } else {
-                        result[key] = deepMerge(val);
-                    }
-                } else {
-                    result[key] = val;
-                }
-            });
-        }
-    });
-    return result;
-}
+// export function deepMerge(...objs: any[]): any {
+//     const result = Object.create(null)
+//     objs.forEach(obj => {
+//         if (obj) {
+//             Object.keys(obj).forEach(key => {
+//                 const val = obj[key]
+//                 if (isPlainObject(val)) {
+//                     // 递归
+//                     if (isPlainObject(result[key])) {
+//                         result[key] = deepMerge(result[key], val)
+//                     } else {
+//                         result[key] = deepMerge(val)
+//                     }
+//                 } else {
+//                     result[key] = val
+//                 }
+//             })
+//         }
+//     })
+//     return result
+// }
 
-export function isPlainObject(val: any): val is Object {
-    return toString.call(val) === "[object Object]";
-}
+// export function isPlainObject(val: any): val is Object {
+//     return toString.call(val) === '[object Object]'
+// }

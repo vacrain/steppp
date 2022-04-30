@@ -5,36 +5,36 @@ import {
     useNotification,
     useLoadingBar,
     MenuOption,
-} from "naive-ui";
-import { ref, computed } from "vue";
-import { useRouter } from "vue-router";
+} from 'naive-ui'
+import { ref, computed } from 'vue'
+import { useRouter } from 'vue-router'
 
 // mount something
-import { useConfig } from "@/base/hooks/useConfig";
-import { MENU_ITEMS, APP_NAME } from "@/base/entry/appConst";
+import { useConfig } from '@/base/hooks/useConfig'
+import { MENU_ITEMS, APP_NAME } from '@/base/entry/appConst'
 
-const router = useRouter();
+const router = useRouter()
 
 // mount on window
-window.$message = useMessage();
-window.$dialog = useDialog();
-window.$notification = useNotification();
-window.$loadingBar = useLoadingBar();
-const layoutOptions = ref<MenuOption[]>(MENU_ITEMS);
-const collapsed = ref(false);
-const activeName = ref("/");
+window.$message = useMessage()
+window.$dialog = useDialog()
+window.$notification = useNotification()
+window.$loadingBar = useLoadingBar()
+const layoutOptions = ref<MenuOption[]>(MENU_ITEMS)
+const collapsed = ref(false)
+const activeName = ref('/')
 const handleMenuSelect = (value: string) => {
-    activeName.value = value;
+    activeName.value = value
     router.push({
         path: value,
-    });
-};
+    })
+}
 
 // config
-const { theme, lang, changeTheme, changeLang } = useConfig();
+const { theme, lang, changeTheme, changeLang } = useConfig()
 const showLang = computed(() => {
-    return lang.value.name === "zh-CN" ? "中文" : "English";
-});
+    return lang.value.name === 'zh-CN' ? '中文' : 'English'
+})
 </script>
 <template>
     <n-layout has-sider class="app-layout" position="absolute">
@@ -67,7 +67,7 @@ const showLang = computed(() => {
             <n-layout-header bordered>
                 <div style="padding-right: 40px">
                     <span style="margin-right: 20px" @click="changeTheme">{{
-                        theme === null ? "浅色" : "深色"
+                        theme === null ? '浅色' : '深色'
                     }}</span>
                     <span @click="changeLang">{{ showLang }}</span>
                 </div>

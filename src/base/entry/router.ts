@@ -2,22 +2,22 @@
  * @Author: vacrain
  * @Date: 2022-04-17 14:23:14
  * @LastEditors: vacrain
- * @LastEditTime: 2022-04-23 15:16:04
- * @FilePath: /naive-ui-steppp/src/base/entry/router.ts
+ * @LastEditTime: 2022-04-30 15:47:30
+ * @FilePath: /steppp/src/base/entry/router.ts
  * @Description:
  *
  */
-import { createRouter, createWebHistory } from "vue-router";
-import { ROUTE_LIST } from "@/base/entry/appConst";
+import { createRouter, createWebHistory } from 'vue-router'
+import { ROUTE_LIST } from '@/base/entry/appConst'
 
-const routes: RouteRecordRaw = [];
+const routes = []
 
 for (let i = 0; i < ROUTE_LIST.length; i++) {
-    let routeObj = ROUTE_LIST[i];
+    const routeObj = ROUTE_LIST[i]
     routes.push({
         path: routeObj.path,
         component: routeObj.component,
-    });
+    })
 }
 
 // ROUTE_LIST.forEach((val, idx, routeObj) => {
@@ -58,6 +58,6 @@ for (let i = 0; i < ROUTE_LIST.length; i++) {
 const router = createRouter({
     history: createWebHistory(),
     routes,
-});
+})
 
-export default router;
+export default router

@@ -2,13 +2,13 @@
  * @Author: vacrain
  * @Date: 2022-04-30 08:16:51
  * @LastEditors: vacrain
- * @LastEditTime: 2022-04-30 08:16:51
+ * @LastEditTime: 2022-04-30 15:53:38
  * @FilePath: /steppp/src/spec/home/home1.vue
  * @Description: 
  * 
 -->
 <script setup lang="ts">
-import axios from "axios";
+import axios from 'axios'
 
 // mock
 // let mockData = { statusText: "" };
@@ -27,7 +27,7 @@ import axios from "axios";
 // getInfo2();
 
 // 开发 生产 切换模式
-let mockData = {};
+let mockData = {}
 const getInfo = async () => {
     // mock
     // mockData = await axios.get("/api/get");
@@ -45,9 +45,9 @@ const getInfo = async () => {
 
     // 自动根据当前环境获取api地址
     // 不as string 一下，dev没事，build完了
-    mockData = await axios.get(import.meta.env.VITE_BASE_API as string);
-    console.log(mockData);
-};
-getInfo();
+    mockData = await axios.get(import.meta.env.VITE_BASE_API as string)
+    console.log(mockData)
+}
+getInfo()
 </script>
 <template>hihihi<br /></template>

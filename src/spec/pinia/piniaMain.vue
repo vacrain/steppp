@@ -2,8 +2,8 @@
  * @Author: vacrain
  * @Date: 2022-04-22 20:24:21
  * @LastEditors: vacrain
- * @LastEditTime: 2022-04-23 07:10:17
- * @FilePath: /naive-ui-steppp/src/spec/pinia/piniaMain.vue
+ * @LastEditTime: 2022-04-30 15:56:03
+ * @FilePath: /steppp/src/spec/pinia/piniaMain.vue
  * @Description: 
  * 
 -->
@@ -17,43 +17,43 @@
  * 
 -->
 <script setup lang="ts">
-import { getMockInfo } from "@/base/api/request";
-import { mainStore } from "@/base/config/pinia";
-const store = mainStore();
+import { getMockInfo } from '@/base/api/request'
+import { mainStore } from '@/base/config/pinia'
+const store = mainStore()
 
-const reminders = [];
+const reminders = []
 for (let i = 0; i < 10; i++) {
     reminders.push({
-        content: "",
-    });
+        content: '',
+    })
 }
 
 const handleShowMessage = (aMsg: string) => {
-    window.$message.success(aMsg);
-};
+    window.$message.success(aMsg)
+}
 const handleShowDialog = () => {
     window.$dialog.success({
-        title: "Success use dialog",
-        content: "Cool",
-        positiveText: "Wow!",
+        title: 'Success use dialog',
+        content: 'Cool',
+        positiveText: 'Wow!',
         onPositiveClick: () => {
-            window.$message.success("Great!");
+            window.$message.success('Great!')
         },
-    });
-};
+    })
+}
 const handleShowNotification = () => {
     window.$notification.success({
-        content: "Will be success",
-        meta: "I think so",
-    });
-};
+        content: 'Will be success',
+        meta: 'I think so',
+    })
+}
 const handleShowLoadingBar = () => {
-    window.$loadingBar.start();
-};
+    window.$loadingBar.start()
+}
 
 const handleRequest = async () => {
-    await getMockInfo();
-};
+    await getMockInfo()
+}
 </script>
 <template>
     <n-space vertical>

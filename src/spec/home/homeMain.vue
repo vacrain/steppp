@@ -2,50 +2,50 @@
  * @Author: vacrain
  * @Date: 2022-04-17 14:24:17
  * @LastEditors: vacrain
- * @LastEditTime: 2022-04-30 08:17:27
+ * @LastEditTime: 2022-04-30 15:54:18
  * @FilePath: /steppp/src/spec/home/homeMain.vue
  * @Description: 
  * 
 -->
 <script setup lang="ts">
-import { getMockInfo } from "@/base/utils/api/request";
-import { mainStore } from "@/base/entry/store";
-import Home1 from "./home1.vue";
-const store = mainStore();
+// import { getMockInfo } from '@/base/utils/api/request'
+import { mainStore } from '@/base/entry/store'
+import Home1 from './homeComp1.vue'
+const store = mainStore()
 
-const reminders = [];
+const reminders = []
 for (let i = 0; i < 10; i++) {
     reminders.push({
-        content: "",
-    });
+        content: '',
+    })
 }
 
 const handleShowMessage = (aMsg: string) => {
-    window.$message.success(aMsg);
-};
+    window.$message.success(aMsg)
+}
 const handleShowDialog = () => {
     window.$dialog.success({
-        title: "Success use dialog",
-        content: "Cool",
-        positiveText: "Wow!",
+        title: 'Success use dialog',
+        content: 'Cool',
+        positiveText: 'Wow!',
         onPositiveClick: () => {
-            window.$message.success("Great!");
+            window.$message.success('Great!')
         },
-    });
-};
+    })
+}
 const handleShowNotification = () => {
     window.$notification.success({
-        content: "Will be success",
-        meta: "I think so",
-    });
-};
+        content: 'Will be success',
+        meta: 'I think so',
+    })
+}
 const handleShowLoadingBar = () => {
-    window.$loadingBar.start();
-};
+    window.$loadingBar.start()
+}
 
-const handleRequest = async () => {
-    await getMockInfo();
-};
+// const handleRequest = async () => {
+//     await getMockInfo()
+// }
 </script>
 <template>
     <n-space vertical>

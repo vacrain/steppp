@@ -1,18 +1,26 @@
-import mockJson from "./mock.json";
+/*
+ * @Author: vacrain
+ * @Date: 2022-04-30 07:58:35
+ * @LastEditors: vacrain
+ * @LastEditTime: 2022-04-30 15:56:47
+ * @FilePath: /steppp/src/base/utils/api/request.ts
+ * @Description:
+ *
+ */
+import mockJson from './mock.json'
 
-const request = () => {
-    return new Promise((resolve, reject) => {
-        resolve(mockJson);
-    });
-};
+export const request = () => {
+    return new Promise(resolve => {
+        resolve(mockJson)
+    })
+}
 
-const getMockInfo = async () => {
-    const result = (await request()) as { success: boolean; result: {} };
+export const getMockInfo = async () => {
+    const result = (await request()) as { success: boolean; result: object }
 
     if (result.success) {
-        window.$message.success("Successfully request");
+        window.$message.success('Successfully request')
     } else {
-        window.$message.error("Failed request");
+        window.$message.error('Failed request')
     }
-};
-export { request, getMockInfo };
+}
