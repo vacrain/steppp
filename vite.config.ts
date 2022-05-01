@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-04-17 13:41:29
  * @LastEditors: vacrain
- * @LastEditTime: 2022-04-30 08:29:22
+ * @LastEditTime: 2022-05-01 11:53:17
  * @FilePath: /steppp/vite.config.ts
  * @Description:
  *
@@ -15,8 +15,8 @@ import { viteMockServe } from 'vite-plugin-mock'
 import importToCDN from 'vite-plugin-cdn-import'
 import viteCompression from 'vite-plugin-compression'
 
-// 真正的root ../
-const rootPath = resolve(__dirname, '.')
+// 真正的root
+const rootPath = process.cwd()
 // const srcPath = rootPath + '/src'
 // const distPath = rootPath + '/dist'
 // const assetDistPath = !!prodPath ? prodPath + '/assets' : distPath + '/assets'
@@ -24,10 +24,6 @@ const rootPath = resolve(__dirname, '.')
 // __filename
 // console.log(__filename)
 // /Library/code/projects/my_now/pnpm-init-vite-latest/tools/vite.config.ts
-
-/////////////////////////////
-// https://vitejs.dev/config/
-/////////////////////////////
 
 // 分环境配置
 // export default defineConfig(({ command, mode }) => {
@@ -43,7 +39,9 @@ const rootPath = resolve(__dirname, '.')
 //     }
 // })
 
-// https://vitejs.dev/config/
+///////////////////////////////
+///https://vitejs.dev/config///
+///////////////////////////////
 export default defineConfig({
     // define 全局常量
 
@@ -69,7 +67,8 @@ export default defineConfig({
         // CDN
         importToCDN({
             modules: [
-                { name: 'vue', var: 'Vue', path: 'https://unpkg.com/vue@next' },
+                // 生产环境还有点问题。。
+                // { name: 'vue', var: 'Vue', path: 'https://unpkg.com/vue@next' },
             ],
         }),
         // compress
@@ -120,7 +119,7 @@ export default defineConfig({
         // 打包输出文件夹配置，不配置，就都在assets里
         rollupOptions: {
             input: {
-                // main: resolve(rootPath, 'src/index.html'),
+                main: resolve(rootPath, './index.html'),
                 // 多主页配置 https://cn.vitejs.dev/guide/build.html#multi-page-app
                 // nested: resolve(__dirname, 'nested/index.html'),
             },

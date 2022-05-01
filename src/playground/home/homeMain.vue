@@ -2,15 +2,21 @@
  * @Author: vacrain
  * @Date: 2022-04-17 14:24:17
  * @LastEditors: vacrain
- * @LastEditTime: 2022-04-30 15:54:18
- * @FilePath: /steppp/src/spec/home/homeMain.vue
+ * @LastEditTime: 2022-05-01 11:27:40
+ * @FilePath: /steppp/src/playground/home/homeMain.vue
  * @Description: 
  * 
 -->
+
+<script lang="ts">
+export const routePath = '/'
+export const menuName = 'Home'
+</script>
 <script setup lang="ts">
-// import { getMockInfo } from '@/base/utils/api/request'
+import { getMockInfo } from '@/base/utils/api/request'
+// import Home1 from './homeComp1.vue'
+
 import { mainStore } from '@/base/entry/store'
-import Home1 from './homeComp1.vue'
 const store = mainStore()
 
 const reminders = []
@@ -43,15 +49,15 @@ const handleShowLoadingBar = () => {
     window.$loadingBar.start()
 }
 
-// const handleRequest = async () => {
-//     await getMockInfo()
-// }
+const handleRequest = async () => {
+    await getMockInfo()
+}
 </script>
 <template>
     <n-space vertical>
         <n-card>
             <h3>home - 1</h3>
-            <Home1 />
+            <!-- <Home1 /> -->
         </n-card>
         <n-card>
             <h3>Pinia</h3>
@@ -81,6 +87,12 @@ const handleShowLoadingBar = () => {
             <h3>LoadingBar</h3>
             <n-button type="primary" @click="handleShowLoadingBar">
                 useLoadingBar
+            </n-button>
+        </n-card>
+        <n-card>
+            <h3>Request</h3>
+            <n-button type="primary" @click="handleRequest">
+                useRequest
             </n-button>
         </n-card>
     </n-space>

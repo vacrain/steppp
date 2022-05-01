@@ -2,8 +2,8 @@
  * @Author: vacrain
  * @Date: 2022-04-19 06:26:50
  * @LastEditors: vacrain
- * @LastEditTime: 2022-04-30 15:48:16
- * @FilePath: /steppp/src/base/layout/sysProvider.vue
+ * @LastEditTime: 2022-04-30 21:06:32
+ * @FilePath: /steppp/src/base/provider/appProvider.vue
  * @Description: 
  * 
 -->
@@ -18,7 +18,7 @@ import {
 } from 'naive-ui'
 
 import { useConfig } from '@/base/hooks/useConfig'
-import LayoutPlayground from '@/base/layout/layoutPlayground.vue'
+import AppPlayground from '@/base/layout/layoutPlayground.vue'
 
 const themeOverrides: GlobalThemeOverrides = {
     common: {
@@ -43,7 +43,7 @@ const { theme, lang } = useConfig()
             <n-message-provider>
                 <n-notification-provider>
                     <n-loading-bar-provider>
-                        <LayoutPlayground />
+                        <app-playground />
                     </n-loading-bar-provider>
                 </n-notification-provider>
             </n-message-provider>

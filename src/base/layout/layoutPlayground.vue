@@ -12,6 +12,9 @@ import { useRouter } from 'vue-router'
 // mount something
 import { useConfig } from '@/base/hooks/useConfig'
 import { MENU_ITEMS, APP_NAME } from '@/base/entry/appConst'
+// import { MENU_ITEMS } from '@/base/entry/router'
+
+// console.log(MENU_ITEMS)
 
 const router = useRouter()
 

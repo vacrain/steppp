@@ -2,62 +2,61 @@
  * @Author: vacrain
  * @Date: 2022-04-17 14:23:14
  * @LastEditors: vacrain
- * @LastEditTime: 2022-04-30 15:47:30
+ * @LastEditTime: 2022-05-01 11:24:59
  * @FilePath: /steppp/src/base/entry/router.ts
  * @Description:
  *
  */
 import { createRouter, createWebHistory } from 'vue-router'
-import { ROUTE_LIST } from '@/base/entry/appConst'
 
-const routes = []
+import Home from '@/playground/home/homeMain.vue'
+import Vue3 from '@/playground/vue3/vue3Main.vue'
 
-for (let i = 0; i < ROUTE_LIST.length; i++) {
-    const routeObj = ROUTE_LIST[i]
-    routes.push({
-        path: routeObj.path,
-        component: routeObj.component,
-    })
-}
+const menuList: any = []
 
-// ROUTE_LIST.forEach((val, idx, routeObj) => {
-//     let path = !!routeObj.path ? routeObj.path : ;
-//     if(!!routeObj.path)
-//     routes.push({
-//         path:
-//     });
-// });
+// const modules = import.meta.glob('@/playground/**')
+// const routes2: any = []
 
-// main
+// for (const path in modules) {
+//     modules[path]().then(mod => {
+//         if (mod.routePath) {
+//             routes2.push({
+//                 path: mod.routePath,
+//                 component: mod.default,
+//             })
+//         }
+//         if (mod.menuName) {
+//             menuList.push({
+//                 label: mod.menuName,
+//                 key: mod.routePath,
+//             })
+//         }
+//     })
+// }
 
-// component.__file: "/Library/code/projects/others_now/naive-ui-provider/src/container/home/Home.vue"
-// str=str.split(',')[str.split(',').length - 1];
-// ROUTE_LIST.forEach((val, idx, routeObj) => {
-//     routes.push({
-//         path: "/" + routeObj.fieldName,
-//         component: COMPONENT_ITEMS[0],
-//     });
-// });
+// const modules = import.meta.globEager('@/playground/**')
+// console.log(modules)
+// const routes2: any = []
+// for (const path in modules) {
+//     const comp = modules[path]
+//     console.log(comp)
+// }
 
-// 放数组里 引入之后 forEach
-// const routes = [
-//     {
-//         path: "/",
-//         component: Home,
-//     },
-//     {
-//         path: "/field1",
-//         component: Field1,
-//     },
-//     {
-//         path: "/vue3",
-//         component: Vue3,
-//     },
-// ];
-
+const routes1: any = [
+    {
+        path: '/',
+        component: Home,
+    },
+    {
+        path: '/vue',
+        component: Vue3,
+    },
+]
 const router = createRouter({
     history: createWebHistory(),
-    routes,
+    routes: routes1,
 })
 
 export default router
+
+export const MENU_ITEMS: any = menuList

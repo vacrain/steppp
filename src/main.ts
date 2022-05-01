@@ -2,18 +2,18 @@
  * @Author: vacrain
  * @Date: 2022-04-17 13:41:29
  * @LastEditors: vacrain
- * @LastEditTime: 2022-04-30 15:40:08
+ * @LastEditTime: 2022-05-01 11:25:40
  * @FilePath: /steppp/src/main.ts
  * @Description:
  *
  */
-// global
+// dependence
 import { createApp } from 'vue'
 import naiveUI from 'naive-ui'
 import { createPinia } from 'pinia'
 
-// local
-import Provider from '@/base/layout/sysProvider.vue'
+// configuration
+import Provider from '@/base/Provider/appProvider.vue'
 import router from '@/base/entry/router'
 
 // 实例化
@@ -25,3 +25,6 @@ appProvider.use(router)
 appProvider.use(naiveUI)
 appProvider.use(pinia)
 appProvider.mount('#app')
+// await setTimeout(() => {
+//     appProvider.mount('#app')
+// }, 5555)
