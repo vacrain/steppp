@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-05-02 21:52:57
  * @LastEditors: vacrain
- * @LastEditTime: 2022-05-02 22:05:31
+ * @LastEditTime: 2022-05-02 22:07:24
  * @FilePath: /steppp/changelog.config.js
  * @Description: 提交辅助工具git-cz配置
  *
@@ -27,7 +27,7 @@ module.exports = {
         'type',
         'scope',
         'subject',
-        'body',
+        // 'body',
         // 'breaking',
         // 'issues',
         // 'lerna',
