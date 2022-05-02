@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-05-02 21:52:57
  * @LastEditors: vacrain
- * @LastEditTime: 2022-05-02 22:03:09
+ * @LastEditTime: 2022-05-02 22:05:31
  * @FilePath: /steppp/changelog.config.js
  * @Description: 提交辅助工具git-cz配置
  *
@@ -32,7 +32,7 @@ module.exports = {
         // 'issues',
         // 'lerna',
     ],
-    scopes: [],
+    scopes: ['', 'config', 'router', 'dependence'],
     types: {
         chore: {
             description: 'Build process or auxiliary tool changes',
