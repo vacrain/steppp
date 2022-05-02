@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-04-17 14:24:17
  * @LastEditors: vacrain
- * @LastEditTime: 2022-05-01 11:27:40
+ * @LastEditTime: 2022-05-01 21:13:56
  * @FilePath: /steppp/src/playground/home/homeMain.vue
  * @Description: 
  * 
@@ -14,7 +14,7 @@ export const menuName = 'Home'
 </script>
 <script setup lang="ts">
 import { getMockInfo } from '@/base/utils/api/request'
-// import Home1 from './homeComp1.vue'
+import HomeComp from './homeComp.vue'
 
 import { mainStore } from '@/base/entry/store'
 const store = mainStore()
@@ -56,8 +56,8 @@ const handleRequest = async () => {
 <template>
     <n-space vertical>
         <n-card>
-            <h3>home - 1</h3>
-            <!-- <Home1 /> -->
+            <h3>home-comp</h3>
+            <home-comp />
         </n-card>
         <n-card>
             <h3>Pinia</h3>

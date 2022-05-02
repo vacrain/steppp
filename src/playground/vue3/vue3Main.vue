@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-04-23 07:14:21
  * @LastEditors: vacrain
- * @LastEditTime: 2022-05-01 00:14:24
+ * @LastEditTime: 2022-05-01 21:15:48
  * @FilePath: /steppp/src/playground/vue3/vue3Main.vue
  * @Description: 
  * 
@@ -13,4 +13,4 @@ export const routePath = '/vue'
 export const menuName = 'Vue3'
 </script>
 <script setup lang="ts"></script>
-<template>111</template>
+<template>Vue3</template>
