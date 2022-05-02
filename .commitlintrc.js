@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-05-02 20:51:47
  * @LastEditors: vacrain
- * @LastEditTime: 2022-05-02 21:14:21
+ * @LastEditTime: 2022-05-02 21:19:41
  * @FilePath: /steppp/.commitlintrc.js
  * @Description:
  *
@@ -15,18 +15,15 @@ module.exports = {
             2,
             'always',
             [
-                'del', // 删除功能
-                'fix', // 解决问题
-                'bump', // 修改某个版本号
-                'conf', // 配置文件修改
-                'refactor', // 必须进行重构的代码
-                'reformat', // 代码格式化
-                'optimize', // 代码性能优化
-                'start', // 开始做某事，比如创建分支等
-                'end', // 结束做某事，比如删除分支等
-                'style', // 仅代码格式改动
-                'docs', // 文档构建与修改
+                'feat', // 新特性、新功能（feature）
+                'fix', // 修bug
+                'style', // 代码格式修改,代码格式化，注意不是 css 修改（不影响代码运行的变动）
                 'chore', // 构建过程或辅助工具的变动
+                'docs', // 文档构建与修改
+                'conf', // 配置文件修改
+                'refactor', // 代码重构（即不是新增功能，也不是修改bug的代码变动）
+                'test', // 增加测试、测试用例修改
+                'perf', // 优化相关，比如提升性能、体验
             ],
         ],
 
