@@ -38,6 +38,11 @@ const { theme, lang, changeTheme, changeLang } = useConfig()
 const showLang = computed(() => {
     return lang.value.name === 'zh-CN' ? '中文' : 'English'
 })
+const emit = defineEmits(['back'])
+//返回初始选择端
+const goBack = () => {
+    emit('back')
+}
 </script>
 <template>
     <n-layout has-sider class="app-layout" position="absolute">
@@ -54,6 +59,7 @@ const showLang = computed(() => {
             @expand="collapsed = false"
         >
             <span class="app-layout-sider__title"> {{ APP_NAME }}</span>
+
             <n-menu
                 :value="activeName"
                 :options="layoutOptions"
@@ -72,7 +78,10 @@ const showLang = computed(() => {
                     <span style="margin-right: 20px" @click="changeTheme">{{
                         theme === null ? '浅色' : '深色'
                     }}</span>
-                    <span @click="changeLang">{{ showLang }}</span>
+                    <span style="margin-right: 20px" @click="changeLang">{{
+                        showLang
+                    }}</span>
+                    <span @click="goBack">back</span>
                 </div>
             </n-layout-header>
             <n-layout-content
