@@ -2,8 +2,8 @@
  * @Author: vacrain
  * @Date: 2022-04-30 08:16:51
  * @LastEditors: vacrain
- * @LastEditTime: 2022-05-01 21:03:59
- * @FilePath: /steppp/src/playground/home/homeComp1.vue
+ * @LastEditTime: 2022-05-05 05:48:06
+ * @FilePath: /steppp/src/playground/home/homeComp.vue
  * @Description: 
  * 
 -->
@@ -44,8 +44,7 @@ const getInfo = async () => {
     // }
 
     // 自动根据当前环境获取api地址
-    // 不as string 一下，dev没事，build完了
-    mockData = await axios.get(import.meta.env.VITE_BASE_API as string)
+    mockData = await axios.get(import.meta.env.VITE_BASE_API)
     console.log(mockData)
 }
 getInfo()

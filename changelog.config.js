@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-05-02 21:52:57
  * @LastEditors: vacrain
- * @LastEditTime: 2022-05-02 22:07:24
+ * @LastEditTime: 2022-05-05 18:36:27
  * @FilePath: /steppp/changelog.config.js
  * @Description: 提交辅助工具git-cz配置
  *
@@ -23,6 +23,8 @@ module.exports = {
     ],
     maxMessageLength: 64,
     minMessageLength: 3,
+
+    // git-cz命令后，询问需要填写的内容
     questions: [
         'type',
         'scope',
