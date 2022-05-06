@@ -1,9 +1,9 @@
 /*
  * @Author: vacrain
  * @Date: 2022-04-17 16:03:52
- * @LastEditors: vacrain
- * @LastEditTime: 2022-05-01 11:28:43
- * @FilePath: /steppp/src/base/entry/appConst.ts
+ * @LastEditors: yhq
+ * @LastEditTime: 2022-05-06 10:03:55
+ * @FilePath: \naive-ui-steppp\src\base\entry\appConst.ts
  * @Description:
  *
  */
@@ -20,5 +20,9 @@ export const MENU_ITEMS = [
     {
         label: 'Vue3',
         key: '/vue',
+    },
+    {
+        label: 'NavUI',
+        key: '/nav_ui',
     },
 ]

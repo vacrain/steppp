@@ -1,9 +1,9 @@
 /*
  * @Author: vacrain
  * @Date: 2022-04-17 14:23:14
- * @LastEditors: vacrain
- * @LastEditTime: 2022-05-01 11:24:59
- * @FilePath: /steppp/src/base/entry/router.ts
+ * @LastEditors: yhq
+ * @LastEditTime: 2022-05-06 10:06:05
+ * @FilePath: \naive-ui-steppp\src\base\entry\router.ts
  * @Description:
  *
  */
@@ -11,6 +11,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 
 import Home from '@/playground/home/homeMain.vue'
 import Vue3 from '@/playground/vue3/vue3Main.vue'
+import navUI from '@/playground/navUI/navUIModular.vue'
 
 const menuList: any = []
 
@@ -50,6 +51,10 @@ const routes1: any = [
     {
         path: '/vue',
         component: Vue3,
+    },
+    {
+        path: '/nav_ui',
+        component: navUI,
     },
 ]
 const router = createRouter({
