@@ -1,47 +1,50 @@
 <script setup lang="ts">
-import {
-    useMessage,
-    useDialog,
-    useNotification,
-    useLoadingBar,
-    MenuOption,
-} from 'naive-ui'
-import { ref, computed } from 'vue'
-import { useRouter } from 'vue-router'
-
+import { useMessage, useDialog, useNotification, useLoadingBar } from 'naive-ui'
+import { ref, computed, onMounted } from 'vue'
 // mount something
 import { useConfig } from '@/base/hooks/useConfig'
-import { MENU_ITEMS, APP_NAME } from '@/base/entry/appConst'
-// import { MENU_ITEMS } from '@/base/entry/router'
-
-// console.log(MENU_ITEMS)
-
+import { useRouter } from 'vue-router'
 const router = useRouter()
-
 // mount on window
 window.$message = useMessage()
 window.$dialog = useDialog()
 window.$notification = useNotification()
 window.$loadingBar = useLoadingBar()
-const layoutOptions = ref<MenuOption[]>(MENU_ITEMS)
 const collapsed = ref(false)
-const activeName = ref('/')
-const handleMenuSelect = (value: string) => {
-    activeName.value = value
-    router.push({
-        path: value,
-    })
-}
-
 // config
 const { theme, lang, changeTheme, changeLang } = useConfig()
 const showLang = computed(() => {
     return lang.value.name === 'zh-CN' ? '中文' : 'English'
 })
 const emit = defineEmits(['back'])
+defineProps({
+    layoutOptions: {
+        type: Array,
+        default: () => {
+            return []
+        },
+    },
+    appName: {
+        type: String,
+        default: '',
+    },
+})
 //返回初始选择端
 const goBack = () => {
     emit('back')
+}
+const activeName = ref('/')
+const handleMenuSelect = (value: string) => {
+    setActiveName(value)
+    router.push({
+        path: value,
+    })
+}
+onMounted(() => {
+    setActiveName(window.location.pathname)
+})
+const setActiveName = (val: string) => {
+    activeName.value = val
 }
 </script>
 <template>
@@ -58,7 +61,7 @@ const goBack = () => {
             @collapse="collapsed = true"
             @expand="collapsed = false"
         >
-            <span class="app-layout-sider__title"> {{ APP_NAME }}</span>
+            <span class="app-layout-sider__title"> {{ appName }}</span>
 
             <n-menu
                 :value="activeName"

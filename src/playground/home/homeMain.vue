@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-04-17 14:24:17
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-06 17:41:26
+ * @LastEditTime: 2022-05-07 17:59:52
  * @FilePath: \naive-ui-steppp\src\playground\home\homeMain.vue
  * @Description: 
  * 
@@ -19,14 +19,6 @@ import leftComp from '@/base/components/n-anchor.vue'
 
 import { mainStore } from '@/base/entry/store'
 const store = mainStore()
-
-const reminders = []
-for (let i = 0; i < 10; i++) {
-    reminders.push({
-        content: '',
-    })
-}
-
 const handleShowMessage = (aMsg: string) => {
     window.$message.success(aMsg)
 }

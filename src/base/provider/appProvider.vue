@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-04-19 06:26:50
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-05 18:38:34
+ * @LastEditTime: 2022-05-07 15:12:58
  * @FilePath: \naive-ui-steppp\src\base\provider\appProvider.vue
  * @Description: 
  * 
@@ -70,7 +70,7 @@ const changEnd = (val: string) => {
                             class="layoutStyle"
                         >
                             <div
-                                @click="changEnd(item)"
+                                @click="changEnd(index + '')"
                                 v-for="(item, index) in endList"
                                 :key="index"
                             >
@@ -78,10 +78,12 @@ const changEnd = (val: string) => {
                             </div>
                         </n-card>
                         <layout-playground
-                            v-if="showLayout == 'playground'"
+                            v-if="showLayout == '0'"
+                            :layoutOptions="store.appInfo[showLayout].menuItem"
+                            :appName="store.appInfo[showLayout].appName"
                             @back="changEnd('')"
                         />
-                        <layout-web1 v-if="showLayout == 'web1'" />
+                        <layout-web1 v-if="showLayout == '1'" />
                     </n-loading-bar-provider>
                 </n-notification-provider>
             </n-message-provider>

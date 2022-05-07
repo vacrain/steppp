@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-04-22 20:13:01
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-05 17:40:14
+ * @LastEditTime: 2022-05-07 15:00:56
  * @FilePath: \naive-ui-steppp\src\base\entry\store.ts
  * @Description:
  *
@@ -10,11 +10,12 @@
 
 // 引入仓库定义函数
 import { defineStore } from 'pinia'
-
+import appInfo from './appConst'
 const pinia_store = {
     msg: 'hello pinia!',
     counter: 0,
     whichEnd: getItem('whichEnd') || '', //哪个端 默认 初始选择端页
+    appInfo,
 }
 function getItem(key: string) {
     return sessionStorage.getItem(key)
@@ -32,7 +33,6 @@ export const mainStore = defineStore('main', {
     getters: {},
     actions: {
         setEnd(val: any) {
-            console.log(val, 'val')
             setItem('whichEnd', val)
         },
     },
