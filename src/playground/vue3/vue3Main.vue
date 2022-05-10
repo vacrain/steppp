@@ -1,17 +1,17 @@
 <!--
  * @Author: vacrain
  * @Date: 2022-04-23 07:14:21
- * @LastEditors: yhq
- * @LastEditTime: 2022-05-10 14:05:21
- * @FilePath: \naive-ui-steppp\src\playground\vue3\vue3Main.vue
+ * @LastEditors: vacrain
+ * @LastEditTime: 2022-05-10 19:23:52
+ * @FilePath: /steppp/src/playground/vue3/vue3Main.vue
  * @Description: 
  * 
 -->
 
 <script setup lang="ts">
 import leftComp from '@/base/components/n-anchor.vue'
-import { computed } from '@vue/reactivity'
-import { getCurrentInstance } from 'vue'
+import { computed, getCurrentInstance } from 'vue'
+
 const { proxy }: any = getCurrentInstance()
 const store = proxy.$store()
 console.log(store)
