@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useMessage, useDialog, useNotification, useLoadingBar } from 'naive-ui'
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, getCurrentInstance } from 'vue'
 // mount something
 import { useConfig } from '@/base/hooks/useConfig'
-import { useRouter } from 'vue-router'
-const router = useRouter()
+import breadCrumb from '@/base/components/n-breadcrumb.vue'
+const { proxy }: any = getCurrentInstance()
 // mount on window
 window.$message = useMessage()
 window.$dialog = useDialog()
@@ -34,15 +34,26 @@ const goBack = () => {
     emit('back')
 }
 const activeName = ref('/')
+const breadInfo = ref({})
 const handleMenuSelect = (value: string) => {
     setActiveName(value)
-    router.push({
+    proxy.$router.push({
         path: value,
     })
 }
-onMounted(() => {
-    setActiveName(window.location.pathname)
+
+// 该步骤是 防止页面刷新拿不到值
+proxy.$router.beforeEach((to: any, from: any, next: any) => {
+    setBreadInfo()
+    next()
 })
+onMounted(() => {
+    setBreadInfo()
+    setActiveName(proxy.$pathname)
+})
+const setBreadInfo = () => {
+    breadInfo.value = JSON.parse(sessionStorage.getItem('breadInfo') as any)
+}
 const setActiveName = (val: string) => {
     activeName.value = val
 }
@@ -77,6 +88,7 @@ const setActiveName = (val: string) => {
             :style="{ left: collapsed ? '10px' : '280px' }"
         >
             <n-layout-header bordered>
+                <breadCrumb :breadcrumb-info="breadInfo" />
                 <div style="padding-right: 40px">
                     <span style="margin-right: 20px" @click="changeTheme">{{
                         theme === null ? '浅色' : '深色'
@@ -117,7 +129,7 @@ const setActiveName = (val: string) => {
 .n-layout-header {
     padding: 24px;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 
 .n-layout-header span {

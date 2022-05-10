@@ -1,16 +1,60 @@
 <!--
  * @Author: vacrain
  * @Date: 2022-04-23 07:14:21
- * @LastEditors: vacrain
- * @LastEditTime: 2022-05-01 21:15:48
- * @FilePath: /steppp/src/playground/vue3/vue3Main.vue
+ * @LastEditors: yhq
+ * @LastEditTime: 2022-05-10 14:05:21
+ * @FilePath: \naive-ui-steppp\src\playground\vue3\vue3Main.vue
  * @Description: 
  * 
 -->
 
-<script lang="ts">
-export const routePath = '/vue'
-export const menuName = 'Vue3'
+<script setup lang="ts">
+import leftComp from '@/base/components/n-anchor.vue'
+import { computed } from '@vue/reactivity'
+import { getCurrentInstance } from 'vue'
+const { proxy }: any = getCurrentInstance()
+const store = proxy.$store()
+console.log(store)
+const menuItemList: any = [
+    {
+        title: 'vue基本使用',
+        path: '/vue_basic_usage',
+    },
+    {
+        title: 'vue3新特性',
+        path: '/vue_new_features',
+    },
+]
+const menuOnClick = (i: number) => {
+    proxy.$router.push(menuItemList[i].path)
+}
+const isShowbreadComp = computed(() => {
+    return (
+        menuItemList.filter((item: any) => {
+            return item.path == proxy.$pathname
+        }).length > 0
+    )
+})
 </script>
-<script setup lang="ts"></script>
-<template>Vue3</template>
+<template>
+    <n-layout has-sider v-if="!isShowbreadComp">
+        <n-layout-sider>
+            <left-comp :list="menuItemList" />
+        </n-layout-sider>
+        <n-layout-content :native-scrollbar="false">
+            <n-space vertical>
+                <n-card
+                    v-for="(item, index) in menuItemList"
+                    :key="index"
+                    :id="item.title"
+                    @click="menuOnClick(index)"
+                >
+                    <h3>{{ item.title }}</h3>
+                </n-card>
+            </n-space>
+        </n-layout-content>
+    </n-layout>
+    <router-view v-slot="{ Component }">
+        <component :is="Component" :key="$route.path" />
+    </router-view>
+</template>

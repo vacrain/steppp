@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-04-19 06:26:50
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-07 15:12:58
+ * @LastEditTime: 2022-05-10 11:01:35
  * @FilePath: \naive-ui-steppp\src\base\provider\appProvider.vue
  * @Description: 
  * 
@@ -20,9 +20,10 @@ import {
 import { useConfig } from '@/base/hooks/useConfig'
 import layoutPlayground from '@/base/layout/layoutPlayground.vue'
 import layoutWeb1 from '../layout/layoutWeb1.vue'
-import { onMounted, ref } from 'vue'
-import { mainStore } from '@/base/entry/store'
-const store = mainStore()
+import { getCurrentInstance, onMounted, ref } from 'vue'
+import { getMenuList } from '@/base/utils/menuAdjustment'
+const { proxy }: any = getCurrentInstance()
+const store = proxy.$store()
 const themeOverrides: GlobalThemeOverrides = {
     common: {
         primaryColor: '#4fb233',
@@ -31,17 +32,34 @@ const themeOverrides: GlobalThemeOverrides = {
         borderRadius: '16px',
     },
 }
-
+proxy.$router.beforeEach((to: any, from: any, next: any) => {
+    let routeInfo = to.matched[0]
+    const obj = {
+        name: routeInfo.name,
+        path: routeInfo.path,
+        children: routeInfo.children,
+    }
+    sessionStorage.setItem('breadInfo', JSON.stringify(obj))
+    next()
+})
 const showLayout = ref('')
 const endList: any = ref(['playground', 'web'])
 const { theme, lang } = useConfig()
+const layoutOptions = ref([])
 onMounted(() => {
     showLayout.value = store.whichEnd
+    setLayoutOptions(store.whichEnd)
 })
+
 //改变端
 const changEnd = (val: string) => {
     store.setEnd(val)
     showLayout.value = val
+    setLayoutOptions(val)
+}
+const setLayoutOptions = (val: string) => {
+    layoutOptions.value =
+        store.appInfo[val] && getMenuList(store.appInfo[val].menuItem)
 }
 </script>
 
@@ -79,7 +97,7 @@ const changEnd = (val: string) => {
                         </n-card>
                         <layout-playground
                             v-if="showLayout == '0'"
-                            :layoutOptions="store.appInfo[showLayout].menuItem"
+                            :layoutOptions="layoutOptions"
                             :appName="store.appInfo[showLayout].appName"
                             @back="changEnd('')"
                         />

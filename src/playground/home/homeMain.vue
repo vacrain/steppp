@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-04-17 14:24:17
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-07 17:59:52
+ * @LastEditTime: 2022-05-10 13:21:12
  * @FilePath: \naive-ui-steppp\src\playground\home\homeMain.vue
  * @Description: 
  * 
@@ -16,9 +16,10 @@ export const menuName = 'Home'
 import { getMockInfo } from '@/base/utils/api/request'
 import HomeComp from './homeComp.vue'
 import leftComp from '@/base/components/n-anchor.vue'
+import { getCurrentInstance } from 'vue'
 
-import { mainStore } from '@/base/entry/store'
-const store = mainStore()
+const { proxy }: any = getCurrentInstance()
+const store = proxy.$store()
 const handleShowMessage = (aMsg: string) => {
     window.$message.success(aMsg)
 }
