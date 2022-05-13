@@ -5,6 +5,7 @@ import { ref, computed, onMounted, getCurrentInstance } from 'vue'
 import { useConfig } from '@/base/hooks/useConfig'
 import breadCrumb from '@/base/components/n-breadcrumb.vue'
 const { proxy }: any = getCurrentInstance()
+const store = proxy.$store()
 // mount on window
 window.$message = useMessage()
 window.$dialog = useDialog()
@@ -36,6 +37,7 @@ const goBack = () => {
 const activeName = ref('/')
 const breadInfo = ref({})
 const handleMenuSelect = (value: string) => {
+    store.setNowMenuItemPath(value)
     setActiveName(value)
     proxy.$router.push({
         path: value,
@@ -49,7 +51,7 @@ proxy.$router.beforeEach((to: any, from: any, next: any) => {
 })
 onMounted(() => {
     setBreadInfo()
-    setActiveName(proxy.$pathname)
+    setActiveName(window.location.pathname)
 })
 const setBreadInfo = () => {
     breadInfo.value = JSON.parse(sessionStorage.getItem('breadInfo') as any)

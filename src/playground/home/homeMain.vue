@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-04-17 14:24:17
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-10 13:21:12
+ * @LastEditTime: 2022-05-12 18:54:01
  * @FilePath: \naive-ui-steppp\src\playground\home\homeMain.vue
  * @Description: 
  * 
@@ -25,7 +25,7 @@ const handleShowMessage = (aMsg: string) => {
 }
 const handleShowDialog = () => {
     window.$dialog.success({
-        title: 'Success use dialog',
+        label: 'Success use dialog',
         content: 'Cool',
         positiveText: 'Wow!',
         onPositiveClick: () => {
@@ -49,40 +49,40 @@ const handleRequest = async () => {
 //注意 meth 里的方法不要写 （）
 const menuItemList: any = [
     {
-        title: 'home-comp',
+        label: 'home-comp',
         isShowBtn: false,
         meth: null,
         comp: HomeComp,
     },
     {
-        title: 'Pinia',
+        label: 'Pinia',
         isShowBtn: true,
         meth: handleShowMessage,
         msg: store.msg,
     },
     {
-        title: 'Message',
+        label: 'Message',
         isShowBtn: true,
         meth: handleShowMessage,
         msg: 'just a msg',
     },
     {
-        title: 'Dialog',
+        label: 'Dialog',
         isShowBtn: true,
         meth: handleShowDialog,
     },
     {
-        title: 'Nofitication',
+        label: 'Nofitication',
         isShowBtn: true,
         meth: handleShowNotification,
     },
     {
-        title: 'LoadingBar',
+        label: 'LoadingBar',
         isShowBtn: true,
         meth: handleShowLoadingBar,
     },
     {
-        title: 'Request',
+        label: 'Request',
         isShowBtn: true,
         meth: handleRequest,
     },
@@ -99,16 +99,16 @@ const menuItemList: any = [
                     class="rightContentCard"
                     v-for="(item, index) in menuItemList"
                     :key="index"
-                    :id="item.title"
+                    :id="item.label"
                 >
-                    <h3>{{ item.title }}</h3>
+                    <h3>{{ item.label }}</h3>
                     <component :is="item.comp" v-if="!item.isShowBtn" />
                     <n-button
                         v-if="item.isShowBtn"
                         type="primary"
                         @click="item.meth(item.msg)"
                     >
-                        {{ 'use' + item.title }}
+                        {{ 'use' + item.label }}
                     </n-button>
                 </n-card>
             </n-space>

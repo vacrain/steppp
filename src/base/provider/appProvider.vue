@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-04-19 06:26:50
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-10 11:01:35
+ * @LastEditTime: 2022-05-13 16:17:58
  * @FilePath: \naive-ui-steppp\src\base\provider\appProvider.vue
  * @Description: 
  * 
@@ -32,23 +32,14 @@ const themeOverrides: GlobalThemeOverrides = {
         borderRadius: '16px',
     },
 }
-proxy.$router.beforeEach((to: any, from: any, next: any) => {
-    let routeInfo = to.matched[0]
-    const obj = {
-        name: routeInfo.name,
-        path: routeInfo.path,
-        children: routeInfo.children,
-    }
-    sessionStorage.setItem('breadInfo', JSON.stringify(obj))
-    next()
-})
+
 const showLayout = ref('')
 const endList: any = ref(['playground', 'web'])
 const { theme, lang } = useConfig()
 const layoutOptions = ref([])
 onMounted(() => {
-    showLayout.value = store.whichEnd
-    setLayoutOptions(store.whichEnd)
+    showLayout.value = sessionStorage.getItem('whichEnd') || '' // 可以改变这个地方的值，就不用走空制页 结合 router
+    setLayoutOptions(showLayout.value)
 })
 
 //改变端
@@ -58,8 +49,8 @@ const changEnd = (val: string) => {
     setLayoutOptions(val)
 }
 const setLayoutOptions = (val: string) => {
-    layoutOptions.value =
-        store.appInfo[val] && getMenuList(store.appInfo[val].menuItem)
+    // 这一步过滤 面包屑的菜单
+    val && (layoutOptions.value = getMenuList(store.getEndList(val).menuItem))
 }
 </script>
 
@@ -77,6 +68,7 @@ const setLayoutOptions = (val: string) => {
                         <!-- 这里是一个很简陋的主页，可以选择layout
                         默认layout是空，选好了以后就关闭选择界面，打开选择的layout
                         现在不要点 web 点了就回不去了，清缓存吧
+                        选端时 进页面需要刷新一下
                         -->
 
                         <n-card
@@ -88,7 +80,7 @@ const setLayoutOptions = (val: string) => {
                             class="layoutStyle"
                         >
                             <div
-                                @click="changEnd(index + '')"
+                                @click="changEnd(item)"
                                 v-for="(item, index) in endList"
                                 :key="index"
                             >
@@ -96,12 +88,15 @@ const setLayoutOptions = (val: string) => {
                             </div>
                         </n-card>
                         <layout-playground
-                            v-if="showLayout == '0'"
+                            v-if="showLayout == 'playground'"
                             :layoutOptions="layoutOptions"
-                            :appName="store.appInfo[showLayout].appName"
+                            :appName="store.getEndList(showLayout).appName"
                             @back="changEnd('')"
                         />
-                        <layout-web1 v-if="showLayout == '1'" />
+                        <layout-web1
+                            v-if="showLayout == 'web'"
+                            @back="changEnd('')"
+                        />
                     </n-loading-bar-provider>
                 </n-notification-provider>
             </n-message-provider>

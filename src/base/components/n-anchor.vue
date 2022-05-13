@@ -1,7 +1,7 @@
 <!--
  * @Author: yhq
  * @Date: 2022-05-06 14:10:34
- * @LastEditTime: 2022-05-06 17:10:03
+ * @LastEditTime: 2022-05-12 18:53:40
  * @LastEditors: yhq
  * @Description: 
  * @FilePath: \naive-ui-steppp\src\base\components\n-anchor.vue
@@ -26,8 +26,8 @@ defineProps({
         :ignore-gap="true"
         ><n-anchor-link
             v-for="(item, index) in list"
-            :title="item.title"
-            :href="'#' + item.title"
+            :title="item.label"
+            :href="'#' + item.label"
             :key="index"
         />
     </n-anchor>
