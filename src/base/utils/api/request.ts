@@ -17,7 +17,7 @@ export const request = () => {
 
 export const getMockInfo = async () => {
     const result = (await request()) as { success: boolean; result: object }
-
+    console.log(result, 'result')
     if (result.success) {
         window.$message.success('Successfully request')
     } else {

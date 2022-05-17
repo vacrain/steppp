@@ -17,6 +17,8 @@ import i18n from '@/base/i18n/lang'
 import Provider from '@/base/Provider/appProvider.vue'
 import router from '@/base/entry/router'
 import { mainStore } from '@/base/entry/store'
+import api from '@/api'
+
 const store = mainStore
 // 实例化
 const appProvider = createApp(Provider)
@@ -24,6 +26,7 @@ const pinia = createPinia()
 // 全局挂载
 appProvider.config.globalProperties.$store = store
 appProvider.config.globalProperties.$router = router
+appProvider.config.globalProperties.$api = api
 // 挂载
 appProvider.use(router)
 appProvider.use(i18n)

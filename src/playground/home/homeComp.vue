@@ -8,7 +8,8 @@
  * 
 -->
 <script setup lang="ts">
-import axios from 'axios'
+import { getCurrentInstance, ref } from 'vue'
+const { proxy }: any = getCurrentInstance()
 
 // mock
 // let mockData = { statusText: "" };
@@ -26,8 +27,7 @@ import axios from 'axios'
 // };
 // getInfo2();
 
-// 开发 生产 切换模式
-let mockData = {}
+const NameList = ref([])
 const getInfo = async () => {
     // mock
     // mockData = await axios.get("/api/get");
@@ -44,9 +44,14 @@ const getInfo = async () => {
     // }
 
     // 自动根据当前环境获取api地址
-    mockData = await axios.get(import.meta.env.VITE_BASE_API)
-    console.log(mockData)
+    // mockData = await axios.get(import.meta.env.VITE_BASE_API)
+    proxy.$api.getNameList().then((res: any) => {
+        NameList.value = res.info.name
+    })
+    // proxy.$api.getProduct()
 }
 getInfo()
 </script>
-<template>hihihi<br /></template>
+<template>
+    <span v-for="(item, index) in NameList" :key="index">{{ item }}、</span>
+</template>

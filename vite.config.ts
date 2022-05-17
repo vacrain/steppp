@@ -1,9 +1,9 @@
 /*
  * @Author: vacrain
  * @Date: 2022-04-17 13:41:29
- * @LastEditors: vacrain
- * @LastEditTime: 2022-05-01 11:53:17
- * @FilePath: /steppp/vite.config.ts
+ * @LastEditors: yhq
+ * @LastEditTime: 2022-05-05 18:25:15
+ * @FilePath: \naive-ui-steppp\vite.config.ts
  * @Description:
  *
  * Copyright (c) 2022 by notia, All Rights Reserved.
@@ -14,7 +14,6 @@ import { resolve } from 'path'
 import { viteMockServe } from 'vite-plugin-mock'
 import importToCDN from 'vite-plugin-cdn-import'
 import viteCompression from 'vite-plugin-compression'
-
 // 真正的root
 const rootPath = process.cwd()
 // const srcPath = rootPath + '/src'
@@ -63,6 +62,7 @@ export default defineConfig({
         // mock
         viteMockServe({
             mockPath: 'mock',
+            localEnabled: true, //是否开启mock
         }),
         // CDN
         importToCDN({
@@ -92,10 +92,16 @@ export default defineConfig({
         port: 3210,
         // 设置完启动后会显示，Network:  http://192.168.13.15:3000/ 然后就可以根据ip访问了
         host: '0.0.0.0',
+        //开启热更新
+        hmr: true,
         // 启动后自动打开
-        open: true,
+        open: false,
         // 跨域
         proxy: {
+            '/api': {
+                target: '',
+                changeOrigin: true,
+            },
             '/ss': {
                 target: 'https://saucenao.com/search.php?db=999&output_type=2&url=https://pica.zhimg.com/v2-178387c7e8e907910d715e890bfd7519_1440w.jpg?source=172ae18b&api_key=33d4bee5c19583cd3756ee47f2ebef8edd5bef7e',
                 changeOrigin: true,

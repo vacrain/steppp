@@ -24,6 +24,7 @@ export default [
                 code: 200,
                 dev: 'dev yeah!',
                 info,
+                errMsg: '请求方法错误',
             }
         },
     },
