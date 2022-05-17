@@ -1,10 +1,28 @@
 # Steppp
 
-> 基于 vue3 vite2 naive-ui 的常用 layout 开箱即用框架
-> 注释全，适合学习
-> 已经配置好了 vite 的基本设置 alias、build、跨域等，还有 eslint、prettier、mock、cdn、gzip 等
+> 基于 vue3、vite2、naive-ui 开箱即用且全端 layout 统一管理框架
 
-推荐全局使用 pnpm、git-cz，安装方式：
+## feat：
+
+1. vue3: mvvm 架构，双向绑定，components api，setup 语法糖，更能 hold 住大项目了
+2. vite: 脚手架及打包工具于一体，而且很快是真的。已经配置好了 vite 的基本设置 alias、build、跨域等，还有 eslint、prettier、mock、cdn、gzip 等
+3. naive-ui: vue3 + ts 激动人心的 ui 框架，整合了掌控全局的 provider 及大量实用组件
+4. 常用 layout: 不管你是想做一个宣传用的官网，还是 web2 类型的平台，还是 admin 端系统，all in one，从此一起管理！
+5. 注释全: 可以说是非常适合学习了
+6. 二次封装组件: 嗯，还是要封装的，官方的也不全是拿来就很好用的...
+7. 完全支持 typescript: 静态类型的 js，护航你的项目，并通过 eslint、prettier 等插件使代码更健壮、安全
+8. git 提交管理: 通过 husky、commitlint，好好写提交信息，让版本控制软件的能力最大化
+9. axios: 封装好的 AJAX 框架，支持 rest 风格，api 管理首选
+10. pinia: 由 vuex 核心成员写的，新一代的状态管理框架，现已加入浏览器开发工具中
+11. 国际化: 统一的语种管理，助力你的项目推向国际
+12. 路由: 通过视图内声明式的管理路由及菜单（待定）
+13. mock: 模拟好了数据再上真家伙！
+14. vscode 插件: 经过大量实际开发中的使用，推荐了必安的良心插件
+15.
+
+## start
+
+全局使用 pnpm、git-cz，安装方式：
 
 ```
 npm install pnpm -g
@@ -25,7 +43,7 @@ pnpm run build
 pnpm run preview
 ```
 
-提交
+提交（运行后，根据提示填写提交信息即可）
 
 ```
 git-cz
