@@ -4,6 +4,8 @@ import { ref, computed, onMounted, getCurrentInstance } from 'vue'
 // mount something
 import { useConfig } from '@/base/hooks/useConfig'
 import breadCrumb from '@/base/components/n-breadcrumb.vue'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 const { proxy }: any = getCurrentInstance()
 const store = proxy.$store()
 // mount on window
@@ -93,12 +95,12 @@ const setActiveName = (val: string) => {
                 <breadCrumb :breadcrumb-info="breadInfo" />
                 <div style="padding-right: 40px">
                     <span style="margin-right: 20px" @click="changeTheme">{{
-                        theme === null ? '浅色' : '深色'
+                        theme === null ? t('light') : t('dark')
                     }}</span>
                     <span style="margin-right: 20px" @click="changeLang">{{
                         showLang
                     }}</span>
-                    <span @click="goBack">back</span>
+                    <span @click="goBack">{{ t('back') }}</span>
                 </div>
             </n-layout-header>
             <n-layout-content

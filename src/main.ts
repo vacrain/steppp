@@ -11,7 +11,8 @@
 import { createApp } from 'vue'
 import naiveUI from 'naive-ui'
 import { createPinia } from 'pinia'
-
+// 国际化注册
+import i18n from '@/base/i18n/lang'
 // configuration
 import Provider from '@/base/Provider/appProvider.vue'
 import router from '@/base/entry/router'
@@ -25,6 +26,7 @@ appProvider.config.globalProperties.$store = store
 appProvider.config.globalProperties.$router = router
 // 挂载
 appProvider.use(router)
+appProvider.use(i18n)
 appProvider.use(naiveUI)
 appProvider.use(pinia)
 appProvider.mount('#app')

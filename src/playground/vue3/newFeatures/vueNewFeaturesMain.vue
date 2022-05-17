@@ -7,6 +7,10 @@
  * @FilePath: \naive-ui-steppp\src\playground\vue3\newFeatures\vueNewFeaturesMain.vue
  * 
 -->
+<script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
+</script>
 <template>
-    <n-layout has-sider> 新特性</n-layout>
+    <n-layout has-sider> {{ t('hello') }}</n-layout>
 </template>
