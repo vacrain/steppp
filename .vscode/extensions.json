@@ -1,10 +1,41 @@
 {
     "recommendations": [
-        "Vue.volar",
-        "eamodio.gitlens",
-        "OBKoro1.korofileheader",
+        // easy codeing
+        "steoates.autoimport",
+        "formulahendry.auto-rename-tag",
+        // format
+        "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
+        "usernamehw.errorlens",
+        "stylelint.vscode-stylelint",
+        // snippets
+        "TabNine.tabnine-vscode",
         "JimDong.naive-ui-snippets",
-        "usernamehw.errorlens"
+        "fastify.fastify-snippets",
+        "abusaidm.html-snippets",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "xabikos.JavaScriptSnippets",
+        "yzhang.markdown-all-in-one",
+        "JimDong.naive-ui-snippets",
+        "christian-kohler.path-intellisense",
+        // highlight
+        "aaron-bond.better-comments",
+        "CoenraadS.bracket-pair-colorizer-2",
+        "naumovs.color-highlight",
+        // git
+        "eamodio.gitlens",
+        "mhutchie.git-graph",
+        "donjayamanne.githistory",
+        // back-end
+        "msjsdiag.debugger-for-chrome",
+        // vue
+        "jcbuisson.vue",
+        "Vue.volar",
+        "dariofuzinato.vue-peek",
+        // other
+        "pranaygp.vscode-css-peek",
+        "OBKoro1.korofileheader",
+        "humao.rest-client",
+        "WakaTime.vscode-wakatime"
     ]
 }

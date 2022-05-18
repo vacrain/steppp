@@ -1,8 +1,8 @@
 # Steppp
 
-> 基于 vue3、vite2、naive-ui 开箱即用且全端 layout 统一管理框架
+> 基于 vue3、vite2、naive-ui 开箱即用且全端 layout 统一管理的框架
 
-## feat：
+## Features
 
 1. vue3: mvvm 架构，双向绑定，components api，setup 语法糖，更能 hold 住大项目了
 2. vite: 脚手架及打包工具于一体，而且很快是真的。已经配置好了 vite 的基本设置 alias、build、跨域等，还有 eslint、prettier、mock、cdn、gzip 等
@@ -20,14 +20,25 @@
 14. vscode 插件: 经过大量实际开发中的使用，推荐了必安的良心插件
 15.
 
-## start
+## 环境
 
-全局使用 pnpm、git-cz，安装方式：
+什么 os 都 OK
+
+nodejs v16.14.2
+pnpm 5.18.2
+git-cz 4.5.0
+
+ide 使用 vscode
+vscode 插件推荐： 参考 .vscode/extensions.json
+
+安装 node16.14.2 后
 
 ```
 npm install pnpm -g
 npm install git-cz -g
 ```
+
+## Start
 
 克隆本项目后，安装依赖
 
@@ -47,4 +58,36 @@ pnpm run preview
 
 ```
 git-cz
+```
+
+## Dir
+
+> 目录说明
+> 生成目录命令：tree -d
+
+-   生成日期：2022/4/22
+
+```
+├── src
+│   ├── assets
+│   │   ├── css // ssc
+│   │   ├── js // sj
+│   │   ├── media // 各种静态媒体文件咯
+│   │   │   └── public
+│   │   └── plugins // 插件
+│   ├── etc // 就是你项目招新人了，不要让他动这里的东西！
+│   │   ├── api // ipa
+│   │   ├── config // 软件的全局设定，比如常量、路由
+│   │   ├── typings // 打开看看吧，全是全局声明，各种type、interface
+│   │   ├── pinia // 状态管理，没用stroe因为和providers首字母重了
+│   │   ├── providers // provider啥的，全局拿捏了属于是
+│   │   └── utils // 系统工具包
+│   │       └── hooks // app的hooks
+│   └── spec // 具体业务
+│       ├── field1 // 一个demo说明
+│       ├── home // 主页
+│       ├── pinia // pinia演示
+│       └── ... // 其他demo演示
+└── steppp-docs // 全部文档（好像就一个文件，bushi
+
 ```
