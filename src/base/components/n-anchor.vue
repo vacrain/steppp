@@ -7,6 +7,7 @@
  * @FilePath: \naive-ui-steppp\src\base\components\n-anchor.vue
  * 
 -->
+<!-- 页面左侧大纲 -->
 <script setup lang="ts">
 defineProps({
     list: {

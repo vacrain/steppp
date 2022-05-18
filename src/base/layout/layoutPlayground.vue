@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useMessage, useDialog, useNotification, useLoadingBar } from 'naive-ui'
 import { ref, computed, onMounted, getCurrentInstance } from 'vue'
-// mount something
 import { useConfig } from '@/base/hooks/useConfig'
 import breadCrumb from '@/base/components/n-breadcrumb.vue'
 import { useI18n } from 'vue-i18n'

@@ -12,11 +12,14 @@
 import leftComp from '@/base/components/n-anchor.vue'
 import { computed, getCurrentInstance } from 'vue'
 const { proxy }: any = getCurrentInstance()
+// 从本地存储获取 面包屑数组 （侧边栏点击时会进行一个赋值操作）
 const menuItemList: any =
     JSON.parse(sessionStorage.getItem('breadList') || '') || []
+// 面包屑点击
 const menuOnClick = (i: number) => {
     proxy.$router.push(menuItemList[i].key)
 }
+// 判断是否从面包屑二级列表单击进入  返回真 则显示面包屑主页 假则显示 面包屑子页面
 const isShowbreadComp = computed(() => {
     return window.location.pathname == sessionStorage.getItem('nowMenuItemPath')
 })

@@ -50,7 +50,7 @@ const changEnd = (val: string) => {
 }
 const setLayoutOptions = (val: string) => {
     // 这一步过滤 面包屑的菜单
-    val && (layoutOptions.value = getMenuList(store.getEndList(val).menuItem))
+    val && (layoutOptions.value = getMenuList(store.getEndList(val).fileList))
 }
 </script>
 

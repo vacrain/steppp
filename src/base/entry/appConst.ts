@@ -19,7 +19,7 @@ function getEndList(nowEnd: string) {
         appName: 'Steppp',
         appVersion: '0.0.0',
         endRootPath: 'playground',
-        menuItem: [
+        fileList: [
             {
                 label: 'Home',
                 key: '/',
@@ -76,7 +76,7 @@ function getEndList(nowEnd: string) {
         appName: '',
         appVersion: '0.0.0',
         endRootPath: 'web',
-        menuItem: [
+        fileList: [
             {
                 label: 'Home',
                 key: '/',
@@ -92,4 +92,6 @@ function getEndList(nowEnd: string) {
             return web
     }
 }
-export { getEndList }
+const LANG_TYPE_ZH_CN = 0 //国际化中文
+const LANG_TYPE_EN_US = 1 //国际化英文
+export { getEndList, LANG_TYPE_ZH_CN, LANG_TYPE_EN_US }

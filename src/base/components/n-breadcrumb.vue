@@ -7,6 +7,7 @@
  * @FilePath: \naive-ui-steppp\src\base\components\n-breadcrumb.vue
  * 
 -->
+<!-- 页面顶部面包屑 -->
 <script setup lang="ts">
 defineProps({
     breadcrumbInfo: {

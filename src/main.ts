@@ -12,7 +12,7 @@ import { createApp } from 'vue'
 import naiveUI from 'naive-ui'
 import { createPinia } from 'pinia'
 // 国际化注册
-import i18n from '@/base/i18n/lang'
+import i18n from '@/base/i18n/index'
 // configuration
 import Provider from '@/base/Provider/appProvider.vue'
 import router from '@/base/entry/router'
