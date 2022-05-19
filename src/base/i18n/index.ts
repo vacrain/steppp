@@ -1,6 +1,6 @@
 import { createI18n } from 'vue-i18n'
 import { LANG_TYPE_ZH_CN, LANG_TYPE_EN_US } from '@/base/entry/appConst'
-import { getLang } from '@/base/utils/getLang'
+import { getLang } from '@/base/utils'
 //自定义国际化文件
 const i18n = createI18n({
     locale: 'zh_CN', //默认语言

@@ -1,4 +1,4 @@
-import request from '@/base/utils/request'
+import { request } from '@/base/utils'
 export default {
     // 如果带参数就这么传
     getNameList(data = {}) {

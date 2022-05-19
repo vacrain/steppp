@@ -13,7 +13,7 @@ export const routePath = '/'
 export const menuName = 'Home'
 </script>
 <script setup lang="ts">
-import { getMockInfo } from '@/base/utils/api/request'
+import { getMockInfo } from '@/base/utils'
 import HomeComp from './homeComp.vue'
 import leftComp from '@/base/components/n-anchor.vue'
 import { getCurrentInstance } from 'vue'

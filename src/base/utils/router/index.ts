@@ -18,7 +18,7 @@ export function getMenu(arr: any, endRootPath: any) {
             path: item.key,
             component:
                 mainComps[
-                    `../../${endRootPath}/${item.folderName}/${item.fileName}.vue`
+                    `../../../${endRootPath}/${item.folderName}/${item.fileName}.vue`
                 ],
             children: [],
         }

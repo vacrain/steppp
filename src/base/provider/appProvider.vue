@@ -21,7 +21,7 @@ import { useConfig } from '@/base/hooks/useConfig'
 import layoutPlayground from '@/base/layout/layoutPlayground.vue'
 import layoutWeb1 from '../layout/layoutWeb1.vue'
 import { getCurrentInstance, onMounted, ref } from 'vue'
-import { getMenuList } from '@/base/utils/menuAdjustment'
+import { getMenuList } from '@/base/utils'
 const { proxy }: any = getCurrentInstance()
 const store = proxy.$store()
 const themeOverrides: GlobalThemeOverrides = {

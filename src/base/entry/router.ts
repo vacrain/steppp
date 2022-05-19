@@ -9,7 +9,7 @@
  */
 import { createRouter, createWebHistory } from 'vue-router'
 import { getEndList } from './appConst'
-import { getMenu, getBreadRouteList } from '@/base/utils/getRoutesMenu'
+import { getMenu, getBreadRouteList } from '@/base/utils'
 // 哪个端
 const nowEnd = sessionStorage.getItem('whichEnd') || 'playground'
 // 文件列表

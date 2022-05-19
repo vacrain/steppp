@@ -47,6 +47,7 @@ const getInfo = async () => {
     // mockData = await axios.get(import.meta.env.VITE_BASE_API)
     proxy.$api.getNameList().then((res: any) => {
         NameList.value = res.info.name
+        console.log(res, 'res')
     })
     // proxy.$api.getProduct()
 }

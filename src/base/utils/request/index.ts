@@ -1,6 +1,6 @@
 // 封装请求  最简单的，可以根据业务进行修改
 import axios from 'axios'
-import { download } from './download'
+import { download } from '../file'
 // 请求
 const http = axios.create({
     baseURL: '/api/',
@@ -42,4 +42,4 @@ function request({ url = '', method = 'get', ...otherOptions }) {
     })
 }
 
-export default request
+export { request }

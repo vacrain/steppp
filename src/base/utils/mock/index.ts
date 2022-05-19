@@ -9,14 +9,14 @@
  */
 import mockJson from './mock.json'
 
-export const request = () => {
+const mockRequest = () => {
     return new Promise(resolve => {
         resolve(mockJson)
     })
 }
 
 export const getMockInfo = async () => {
-    const result = (await request()) as { success: boolean; result: object }
+    const result = (await mockRequest()) as { success: boolean; result: object }
     console.log(result, 'result')
     if (result.success) {
         window.$message.success('Successfully request')
