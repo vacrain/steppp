@@ -9,7 +9,7 @@
  */
 import { enUS, zhCN, darkTheme, GlobalTheme } from 'naive-ui'
 import { ref } from 'vue'
-import i18n from '@/base/i18n/lang'
+import i18n from '@/base/i18n/index'
 const theme = ref<GlobalTheme | null>(null)
 const lang = ref(zhCN)
 

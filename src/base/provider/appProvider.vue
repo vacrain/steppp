@@ -73,7 +73,7 @@ const setLayoutOptions = (val: string) => {
 
                         <n-card
                             v-if="showLayout == ''"
-                            title="Steppp 选择layout"
+                            title="Steppp 选择view-type"
                             :segmented="{
                                 content: true,
                             }"
