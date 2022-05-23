@@ -2,8 +2,8 @@
  * @Author: vacrain
  * @Date: 2022-04-19 06:26:50
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-13 16:17:58
- * @FilePath: \naive-ui-steppp\src\base\provider\appProvider.vue
+ * @LastEditTime: 2022-05-23 17:23:05
+ * @FilePath: \naive-ui-steppp\src\base\provider\app-provider.vue
  * @Description: 
  * 
 -->
@@ -17,9 +17,9 @@ import {
     GlobalThemeOverrides,
 } from 'naive-ui'
 
-import { useConfig } from '@/base/hooks/useConfig'
-import layoutPlayground from '@/base/layout/layoutPlayground.vue'
-import layoutWeb1 from '../layout/layoutWeb1.vue'
+import { useConfig } from '@/base/hooks/use-config'
+import layoutPlayground from '@/base/layout/layout-playground.vue'
+import layoutWeb1 from '../layout/layout-web1.vue'
 import { getCurrentInstance, onMounted, ref } from 'vue'
 import { getMenuList } from '@/base/utils'
 const { proxy }: any = getCurrentInstance()
@@ -50,7 +50,7 @@ const changEnd = (val: string) => {
 }
 const setLayoutOptions = (val: string) => {
     // 这一步过滤 面包屑的菜单
-    val && (layoutOptions.value = getMenuList(store.getEndList(val).fileList))
+    val && (layoutOptions.value = getMenuList(store.getEndInfo(val).fileList))
 }
 </script>
 
@@ -90,7 +90,7 @@ const setLayoutOptions = (val: string) => {
                         <layout-playground
                             v-if="showLayout == 'playground'"
                             :layoutOptions="layoutOptions"
-                            :appName="store.getEndList(showLayout).appName"
+                            :appName="store.getEndInfo(showLayout).appName"
                             @back="changEnd('')"
                         />
                         <layout-web1

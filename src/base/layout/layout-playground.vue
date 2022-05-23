@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { useMessage, useDialog, useNotification, useLoadingBar } from 'naive-ui'
 import { ref, computed, onMounted, getCurrentInstance } from 'vue'
-import { useConfig } from '@/base/hooks/useConfig'
-import breadCrumb from '@/base/components/n-breadcrumb.vue'
+import { useConfig } from '@/base/hooks/use-config'
+import breadCrumb from '@/base/components/top-bread-crumbs.vue'
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 const { proxy }: any = getCurrentInstance()
@@ -12,7 +12,6 @@ window.$message = useMessage()
 window.$dialog = useDialog()
 window.$notification = useNotification()
 window.$loadingBar = useLoadingBar()
-const collapsed = ref(false)
 // config
 const { theme, lang, changeTheme, changeLang } = useConfig()
 const showLang = computed(() => {
@@ -31,12 +30,9 @@ defineProps({
         default: '',
     },
 })
-//返回初始选择端
-const goBack = () => {
-    emit('back')
-}
 const activeName = ref('/')
 const breadInfo = ref({})
+const collapsed = ref(false)
 const handleMenuSelect = (value: string) => {
     store.setNowMenuItemPath(value)
     setActiveName(value)
@@ -44,7 +40,6 @@ const handleMenuSelect = (value: string) => {
         path: value,
     })
 }
-
 // 该步骤是 防止页面刷新拿不到值
 proxy.$router.beforeEach((to: any, from: any, next: any) => {
     setBreadInfo()
@@ -54,6 +49,10 @@ onMounted(() => {
     setBreadInfo()
     setActiveName(window.location.pathname)
 })
+//返回初始选择端
+const goBack = () => {
+    emit('back')
+}
 const setBreadInfo = () => {
     breadInfo.value = JSON.parse(sessionStorage.getItem('breadInfo') as any)
 }

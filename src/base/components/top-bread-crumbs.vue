@@ -4,7 +4,7 @@
  * @LastEditTime: 2022-05-10 10:15:33
  * @LastEditors: yhq
  * @Description: 
- * @FilePath: \naive-ui-steppp\src\base\components\n-breadcrumb.vue
+ * @FilePath: \naive-ui-steppp\src\base\components\top-bread-crumbs.vue
  * 
 -->
 <!-- 页面顶部面包屑 -->

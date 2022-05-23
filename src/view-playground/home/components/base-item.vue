@@ -1,12 +1,3 @@
-<!--
- * @Author: vacrain
- * @Date: 2022-04-30 08:16:51
- * @LastEditors: vacrain
- * @LastEditTime: 2022-05-05 05:48:06
- * @FilePath: /steppp/src/playground/home/homeComp.vue
- * @Description: 
- * 
--->
 <script setup lang="ts">
 import { getCurrentInstance, ref } from 'vue'
 const { proxy }: any = getCurrentInstance()

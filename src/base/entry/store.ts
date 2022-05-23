@@ -10,12 +10,12 @@
 
 // 引入仓库定义函数
 import { defineStore } from 'pinia'
-import { getEndList } from './appConst'
+import { getEndInfo } from './app-const'
 const pinia_store = {
     msg: 'hello pinia!',
     counter: 0,
     whichEnd: getItem('whichEnd') || '', //哪个端 默认 初始选择端页
-    getEndList,
+    getEndInfo,
 }
 function getItem(key: string) {
     return sessionStorage.getItem(key)

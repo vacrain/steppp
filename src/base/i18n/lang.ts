@@ -1,4 +1,4 @@
-// 这个数组里的顺序是按照 appConst 里的语言序号排列的
+// 这个数组里的顺序是按照 app-const 里的语言序号排列的
 const lang = {
     hello: ['你好', 'hello'],
     light: ['浅色', 'Light Colour'],

@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-04-17 13:41:29
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-12 15:12:57
+ * @LastEditTime: 2022-05-23 17:22:35
  * @FilePath: \naive-ui-steppp\src\main.ts
  * @Description:
  *
@@ -14,7 +14,7 @@ import { createPinia } from 'pinia'
 // 国际化注册
 import i18n from '@/base/i18n/index'
 // configuration
-import Provider from '@/base/Provider/appProvider.vue'
+import Provider from '@/base/provider/app-provider.vue'
 import router from '@/base/entry/router'
 import { mainStore } from '@/base/entry/store'
 import api from '@/api'

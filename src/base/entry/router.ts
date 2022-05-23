@@ -8,15 +8,15 @@
  *
  */
 import { createRouter, createWebHistory } from 'vue-router'
-import { getEndList } from './appConst'
-import { getMenu, getBreadRouteList } from '@/base/utils'
+import { getEndInfo } from './app-const'
+import { getRoute, getBreadRoute } from '@/base/utils'
 // 哪个端
 const nowEnd = sessionStorage.getItem('whichEnd') || 'playground'
 // 文件列表
-const fileList: any = getEndList(nowEnd)?.fileList || []
+const fileList: any = getEndInfo(nowEnd)?.fileList || []
 // 端的根文件夹名
-const endRootPath: any = getEndList(nowEnd)?.endRootPath || ''
-const routes: any = getMenu(fileList, endRootPath) || []
+const endRootPath: any = getEndInfo(nowEnd)?.endRootPath || ''
+const routes: any = getRoute(fileList, endRootPath) || []
 const router = createRouter({
     history: createWebHistory(),
     routes,
@@ -34,7 +34,7 @@ router.beforeEach((to: any, from: any, next: any) => {
         sessionStorage.setItem('breadInfo', JSON.stringify(obj))
     }
     // 面包屑 路由赋值
-    const breadList = getBreadRouteList(
+    const breadList = getBreadRoute(
         fileList,
         sessionStorage.getItem('nowMenuItemPath') || ''
     )

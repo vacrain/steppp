@@ -2,20 +2,15 @@
  * @Author: vacrain
  * @Date: 2022-04-17 14:24:17
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-12 18:54:01
- * @FilePath: \naive-ui-steppp\src\playground\home\homeMain.vue
+ * @LastEditTime: 2022-05-23 17:51:34
+ * @FilePath: \naive-ui-steppp\src\view-playground\home\base-main.vue
  * @Description: 
  * 
 -->
-
-<script lang="ts">
-export const routePath = '/'
-export const menuName = 'Home'
-</script>
 <script setup lang="ts">
 import { getMockInfo } from '@/base/utils'
-import HomeComp from './homeComp.vue'
-import leftComp from '@/base/components/n-anchor.vue'
+import HomeComp from './components/base-item.vue'
+import leftComp from '@/base/components/left-outline.vue'
 import { getCurrentInstance } from 'vue'
 
 const { proxy }: any = getCurrentInstance()

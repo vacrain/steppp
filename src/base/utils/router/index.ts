@@ -1,16 +1,16 @@
 /*
  * @Author: yhq
  * @Date: 2022-05-07 17:22:42
- * @LastEditTime: 2022-05-13 16:05:50
+ * @LastEditTime: 2022-05-23 17:25:57
  * @LastEditors: yhq
  * @Description:
- * @FilePath: \naive-ui-steppp\src\base\utils\getRoutesMenu.ts
+ * @FilePath: \naive-ui-steppp\src\base\utils\router\index.ts
  *
  */
-// 路由入口文件以 **Main.vue为结尾的
-const mainComps = import.meta.glob('@/**/**/**Main.vue')
+// 路由入口文件以 **main.vue为结尾的
+const mainComps = import.meta.glob('@/**/**/**main.vue')
 // 总组件路由赋值
-export function getMenu(arr: any, endRootPath: any) {
+export function getRoute(arr: any, endRootPath: any) {
     const menuArr: any = []
     arr.map((item: any) => {
         const obj = {
@@ -23,14 +23,14 @@ export function getMenu(arr: any, endRootPath: any) {
             children: [],
         }
         if (item.children && item.children.length != 0) {
-            obj.children = getMenu(item.children, endRootPath)
+            obj.children = getRoute(item.children, endRootPath)
         }
         menuArr.push(obj)
     })
     return menuArr
 }
 // 面包屑路由赋值判断
-export function getBreadRouteList(arr: any, nowPath: string) {
+export function getBreadRoute(arr: any, nowPath: string) {
     const menuArr: any = []
     arr.map((item: any) => {
         if (item.key == nowPath) {
@@ -43,7 +43,7 @@ export function getBreadRouteList(arr: any, nowPath: string) {
             }
         }
         if (item.children && item.children.length != 0) {
-            getBreadRouteList(item.children, nowPath)
+            getBreadRoute(item.children, nowPath)
         }
     })
     return menuArr

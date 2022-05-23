@@ -3,7 +3,7 @@
  * @Date: 2022-04-30 07:58:35
  * @LastEditors: vacrain
  * @LastEditTime: 2022-04-30 15:48:06
- * @FilePath: /steppp/src/base/hooks/useConfig.ts
+ * @FilePath: /steppp/src/base/hooks/use-config.ts
  * @Description:
  *
  */

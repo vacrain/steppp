@@ -1,10 +1,10 @@
 <!--
  * @Author: yhq
  * @Date: 2022-05-09 09:55:00
- * @LastEditTime: 2022-05-09 13:52:11
+ * @LastEditTime: 2022-05-23 17:45:08
  * @LastEditors: yhq
  * @Description: 
- * @FilePath: \naive-ui-steppp\src\playground\vue3\basicUsage\vueBasicUsageMain.vue
+ * @FilePath: \naive-ui-steppp\src\view-playground\vue3\sub-module\basic-usage-main.vue
  * 
 -->
 <script setup lang="ts">

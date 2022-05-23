@@ -4,7 +4,7 @@
  * @LastEditTime: 2022-05-12 18:53:40
  * @LastEditors: yhq
  * @Description: 
- * @FilePath: \naive-ui-steppp\src\base\components\n-anchor.vue
+ * @FilePath: \naive-ui-steppp\src\base\components\left-outline.vue
  * 
 -->
 <!-- 页面左侧大纲 -->
