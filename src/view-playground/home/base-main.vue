@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-04-17 14:24:17
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-23 17:51:34
+ * @LastEditTime: 2022-05-24 16:28:48
  * @FilePath: \naive-ui-steppp\src\view-playground\home\base-main.vue
  * @Description: 
  * 
@@ -44,40 +44,40 @@ const handleRequest = async () => {
 //注意 meth 里的方法不要写 （）
 const menuItemList: any = [
     {
-        label: 'home-comp',
+        name: 'home-comp',
         isShowBtn: false,
         meth: null,
         comp: HomeComp,
     },
     {
-        label: 'Pinia',
+        name: 'Pinia',
         isShowBtn: true,
         meth: handleShowMessage,
         msg: store.msg,
     },
     {
-        label: 'Message',
+        name: 'Message',
         isShowBtn: true,
         meth: handleShowMessage,
         msg: 'just a msg',
     },
     {
-        label: 'Dialog',
+        name: 'Dialog',
         isShowBtn: true,
         meth: handleShowDialog,
     },
     {
-        label: 'Nofitication',
+        name: 'Nofitication',
         isShowBtn: true,
         meth: handleShowNotification,
     },
     {
-        label: 'LoadingBar',
+        name: 'LoadingBar',
         isShowBtn: true,
         meth: handleShowLoadingBar,
     },
     {
-        label: 'Request',
+        name: 'Request',
         isShowBtn: true,
         meth: handleRequest,
     },
@@ -94,16 +94,16 @@ const menuItemList: any = [
                     class="rightContentCard"
                     v-for="(item, index) in menuItemList"
                     :key="index"
-                    :id="item.label"
+                    :id="item.name"
                 >
-                    <h3>{{ item.label }}</h3>
+                    <h3>{{ item.name }}</h3>
                     <component :is="item.comp" v-if="!item.isShowBtn" />
                     <n-button
                         v-if="item.isShowBtn"
                         type="primary"
                         @click="item.meth(item.msg)"
                     >
-                        {{ 'use' + item.label }}
+                        {{ 'use' + item.name }}
                     </n-button>
                 </n-card>
             </n-space>

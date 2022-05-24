@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-04-17 16:03:52
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-23 17:47:23
+ * @LastEditTime: 2022-05-24 17:42:17
  * @FilePath: \naive-ui-steppp\src\base\entry\app-const.ts
  * @Description:
  *
@@ -22,6 +22,7 @@ function getEndInfo(nowEnd: string) {
         appName: 'Steppp',
         appVersion: '0.0.0',
         endRootPath: 'view-playground',
+        homePath: 'base/layout/layout-playground',
         fileList: [
             {
                 label: 'Home',
@@ -79,6 +80,7 @@ function getEndInfo(nowEnd: string) {
         appName: '',
         appVersion: '0.0.0',
         endRootPath: 'view-web',
+        homePath: 'base/layout/layout-web1',
         fileList: [
             {
                 label: 'Home',

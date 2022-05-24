@@ -1,7 +1,7 @@
 /*
  * @Author: yhq
  * @Date: 2022-05-07 17:22:42
- * @LastEditTime: 2022-05-23 17:25:57
+ * @LastEditTime: 2022-05-24 18:15:53
  * @LastEditors: yhq
  * @Description:
  * @FilePath: \naive-ui-steppp\src\base\utils\router\index.ts
@@ -9,10 +9,31 @@
  */
 // 路由入口文件以 **main.vue为结尾的
 const mainComps = import.meta.glob('@/**/**/**main.vue')
+const layoutComps = import.meta.glob('@/**/**/layout**.vue')
+import { getEndInfo } from '@/base/entry/app-const'
+// 哪个端
+const nowEnd = sessionStorage.getItem('whichEnd') || 'playground'
+const endInfo = getEndInfo(nowEnd)
+// 文件列表
+const fileList: any = endInfo?.fileList || []
+const homePath: any = endInfo?.homePath || ''
+// 端的根文件夹名
+const endRootPath: any = endInfo?.endRootPath || ''
+export function getRoute() {
+    return [
+        {
+            name: 'Home',
+            path: '/',
+            component: layoutComps[`../../../${homePath}.vue`],
+            children: getChildrenRoute(),
+        },
+    ]
+}
 // 总组件路由赋值
-export function getRoute(arr: any, endRootPath: any) {
+function getChildrenRoute(arr?: any, flag?: boolean) {
     const menuArr: any = []
-    arr.map((item: any) => {
+    const fileArr: any = flag ? arr : fileList
+    fileArr.map((item: any) => {
         const obj = {
             name: item.label,
             path: item.key,
@@ -23,28 +44,9 @@ export function getRoute(arr: any, endRootPath: any) {
             children: [],
         }
         if (item.children && item.children.length != 0) {
-            obj.children = getRoute(item.children, endRootPath)
+            obj.children = getChildrenRoute(item.children, true)
         }
         menuArr.push(obj)
-    })
-    return menuArr
-}
-// 面包屑路由赋值判断
-export function getBreadRoute(arr: any, nowPath: string) {
-    const menuArr: any = []
-    arr.map((item: any) => {
-        if (item.key == nowPath) {
-            if (item.children && item.children.length != 0) {
-                item.children.map((item1: any) => {
-                    if (item1.notMenuShow) {
-                        menuArr.push(item1)
-                    }
-                })
-            }
-        }
-        if (item.children && item.children.length != 0) {
-            getBreadRoute(item.children, nowPath)
-        }
     })
     return menuArr
 }

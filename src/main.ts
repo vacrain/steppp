@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-04-17 13:41:29
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-23 17:22:35
+ * @LastEditTime: 2022-05-24 17:04:37
  * @FilePath: \naive-ui-steppp\src\main.ts
  * @Description:
  *
@@ -14,14 +14,14 @@ import { createPinia } from 'pinia'
 // 国际化注册
 import i18n from '@/base/i18n/index'
 // configuration
-import Provider from '@/base/provider/app-provider.vue'
+import App from './App.vue'
 import router from '@/base/entry/router'
 import { mainStore } from '@/base/entry/store'
 import api from '@/api'
 
 const store = mainStore
 // 实例化
-const appProvider = createApp(Provider)
+const appProvider = createApp(App)
 const pinia = createPinia()
 // 全局挂载
 appProvider.config.globalProperties.$store = store

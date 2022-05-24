@@ -1,23 +1,17 @@
 <script setup lang="ts">
-import { useMessage, useDialog, useNotification, useLoadingBar } from 'naive-ui'
 import { ref, computed, onMounted, getCurrentInstance } from 'vue'
 import { useConfig } from '@/base/hooks/use-config'
 import breadCrumb from '@/base/components/top-bread-crumbs.vue'
 import { useI18n } from 'vue-i18n'
+import { getMenuList } from '@/base/utils'
 const { t } = useI18n()
 const { proxy }: any = getCurrentInstance()
 const store = proxy.$store()
-// mount on window
-window.$message = useMessage()
-window.$dialog = useDialog()
-window.$notification = useNotification()
-window.$loadingBar = useLoadingBar()
 // config
 const { theme, lang, changeTheme, changeLang } = useConfig()
 const showLang = computed(() => {
     return lang.value.name === 'zh-CN' ? '中文' : 'English'
 })
-const emit = defineEmits(['back'])
 defineProps({
     layoutOptions: {
         type: Array,
@@ -30,8 +24,13 @@ defineProps({
         default: '',
     },
 })
+const layoutOptions = ref([])
+const appName = ref('')
+const whichEnd = sessionStorage.getItem('whichEnd')
+layoutOptions.value = getMenuList(store.getEndInfo(whichEnd).fileList)
+appName.value = store.getEndInfo(whichEnd).appName
+
 const activeName = ref('/')
-const breadInfo = ref({})
 const collapsed = ref(false)
 const handleMenuSelect = (value: string) => {
     store.setNowMenuItemPath(value)
@@ -40,22 +39,17 @@ const handleMenuSelect = (value: string) => {
         path: value,
     })
 }
-// 该步骤是 防止页面刷新拿不到值
-proxy.$router.beforeEach((to: any, from: any, next: any) => {
-    setBreadInfo()
-    next()
-})
+
 onMounted(() => {
-    setBreadInfo()
+    store.setNowMenuItemPath(window.location.pathname)
     setActiveName(window.location.pathname)
 })
 //返回初始选择端
 const goBack = () => {
-    emit('back')
+    sessionStorage.clear()
+    proxy.$router.push('/login')
 }
-const setBreadInfo = () => {
-    breadInfo.value = JSON.parse(sessionStorage.getItem('breadInfo') as any)
-}
+
 const setActiveName = (val: string) => {
     activeName.value = val
 }
@@ -90,7 +84,7 @@ const setActiveName = (val: string) => {
             :style="{ left: collapsed ? '10px' : '280px' }"
         >
             <n-layout-header bordered>
-                <breadCrumb :breadcrumb-info="breadInfo" />
+                <breadCrumb />
                 <div style="padding-right: 40px">
                     <span style="margin-right: 20px" @click="changeTheme">{{
                         theme === null ? t('light') : t('dark')

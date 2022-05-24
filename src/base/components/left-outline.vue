@@ -1,7 +1,7 @@
 <!--
  * @Author: yhq
  * @Date: 2022-05-06 14:10:34
- * @LastEditTime: 2022-05-12 18:53:40
+ * @LastEditTime: 2022-05-24 16:16:09
  * @LastEditors: yhq
  * @Description: 
  * @FilePath: \naive-ui-steppp\src\base\components\left-outline.vue
@@ -27,8 +27,8 @@ defineProps({
         :ignore-gap="true"
         ><n-anchor-link
             v-for="(item, index) in list"
-            :title="item.label"
-            :href="'#' + item.label"
+            :title="item.name"
+            :href="'#' + item.name"
             :key="index"
         />
     </n-anchor>
