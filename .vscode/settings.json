@@ -45,7 +45,6 @@
         "custom_string_obkoro1": ""
         // 版权声明 保留文件所有权利 自动替换年份
         // "custom_string_obkoro1_copyright": "Copyright (c) ${now_year} by 用户/公司名, All Rights Reserved. "
-        // "custom_string_obkoro1_copyright": "Copyright (c) ${now_year} by notia, All Rights Reserved. "
     },
     // 函数注释
     "fileheader.cursorMode": {
@@ -109,7 +108,7 @@
         "colonObj": {
             "文件后缀": ["头部注释冒号", "函数注释冒号"]
         },
-        "filePathColon": "路径分隔符替换",
+        "filePathColon": "/",
         "showErrorMessage": false,
         "writeLog": false,
         "wideSame": false,

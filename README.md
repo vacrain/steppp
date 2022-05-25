@@ -1,3 +1,13 @@
+<!--
+ * @Author: vacrain
+ * @Date: 2022-04-30 07:58:35
+ * @LastEditors: vacrain
+ * @LastEditTime: 2022-05-25 21:36:40
+ * @FilePath: /steppp/README.md
+ * @Description:
+ *
+-->
+
 # Steppp
 
 > 基于 vue3、vite2、naive-ui 开箱即用且全端 layout 统一管理的框架
@@ -20,18 +30,15 @@
 14. vscode 插件: 经过大量实际开发中的使用，推荐了必安的良心插件
 15.
 
-## 环境
+## 环境准备
 
-什么 os 都 OK
+-   nodejs v16.14.2
+-   pnpm 5.18.2
+-   git-cz 4.5.0
+-   ide 使用 vscode
+-   vscode 插件参考 /.vscode/extensions.json
 
-nodejs v16.14.2
-pnpm 5.18.2
-git-cz 4.5.0
-
-ide 使用 vscode
-vscode 插件推荐： 参考 .vscode/extensions.json
-
-安装 node16.14.2 后
+安装 node16.14.2 后，全局安装 pnpm、git-cz
 
 ```
 npm install pnpm -g
@@ -54,7 +61,7 @@ pnpm run build
 pnpm run preview
 ```
 
-提交（运行后，根据提示填写提交信息即可）
+提交
 
 ```
 git-cz
@@ -65,9 +72,9 @@ git-cz
 > 目录说明
 > 生成目录命令：tree -d
 
--   生成日期：2022/4/22
-
-```
+<details>
+<summary>展开查看(2022/4/22)</summary>
+<pre><code>.
 ├── src
 │   ├── assets
 │   │   ├── css // ssc
@@ -89,5 +96,5 @@ git-cz
 │       ├── pinia // pinia演示
 │       └── ... // 其他demo演示
 └── steppp-docs // 全部文档（好像就一个文件，bushi
-
-```
+</code></pre>
+</details>

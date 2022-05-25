@@ -1,9 +1,9 @@
 /*
  * @Author: vacrain
  * @Date: 2022-04-17 13:41:29
- * @LastEditors: yhq
- * @LastEditTime: 2022-05-24 17:04:37
- * @FilePath: \naive-ui-steppp\src\main.ts
+ * @LastEditors: vacrain
+ * @LastEditTime: 2022-05-25 20:52:28
+ * @FilePath: /steppp/src/main.ts
  * @Description:
  *
  */
@@ -33,6 +33,3 @@ appProvider.use(i18n)
 appProvider.use(naiveUI)
 appProvider.use(pinia)
 appProvider.mount('#app')
-// await setTimeout(() => {
-//     appProvider.mount('#app')
-// }, 5555)

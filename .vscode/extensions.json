@@ -1,40 +1,41 @@
 {
     "recommendations": [
-        // easy codeing
-        "steoates.autoimport",
-        "formulahendry.auto-rename-tag",
         // format
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
         "usernamehw.errorlens",
         "stylelint.vscode-stylelint",
-        // snippets
-        "TabNine.tabnine-vscode",
+        "yzhang.markdown-all-in-one",
+
+        // easy programming
         "JimDong.naive-ui-snippets",
         "fastify.fastify-snippets",
         "abusaidm.html-snippets",
-        "VisualStudioExptTeam.vscodeintellicode",
         "xabikos.JavaScriptSnippets",
-        "yzhang.markdown-all-in-one",
-        "JimDong.naive-ui-snippets",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "TabNine.tabnine-vscode",
         "christian-kohler.path-intellisense",
+        "formulahendry.auto-rename-tag",
+
         // highlight
         "aaron-bond.better-comments",
         "naumovs.color-highlight",
+
         // git
         "eamodio.gitlens",
         "mhutchie.git-graph",
         "donjayamanne.githistory",
-        // back-end
-        "msjsdiag.debugger-for-chrome",
+
         // vue
         "jcbuisson.vue",
         "Vue.volar",
         "dariofuzinato.vue-peek",
+
         // other
+        "msjsdiag.debugger-for-chrome",
+        "humao.rest-client",
         "pranaygp.vscode-css-peek",
         "OBKoro1.korofileheader",
-        "humao.rest-client",
         "WakaTime.vscode-wakatime"
     ]
 }
