@@ -1,7 +1,7 @@
 /*
  * @Author: yhq
  * @Date: 2022-05-07 17:22:42
- * @LastEditTime: 2022-05-24 18:15:53
+ * @LastEditTime: 2022-05-25 18:13:15
  * @LastEditors: yhq
  * @Description:
  * @FilePath: \naive-ui-steppp\src\base\utils\router\index.ts
@@ -11,8 +11,10 @@
 const mainComps = import.meta.glob('@/**/**/**main.vue')
 const layoutComps = import.meta.glob('@/**/**/layout**.vue')
 import { getEndInfo } from '@/base/entry/app-const'
+import { getSeItem } from '@/base/utils'
+
 // 哪个端
-const nowEnd = sessionStorage.getItem('whichEnd') || 'playground'
+const nowEnd = getSeItem('whichEnd') || 'playground'
 const endInfo = getEndInfo(nowEnd)
 // 文件列表
 const fileList: any = endInfo?.fileList || []

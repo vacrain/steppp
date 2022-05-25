@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-04-17 13:41:29
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-05 18:25:15
+ * @LastEditTime: 2022-05-25 16:14:34
  * @FilePath: \naive-ui-steppp\vite.config.ts
  * @Description:
  *
@@ -99,7 +99,7 @@ export default defineConfig({
         // 跨域
         proxy: {
             '/api': {
-                target: '',
+                target: 'localhost:8080',
                 changeOrigin: true,
             },
             '/ss': {

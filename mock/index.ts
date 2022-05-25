@@ -1,20 +1,25 @@
 /*
  * @Author: vacrain
  * @Date: 2022-04-27 04:46:46
- * @LastEditors: vacrain
- * @LastEditTime: 2022-04-27 12:33:20
- * @FilePath: /pnpm-init-vite-latest/mock/index.ts
+ * @LastEditors: yhq
+ * @LastEditTime: 2022-05-25 16:35:21
+ * @FilePath: \naive-ui-steppp\mock\index.ts
  * @Description:
  *
  */
 
 import { MockMethod } from 'vite-plugin-mock'
 import { mock } from 'mockjs'
-
 const info = mock({
     // 'name|10': [() => Random.cname()] // 第一种方法
     'name|10': ['@cname'], // 第二种方法，无区别
 })
+interface temHeader {
+    headers: any
+    body: any
+    url: string
+    query: any
+}
 export default [
     {
         url: '/api/get',
@@ -22,9 +27,10 @@ export default [
         response: () => {
             return {
                 code: 200,
-                dev: 'dev yeah!',
-                info,
-                errMsg: '请求方法错误',
+                data: {
+                    dev: 'dev yeah!',
+                    info,
+                },
             }
         },
     },
@@ -34,7 +40,31 @@ export default [
         response: () => {
             return {
                 code: 200,
-                produt: 'product yeah!',
+                data: {
+                    produt: 'product yeah!',
+                },
+            }
+        },
+    },
+    {
+        url: '/api/login',
+        method: 'post',
+        response: (temHeader: temHeader) => {
+            const params = temHeader.body
+            console.log(params, 'params')
+            if (params.password == '123456' && params.userName == 'admin') {
+                return {
+                    code: 200,
+                    data: {
+                        token: '123456saffafds',
+                    },
+                }
+            } else {
+                return {
+                    code: 202,
+                    data: {},
+                    errMsg: '用户名密码错误',
+                }
             }
         },
     },

@@ -2,7 +2,7 @@
  * @Author: vacrain
  * @Date: 2022-04-17 16:03:52
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-24 17:42:17
+ * @LastEditTime: 2022-05-25 10:42:00
  * @FilePath: \naive-ui-steppp\src\base\entry\app-const.ts
  * @Description:
  *
@@ -99,4 +99,5 @@ function getEndInfo(nowEnd: string) {
 }
 const LANG_TYPE_ZH_CN = 0 //国际化中文
 const LANG_TYPE_EN_US = 1 //国际化英文
-export { getEndInfo, LANG_TYPE_ZH_CN, LANG_TYPE_EN_US }
+const whiteList = ['/login'] //路由白名单
+export { getEndInfo, LANG_TYPE_ZH_CN, LANG_TYPE_EN_US, whiteList }

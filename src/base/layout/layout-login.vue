@@ -1,7 +1,7 @@
 <!--
  * @Author: yhq
  * @Date: 2022-05-24 10:13:32
- * @LastEditTime: 2022-05-24 15:47:22
+ * @LastEditTime: 2022-05-25 18:04:24
  * @LastEditors: yhq
  * @Description: 
  * @FilePath: \naive-ui-steppp\src\base\layout\layout-login.vue
@@ -9,8 +9,8 @@
 -->
 <script lang="ts" setup>
 import { ref, getCurrentInstance } from 'vue'
+import { setSeItem } from '@/base/utils'
 const { proxy }: any = getCurrentInstance()
-const store = proxy.$store()
 const formItem = ref({
     userName: '',
     password: '',
@@ -40,14 +40,18 @@ const handleValidateButtonClick = () => {
         })
 }
 const goLogin = () => {
-    store.setEnd(formItem.value.viewType)
-    sessionStorage.setItem('token', '1231223')
-    proxy.$router.push('/')
+    setSeItem('whichEnd', formItem.value.viewType)
+    proxy.$api.login(formItem.value).then((res: any) => {
+        setSeItem('token', res.token)
+        // 这么跳让路由从加载，对该项目
+        window.location.href = '/'
+    })
 }
 </script>
 <template>
     <div class="login_box">
         <h1>登录页</h1>
+        <p>用户名：admin 密码：123456</p>
         <n-form
             ref="loginFormRef"
             :model="formItem"

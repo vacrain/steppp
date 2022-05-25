@@ -3,50 +3,34 @@ import { ref, computed, onMounted, getCurrentInstance } from 'vue'
 import { useConfig } from '@/base/hooks/use-config'
 import breadCrumb from '@/base/components/top-bread-crumbs.vue'
 import { useI18n } from 'vue-i18n'
-import { getMenuList } from '@/base/utils'
+import { getMenuList, setSeItem, getSeItem, clearSeItem } from '@/base/utils'
 const { t } = useI18n()
 const { proxy }: any = getCurrentInstance()
 const store = proxy.$store()
 // config
 const { theme, lang, changeTheme, changeLang } = useConfig()
 const showLang = computed(() => {
-    return lang.value.name === 'zh-CN' ? '中文' : 'English'
+    return lang.value.name === 'zh-CN' ? 'English' : '中文'
 })
-defineProps({
-    layoutOptions: {
-        type: Array,
-        default: () => {
-            return []
-        },
-    },
-    appName: {
-        type: String,
-        default: '',
-    },
-})
-const layoutOptions = ref([])
-const appName = ref('')
-const whichEnd = sessionStorage.getItem('whichEnd')
-layoutOptions.value = getMenuList(store.getEndInfo(whichEnd).fileList)
-appName.value = store.getEndInfo(whichEnd).appName
-
+const whichEnd = getSeItem('whichEnd')
+const layoutOptions = getMenuList(store.getEndInfo(whichEnd).fileList)
+const appName = store.getEndInfo(whichEnd).appName
 const activeName = ref('/')
 const collapsed = ref(false)
 const handleMenuSelect = (value: string) => {
-    store.setNowMenuItemPath(value)
     setActiveName(value)
     proxy.$router.push({
         path: value,
     })
+    setSeItem('nowMenuItemPath', value)
 }
 
 onMounted(() => {
-    store.setNowMenuItemPath(window.location.pathname)
-    setActiveName(window.location.pathname)
+    setActiveName(getSeItem('nowMenuItemPath') || '/')
 })
 //返回初始选择端
 const goBack = () => {
-    sessionStorage.clear()
+    clearSeItem()
     proxy.$router.push('/login')
 }
 

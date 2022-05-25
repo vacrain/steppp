@@ -10,6 +10,7 @@
 <!-- 页面顶部面包屑 -->
 <script setup lang="ts">
 import { getCurrentInstance, onMounted, ref } from 'vue'
+import { getSeItem } from '@/base/utils'
 const { proxy }: any = getCurrentInstance()
 const breadcrumbInfo: any = ref({})
 proxy.$router.afterEach(() => {
@@ -19,8 +20,7 @@ onMounted(() => {
     setBreadInfo()
 })
 const setBreadInfo = () => {
-    breadcrumbInfo.value =
-        JSON.parse(sessionStorage.getItem('breadInfo') as any) || {}
+    breadcrumbInfo.value = JSON.parse(getSeItem('breadInfo') as any) || {}
 }
 const breadcrumbItemOnClick = (path: string) => {
     proxy.$router.push(path)
