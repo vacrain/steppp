@@ -1,14 +1,15 @@
 <script setup lang="ts">
-import { ref, computed, onMounted, getCurrentInstance } from 'vue'
+import { ref, computed, onMounted, getCurrentInstance, nextTick } from 'vue'
 import { useConfig } from '@/base/hooks/use-config'
-import breadCrumb from '@/base/components/top-bread-crumbs.vue'
+import breadCrumb from '@/base/components/bread-crumbs-top.vue'
+import rightThemeDrawer from '@/base/components/theme-drawer-right.vue'
 import { useI18n } from 'vue-i18n'
 import { getMenuList, setSeItem, getSeItem, clearSeItem } from '@/base/utils'
 const { t } = useI18n()
 const { proxy }: any = getCurrentInstance()
 const store = proxy.$store()
 // config
-const { theme, lang, changeTheme, changeLang } = useConfig()
+const { lang, changeLang } = useConfig()
 const showLang = computed(() => {
     return lang.value.name === 'zh-CN' ? 'English' : '中文'
 })
@@ -17,12 +18,19 @@ const layoutOptions = getMenuList(store.getEndInfo(whichEnd).fileList)
 const appName = store.getEndInfo(whichEnd).appName
 const activeName = ref('/')
 const collapsed = ref(false)
+const breadCrumbShow = ref(true)
+const rightThemeDrawerShow = ref(false)
 const handleMenuSelect = (value: string) => {
     setActiveName(value)
     proxy.$router.push({
         path: value,
     })
     setSeItem('nowMenuItemPath', value)
+    setSeItem('nowPath', value)
+    breadCrumbShow.value = false
+    nextTick(() => {
+        breadCrumbShow.value = true
+    })
 }
 
 onMounted(() => {
@@ -68,11 +76,15 @@ const setActiveName = (val: string) => {
             :style="{ left: collapsed ? '10px' : '280px' }"
         >
             <n-layout-header bordered>
-                <breadCrumb />
-                <div style="padding-right: 40px">
-                    <span style="margin-right: 20px" @click="changeTheme">{{
-                        theme === null ? t('light') : t('dark')
-                    }}</span>
+                <div>
+                    <breadCrumb v-if="breadCrumbShow" />
+                </div>
+                <div>
+                    <span
+                        style="margin-right: 20px"
+                        @click="rightThemeDrawerShow = true"
+                        >{{ t('setUpThemes') }}</span
+                    >
                     <span style="margin-right: 20px" @click="changeLang">{{
                         showLang
                     }}</span>
@@ -91,6 +103,10 @@ const setActiveName = (val: string) => {
             </n-layout-content>
         </n-layout>
     </n-layout>
+    <rightThemeDrawer
+        :isShow="rightThemeDrawerShow"
+        @back="rightThemeDrawerShow = false"
+    />
 </template>
 
 <style scoped>
@@ -108,6 +124,7 @@ const setActiveName = (val: string) => {
 
 .n-layout-header {
     padding: 24px;
+    padding-bottom: 0;
     display: flex;
     justify-content: space-between;
 }

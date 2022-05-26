@@ -2,8 +2,8 @@
  * @Author: vacrain
  * @Date: 2022-04-17 16:03:52
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-25 10:42:00
- * @FilePath: \naive-ui-steppp\src\base\entry\app-const.ts
+ * @LastEditTime: 2022-05-26 18:27:47
+ * @FilePath: /steppp/src/base/entry/app-const.ts
  * @Description:
  *
  */
@@ -70,6 +70,35 @@ function getEndInfo(nowEnd: string) {
                         key: '/naive_ui_table',
                         folderName: 'naive-ui/sub-module',
                         fileName: 'base-table-main',
+                        notMenuShow: true,
+                    },
+                ],
+            },
+            {
+                label: 'Programming',
+                key: '/programming',
+                folderName: 'programming',
+                fileName: 'base-main',
+                children: [
+                    {
+                        label: '设计模式',
+                        key: '/design_mode',
+                        folderName: 'programming/sub-module',
+                        fileName: 'design-mode-main',
+                        notMenuShow: true,
+                    },
+                    {
+                        label: '编码规范',
+                        key: '/coding_specification',
+                        folderName: 'programming/sub-module',
+                        fileName: 'coding-specification-main',
+                        notMenuShow: true,
+                    },
+                    {
+                        label: '编程常识',
+                        key: '/programming_knowledge',
+                        folderName: 'programming/sub-module',
+                        fileName: 'programming-knowledge-main',
                         notMenuShow: true,
                     },
                 ],

@@ -1,25 +1,28 @@
 /*
  * @Author: vacrain
  * @Date: 2022-04-30 07:58:35
- * @LastEditors: vacrain
- * @LastEditTime: 2022-04-30 15:48:06
+ * @LastEditors: yhq
+ * @LastEditTime: 2022-05-26 17:38:09
  * @FilePath: /steppp/src/base/hooks/use-config.ts
  * @Description:
  *
  */
-import { enUS, zhCN, darkTheme, GlobalTheme } from 'naive-ui'
+import { enUS, zhCN, darkTheme, GlobalTheme, useOsTheme } from 'naive-ui'
 import { ref } from 'vue'
 import i18n from '@/base/i18n/index'
-const theme = ref<GlobalTheme | null>(null)
+import { setSeItem, getSeItem } from '@/base/utils'
+const theme = ref<GlobalTheme | null>(
+    getSeItem('theme') == 'dark' ? darkTheme : null
+)
 const lang = ref(zhCN)
-
 export const useConfig = () => {
-    const changeTheme = () => {
-        if (theme.value === null) {
+    const changeTheme = (flag: boolean) => {
+        if (flag) {
             theme.value = darkTheme as GlobalTheme
         } else {
             theme.value = null
         }
+        setSeItem('theme', theme.value?.name || 'light')
     }
     const changeLang = () => {
         let nowLang = 'zh_CN'
@@ -32,10 +35,18 @@ export const useConfig = () => {
         }
         i18n.global.locale = nowLang
     }
+    const setOsTheme = (flag: boolean) => {
+        if (flag) {
+            theme.value = useOsTheme().value == 'dark' ? darkTheme : null
+            setSeItem('theme', theme.value?.name || 'light')
+        }
+        setSeItem('useOsTheme', flag ? '1' : '')
+    }
     return {
         theme,
         lang,
         changeTheme,
         changeLang,
+        setOsTheme,
     }
 }

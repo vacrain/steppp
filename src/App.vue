@@ -1,10 +1,10 @@
 <!--
  * @Author: yhq
  * @Date: 2022-05-24 10:27:19
- * @LastEditTime: 2022-05-24 13:54:17
+ * @LastEditTime: 2022-05-26 18:19:38
  * @LastEditors: yhq
  * @Description: 
- * @FilePath: \naive-ui-steppp\src\app.vue
+ * @FilePath: /steppp/src/App.vue
  * 
 -->
 <script setup lang="ts">
@@ -15,6 +15,7 @@ import {
     NNotificationProvider,
     NLoadingBarProvider,
     GlobalThemeOverrides,
+    NThemeEditor,
 } from 'naive-ui'
 import { useConfig } from '@/base/hooks/use-config'
 import MessageApi from '@/base/components/message-api.vue'
@@ -38,6 +39,7 @@ const { theme, lang } = useConfig()
             </n-notification-provider>
         </n-message-provider>
     </n-dialog-provider>
+    <n-theme-editor> </n-theme-editor>
     <n-config-provider
         class="demo"
         :locale="lang"
