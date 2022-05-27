@@ -1,7 +1,7 @@
 <!--
  * @Author: yhq
  * @Date: 2022-05-24 10:27:19
- * @LastEditTime: 2022-05-26 18:19:38
+ * @LastEditTime: 2022-05-27 17:02:22
  * @LastEditors: yhq
  * @Description: 
  * @FilePath: /steppp/src/App.vue
@@ -14,19 +14,18 @@ import {
     NDialogProvider,
     NNotificationProvider,
     NLoadingBarProvider,
-    GlobalThemeOverrides,
     NThemeEditor,
 } from 'naive-ui'
 import { useConfig } from '@/base/hooks/use-config'
 import MessageApi from '@/base/components/message-api.vue'
-const themeOverrides: GlobalThemeOverrides = {
-    common: {
-        primaryColor: '#4fb233',
-        primaryColorHover: '#4fb233',
-        fontSize: '16px',
-        borderRadius: '16px',
-    },
-}
+import hljs from 'highlight.js/lib/core'
+import javascript from 'highlight.js/lib/languages/javascript'
+import { getCurrentInstance } from 'vue'
+import { storeToRefs } from 'pinia'
+hljs.registerLanguage('javascript', javascript)
+const { proxy }: any = getCurrentInstance()
+const store = proxy.$store()
+const { themeOverrides } = storeToRefs(store)
 const { theme, lang } = useConfig()
 </script>
 <template>
@@ -39,14 +38,16 @@ const { theme, lang } = useConfig()
             </n-notification-provider>
         </n-message-provider>
     </n-dialog-provider>
-    <n-theme-editor> </n-theme-editor>
     <n-config-provider
         class="demo"
         :locale="lang"
         :theme="theme"
         :theme-overrides="themeOverrides"
     >
-        <router-view></router-view>
+        <n-theme-editor> </n-theme-editor>
+        <n-config-provider :hljs="hljs">
+            <router-view></router-view>
+        </n-config-provider>
     </n-config-provider>
 </template>
 <style scoped></style>

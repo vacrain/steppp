@@ -1,21 +1,23 @@
 <!--
  * @Author: yhq
  * @Date: 2022-05-26 13:46:59
- * @LastEditTime: 2022-05-26 17:38:21
+ * @LastEditTime: 2022-05-27 16:50:04
  * @LastEditors: yhq
  * @Description: 
  * @FilePath: /steppp/src/base/components/theme-drawer-right.vue
  * 
 -->
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
 import { useConfig } from '@/base/hooks/use-config'
-import { onMounted, ref, watch } from 'vue'
+import { getCurrentInstance, onMounted, ref, watch } from 'vue'
 import { getSeItem } from '@/base/utils'
 const { changeTheme, setOsTheme } = useConfig()
-const { t } = useI18n()
+const { proxy }: any = getCurrentInstance()
+const store = proxy.$store()
+const { t } = proxy.$useI18n()
 const osTheme = ref<any>(false)
 const darkTheme = ref(false)
+
 defineProps({
     isShow: {
         type: Boolean,
@@ -26,6 +28,7 @@ const emit = defineEmits(['back'])
 const onSubmit = () => {
     setOsTheme(osTheme.value)
     !osTheme.value && changeTheme(darkTheme.value)
+    store.setThemeOverrides()
     emit('back')
 }
 watch(
@@ -38,7 +41,6 @@ watch(
 )
 onMounted(() => {
     osTheme.value = !!getSeItem('useOsTheme') || false
-    console.log(osTheme.value)
     if (osTheme.value) {
         darkTheme.value = false
     } else {

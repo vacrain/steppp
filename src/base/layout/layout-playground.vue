@@ -3,11 +3,10 @@ import { ref, computed, onMounted, getCurrentInstance, nextTick } from 'vue'
 import { useConfig } from '@/base/hooks/use-config'
 import breadCrumb from '@/base/components/bread-crumbs-top.vue'
 import rightThemeDrawer from '@/base/components/theme-drawer-right.vue'
-import { useI18n } from 'vue-i18n'
 import { getMenuList, setSeItem, getSeItem, clearSeItem } from '@/base/utils'
-const { t } = useI18n()
 const { proxy }: any = getCurrentInstance()
 const store = proxy.$store()
+const { t } = proxy.$useI18n()
 // config
 const { lang, changeLang } = useConfig()
 const showLang = computed(() => {

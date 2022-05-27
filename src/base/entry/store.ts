@@ -2,8 +2,8 @@
  * @Author: vacrain
  * @Date: 2022-04-22 20:13:01
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-25 18:01:19
- * @FilePath: \naive-ui-steppp\src\base\entry\store.ts
+ * @LastEditTime: 2022-05-27 17:46:14
+ * @FilePath: /steppp/src/base/entry/store.ts
  * @Description:
  *
  */
@@ -11,8 +11,14 @@
 // 引入仓库定义函数
 import { defineStore } from 'pinia'
 import { getEndInfo } from './app-const'
+import { getLoItem, getSeItem } from '@/base/utils'
+
 const pinia_store = {
     msg: 'hello pinia!',
+    themeOverrides: {},
+    breadInfo:
+        (getSeItem('breadInfo') && JSON.parse(getSeItem('breadInfo') || '')) ||
+        {},
     getEndInfo,
 }
 
@@ -24,5 +30,12 @@ export const mainStore = defineStore('main', {
     // state 类似组件的data选项，函数形式返回对象
     state: () => pinia_store,
     getters: {},
-    actions: {},
+    actions: {
+        // 设置主题编辑器中主题样式
+        setThemeOverrides() {
+            this.themeOverrides = JSON.parse(
+                getLoItem('naive-ui-theme-overrides') || ''
+            )
+        },
+    },
 })
