@@ -1,16 +1,18 @@
 <!--
  * @Author: yhq
  * @Date: 2022-05-24 10:13:32
- * @LastEditTime: 2022-05-25 18:04:24
+ * @LastEditTime: 2022-05-30 14:33:21
  * @LastEditors: yhq
  * @Description: 
- * @FilePath: \naive-ui-steppp\src\base\layout\layout-login.vue
+ * @FilePath: /steppp/src/base/layout/layout-login.vue
  * 
 -->
 <script lang="ts" setup>
 import { ref, getCurrentInstance } from 'vue'
-import { setSeItem } from '@/base/utils'
+import Storage from '@/base/utils/storage'
+
 const { proxy }: any = getCurrentInstance()
+
 const formItem = ref({
     userName: '',
     password: '',
@@ -40,9 +42,9 @@ const handleValidateButtonClick = () => {
         })
 }
 const goLogin = () => {
-    setSeItem('whichEnd', formItem.value.viewType)
+    Storage.setSessionItem('whichEnd', formItem.value.viewType)
     proxy.$api.login(formItem.value).then((res: any) => {
-        setSeItem('token', res.token)
+        Storage.setSessionItem('token', res.token)
         // 这么跳让路由从加载，对该项目
         window.location.href = '/'
     })

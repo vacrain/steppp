@@ -1,13 +1,13 @@
 /*
  * @Author: yhq
  * @Date: 2022-05-09 16:22:59
- * @LastEditTime: 2022-05-25 18:11:00
+ * @LastEditTime: 2022-05-30 14:14:19
  * @LastEditors: yhq
  * @Description:
- * @FilePath: \naive-ui-steppp\src\base\utils\menu\index.ts
+ * @FilePath: /steppp/src/base/utils/menu/index.ts
  *
  */
-import { setSeItem, getSeItem } from '@/base/utils'
+import Storage from '@/base/utils/storage'
 
 // 左侧菜单赋值判断 和路由不产生联系
 export function getMenuList(arr: any) {
@@ -28,7 +28,7 @@ export function getMenuList(arr: any) {
 // 面包屑赋值
 export function setBreadInfo(to: any) {
     let routeInfo: any = {}
-    const nowMenuItemPath = getSeItem('nowMenuItemPath')
+    const nowMenuItemPath = Storage.getSessionItem('nowMenuItemPath')
     to.matched &&
         to.matched.map((item: any) => {
             if (item.path == nowMenuItemPath) {
@@ -44,6 +44,6 @@ export function setBreadInfo(to: any) {
             path: routeInfo.path,
             children: routeInfo.children, //面包屑二级
         }
-        setSeItem('breadInfo', JSON.stringify(obj))
+        Storage.setSessionItem('breadInfo', JSON.stringify(obj))
     }
 }

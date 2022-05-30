@@ -2,13 +2,15 @@
  * @Author: vacrain
  * @Date: 2022-04-17 14:23:14
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-25 18:13:42
- * @FilePath: \naive-ui-steppp\src\base\entry\router.ts
+ * @LastEditTime: 2022-05-30 14:31:12
+ * @FilePath: /steppp/src/base/entry/router.ts
  * @Description:
  *
  */
 import { createRouter, createWebHistory } from 'vue-router'
-import { getRoute, setBreadInfo, getSeItem } from '@/base/utils'
+import { getRoute, setBreadInfo } from '@/base/utils'
+import Storage from '@/base/utils/storage'
+
 import { whiteList } from '@/base/entry/app-const'
 const routes: any = [
     {
@@ -25,7 +27,7 @@ const router = createRouter({
 router.beforeEach((to: any, from: any, next: any) => {
     // 面包屑显示赋值
     setBreadInfo(to)
-    if (!whiteList.includes(to.path) && !getSeItem('token')) {
+    if (!whiteList.includes(to.path) && !Storage.getSessionItem('token')) {
         next('/login')
     } else {
         next()

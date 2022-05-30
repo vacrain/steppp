@@ -1,17 +1,19 @@
 <!--
  * @Author: yhq
  * @Date: 2022-05-09 15:11:01
- * @LastEditTime: 2022-05-26 13:36:40
+ * @LastEditTime: 2022-05-30 14:11:47
  * @LastEditors: yhq
  * @Description: 
- * @FilePath: /steppp/src/base/components/top-bread-crumbs.vue
+ * @FilePath: /steppp/src/base/components/bread-crumbs-top.vue
  * 
 -->
 <!-- 页面顶部面包屑 -->
 <script setup lang="ts">
 import { getCurrentInstance, onMounted, ref } from 'vue'
-import { getSeItem, setSeItem } from '@/base/utils'
+import Storage from '@/base/utils/storage'
+
 const { proxy }: any = getCurrentInstance()
+
 const breadcrumbInfo: any = ref({})
 const nowPath = ref('')
 proxy.$router.afterEach(() => {
@@ -23,13 +25,15 @@ onMounted(() => {
     setNowPath()
 })
 const setNowPath = () => {
-    nowPath.value = getSeItem('nowPath') || breadcrumbInfo.value.path
+    nowPath.value =
+        Storage.getSessionItem('nowPath') || breadcrumbInfo.value.path
 }
 const setBreadInfo = () => {
-    breadcrumbInfo.value = JSON.parse(getSeItem('breadInfo') as any) || {}
+    breadcrumbInfo.value =
+        JSON.parse(Storage.getSessionItem('breadInfo') as any) || {}
 }
 const breadcrumbItemOnClick = (path: string) => {
-    setSeItem('nowPath', path)
+    Storage.setSessionItem('nowPath', path)
     nowPath.value = path
     proxy.$router.push(path)
 }

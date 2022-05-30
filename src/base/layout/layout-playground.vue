@@ -3,8 +3,11 @@ import { ref, computed, onMounted, getCurrentInstance, nextTick } from 'vue'
 import { useConfig } from '@/base/hooks/use-config'
 import breadCrumb from '@/base/components/bread-crumbs-top.vue'
 import rightThemeDrawer from '@/base/components/theme-drawer-right.vue'
-import { getMenuList, setSeItem, getSeItem, clearSeItem } from '@/base/utils'
+import { getMenuList } from '@/base/utils'
+import Storage from '@/base/utils/storage'
+
 const { proxy }: any = getCurrentInstance()
+
 const store = proxy.$store()
 const { t } = proxy.$useI18n()
 // config
@@ -12,7 +15,7 @@ const { lang, changeLang } = useConfig()
 const showLang = computed(() => {
     return lang.value.name === 'zh-CN' ? 'English' : '中文'
 })
-const whichEnd = getSeItem('whichEnd')
+const whichEnd = Storage.getSessionItem('whichEnd')
 const layoutOptions = getMenuList(store.getEndInfo(whichEnd).fileList)
 const appName = store.getEndInfo(whichEnd).appName
 const activeName = ref('/')
@@ -24,8 +27,8 @@ const handleMenuSelect = (value: string) => {
     proxy.$router.push({
         path: value,
     })
-    setSeItem('nowMenuItemPath', value)
-    setSeItem('nowPath', value)
+    Storage.setSessionItem('nowMenuItemPath', value)
+    Storage.setSessionItem('nowPath', value)
     breadCrumbShow.value = false
     nextTick(() => {
         breadCrumbShow.value = true
@@ -33,11 +36,11 @@ const handleMenuSelect = (value: string) => {
 }
 
 onMounted(() => {
-    setActiveName(getSeItem('nowMenuItemPath') || '/')
+    setActiveName(Storage.getSessionItem('nowMenuItemPath') || '/')
 })
 //返回初始选择端
 const goBack = () => {
-    clearSeItem()
+    Storage.clearSessionItem()
     proxy.$router.push('/login')
 }
 

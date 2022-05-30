@@ -1,20 +1,19 @@
 /*
  * @Author: yhq
  * @Date: 2022-05-07 17:22:42
- * @LastEditTime: 2022-05-25 18:13:15
+ * @LastEditTime: 2022-05-30 14:35:37
  * @LastEditors: yhq
  * @Description:
- * @FilePath: \naive-ui-steppp\src\base\utils\router\index.ts
+ * @FilePath: /steppp/src/base/utils/router/index.ts
  *
  */
 // 路由入口文件以 **main.vue为结尾的
 const mainComps = import.meta.glob('@/**/**/**main.vue')
 const layoutComps = import.meta.glob('@/**/**/layout**.vue')
 import { getEndInfo } from '@/base/entry/app-const'
-import { getSeItem } from '@/base/utils'
-
+import Storage from '@/base/utils/storage'
 // 哪个端
-const nowEnd = getSeItem('whichEnd') || 'playground'
+const nowEnd = Storage.getSessionItem('whichEnd') || 'playground'
 const endInfo = getEndInfo(nowEnd)
 // 文件列表
 const fileList: any = endInfo?.fileList || []

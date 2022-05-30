@@ -1,7 +1,7 @@
 <!--
  * @Author: yhq
  * @Date: 2022-05-24 10:27:19
- * @LastEditTime: 2022-05-27 17:02:22
+ * @LastEditTime: 2022-05-30 10:20:00
  * @LastEditors: yhq
  * @Description: 
  * @FilePath: /steppp/src/App.vue
@@ -19,10 +19,10 @@ import {
 import { useConfig } from '@/base/hooks/use-config'
 import MessageApi from '@/base/components/message-api.vue'
 import hljs from 'highlight.js/lib/core'
-import javascript from 'highlight.js/lib/languages/javascript'
+import typescript from 'highlight.js/lib/languages/typescript'
 import { getCurrentInstance } from 'vue'
 import { storeToRefs } from 'pinia'
-hljs.registerLanguage('javascript', javascript)
+hljs.registerLanguage('typescript', typescript)
 const { proxy }: any = getCurrentInstance()
 const store = proxy.$store()
 const { themeOverrides } = storeToRefs(store)

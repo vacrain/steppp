@@ -2,19 +2,19 @@
  * @Author: vacrain
  * @Date: 2022-05-01 21:20:29
  * @LastEditors: yhq
- * @LastEditTime: 2022-05-25 18:10:17
- * @FilePath: \naive-ui-steppp\src\base\layout\layout-web1.vue
+ * @LastEditTime: 2022-05-30 13:56:32
+ * @FilePath: /steppp/src/base/layout/layout-web1.vue
  * @Description: 
  * 
 -->
 <script setup lang="ts">
 import { getCurrentInstance } from 'vue'
-import { clearSeItem } from '@/base/utils'
+import Storage from '@/base/utils/storage'
 
 const { proxy }: any = getCurrentInstance()
 
 const back = () => {
-    clearSeItem()
+    Storage.clearSessionItem()
     proxy.$router.push('/login')
 }
 </script>

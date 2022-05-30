@@ -1,7 +1,7 @@
 <!--
  * @Author: yhq
  * @Date: 2022-05-26 13:46:59
- * @LastEditTime: 2022-05-27 16:50:04
+ * @LastEditTime: 2022-05-30 14:11:58
  * @LastEditors: yhq
  * @Description: 
  * @FilePath: /steppp/src/base/components/theme-drawer-right.vue
@@ -10,9 +10,11 @@
 <script setup lang="ts">
 import { useConfig } from '@/base/hooks/use-config'
 import { getCurrentInstance, onMounted, ref, watch } from 'vue'
-import { getSeItem } from '@/base/utils'
+import Storage from '@/base/utils/storage'
+
 const { changeTheme, setOsTheme } = useConfig()
 const { proxy }: any = getCurrentInstance()
+
 const store = proxy.$store()
 const { t } = proxy.$useI18n()
 const osTheme = ref<any>(false)
@@ -40,11 +42,11 @@ watch(
     }
 )
 onMounted(() => {
-    osTheme.value = !!getSeItem('useOsTheme') || false
+    osTheme.value = !!Storage.getSessionItem('useOsTheme') || false
     if (osTheme.value) {
         darkTheme.value = false
     } else {
-        darkTheme.value = getSeItem('theme') == 'dark'
+        darkTheme.value = Storage.getSessionItem('theme') == 'dark'
     }
 })
 </script>

@@ -1,7 +1,7 @@
 <!--
  * @Author: yhq
  * @Date: 2022-05-13 14:29:25
- * @LastEditTime: 2022-05-26 13:34:59
+ * @LastEditTime: 2022-05-30 14:30:48
  * @LastEditors: yhq
  * @Description: 
  * @FilePath: /steppp/src/base/components/bread-crumbs-main.vue
@@ -11,20 +11,24 @@
 <script setup lang="ts">
 import leftComp from '@/base/components/left-outline.vue'
 import { computed, getCurrentInstance } from 'vue'
-import { getSeItem, setSeItem } from '@/base/utils'
+import Storage from '@/base/utils/storage'
 
 const { proxy }: any = getCurrentInstance()
+
 // 从本地存储获取 面包屑数组 （侧边栏点击时会进行一个赋值操作）
 const menuItemList: any =
-    JSON.parse(getSeItem('breadInfo') || '').children || []
+    JSON.parse(Storage.getSessionItem('breadInfo') || '').children || []
 // 面包屑点击
 const menuOnClick = (i: number) => {
-    setSeItem('nowPath', menuItemList[i].path)
+    Storage.setSessionItem('nowPath', menuItemList[i].path)
     proxy.$router.replace({ path: menuItemList[i].path })
 }
 // 判断是否从面包屑二级列表单击进入  返回真 则显示面包屑主页 假则显示 面包屑子页面
 const isShowbreadComp = computed(() => {
-    return getSeItem('nowPath') == getSeItem('nowMenuItemPath')
+    return (
+        Storage.getSessionItem('nowPath') ==
+        Storage.getSessionItem('nowMenuItemPath')
+    )
 })
 </script>
 <template>
