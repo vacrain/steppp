@@ -42,6 +42,12 @@ const rootPath = process.cwd()
 ///https://vitejs.dev/config///
 ///////////////////////////////
 export default defineConfig({
+    // 解决i18n警告
+    define: {
+        __VUE_I18N_FULL_INSTALL__: true,
+        __VUE_I18N_LEGACY_API__: true,
+        __INTLIFY_PROD_DEVTOOLS__: false,
+    },
     // define 全局常量
 
     // index.html 所在目录

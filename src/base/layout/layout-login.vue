@@ -53,7 +53,6 @@ const goLogin = () => {
 <template>
     <div class="login_box">
         <h1>登录页</h1>
-        <p>用户名：admin 密码：123456</p>
         <n-form
             ref="loginFormRef"
             :model="formItem"
@@ -64,14 +63,17 @@ const goLogin = () => {
             size="medium"
         >
             <n-form-item label="用户名" path="userName">
-                <n-input v-model:value="formItem.userName" placeholder="" />
+                <n-input
+                    v-model:value="formItem.userName"
+                    placeholder="admin"
+                />
             </n-form-item>
             <n-form-item label="密码" path="password">
                 <n-input
                     type="password"
                     show-password-on="click"
                     v-model:value="formItem.password"
-                    placeholder=""
+                    placeholder="123456"
                 />
             </n-form-item>
             <n-form-item label="选择view-type">

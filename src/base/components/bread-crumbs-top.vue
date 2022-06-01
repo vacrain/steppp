@@ -42,8 +42,8 @@ const breadcrumbItemOnClick = (path: string) => {
 <template>
     <n-tabs type="card" class="breadCrumbInfo" :value="nowPath" animated>
         <n-tab
-            :tab="breadcrumbInfo.name"
-            :name="breadcrumbInfo.path"
+            :tab="breadcrumbInfo.name || ''"
+            :name="breadcrumbInfo.path || ''"
             @click="breadcrumbItemOnClick(breadcrumbInfo.path)"
         >
         </n-tab>
