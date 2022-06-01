@@ -1,51 +1,52 @@
 {
-  "name": "vite-project",
+  "name": "steppp",
+  "version": "0.0.1",
+  "author": "vacrain",
+  "description": "",
   "private": true,
-  "version": "0.0.0",
-  "husky": {
-    "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+  "keywords": [
+    "monorepo",
+    "vue",
+    "naive-ui",
+    "fastify"
+  ],
+  "lint-staged": {
+    "*.{vue,js,jsx,ts,tsx}": "eslint --fix"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-customizable"
     }
   },
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
-    "preview": "vite preview --open"
-  },
-  "dependencies": {
-    "@types/node": "^17.0.28",
-    "axios": "^0.27.1",
-    "file-saver": "^2.0.5",
-    "pinia": "^2.0.13",
-    "vue": "^3.2.25",
-    "vue-i18n": "^9.1.10",
-    "vue-router": "^4.0.14"
+    "commit": "git-cz",
+    "release": "standard-version",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
+    "prepare": "husky install && cd app && pnpm i",
+    "postinstall": "patch-package"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.2.4",
-    "@commitlint/config-conventional": "^16.2.4",
-    "@types/file-saver": "^2.0.5",
-    "@typescript-eslint/eslint-plugin": "^5.21.0",
-    "@typescript-eslint/parser": "^5.21.0",
-    "@vicons/fluent": "^0.12.0",
-    "@vitejs/plugin-vue": "^2.3.1",
-    "@vue/eslint-config-prettier": "^7.0.0",
-    "@vue/eslint-config-typescript": "^10.0.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^8.14.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-vue": "^8.7.1",
-    "husky": "^4.3.8",
-    "mockjs": "^1.1.0",
-    "naive-ui": "^2.28.0",
+    "pnpm": "^7.1.7",
+    "husky": "^8.0.1",
+    "commitizen": "^4.2.4",
+    "@commitlint/cli": "^17.0.1",
+    "@commitlint/config-conventional": "^17.0.0",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^6.3.0",
+    "standard-version": "^9.5.0",
     "prettier": "^2.6.2",
-    "typescript": "^4.5.4",
-    "vite": "^2.9.5",
-    "vite-plugin-cdn-import": "^0.3.5",
-    "vite-plugin-compression": "^0.5.1",
-    "vite-plugin-mock": "^2.9.6",
-    "vue-tsc": "^0.34.7",
-    "highlight.js": "^11.5.0"
+    "patch-package": "^6.4.7",
+    "postinstall-postinstall": "^2.1.0",
+    "lint-staged": "^12.4.3",
+    "eslint": "^8.16.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-vue": "8.7.1",
+    "typescript": "^4.7.2",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "@vue/eslint-config-typescript": "^10.0.0"
   }
 }
