@@ -1,0 +1,41 @@
+{
+  "name": "steppp-monorepo",
+  "version": "1.0.0",
+  "workspace": [
+    "server",
+    "website"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "deploy": "turbo run build --scope=app --includeDependencies --no-deps"
+  },
+  "turbo": {
+    "pipeline": {
+      "dev": {
+        "cache": false,
+        "dependsOn": [
+          "serve"
+        ]
+      },
+      "serve": {
+        "dependsOn": [
+          "^serve"
+        ]
+      },
+      "build": {
+        "dependsOn": [
+          "^build"
+        ],
+        "outputs": [
+          ".next/**",
+          "dist/**"
+        ]
+      }
+    }
+  },
+  "devDependencies": {
+    "pnpm": "^6.23.6",
+    "turbo": "^1.0.6"
+  }
+}

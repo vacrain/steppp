@@ -1,0 +1,7 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+pnpm run lint
+
+# 根目录只负责 commit和lint校验 以及 代码自动格式化，type由各个monorepo-demo自行校验
+# pnpm run lint && pnpm run typecheck

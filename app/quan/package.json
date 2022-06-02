@@ -1,0 +1,35 @@
+{
+  "name": "steppp-quan",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview --open"
+  },
+  "dependencies": {
+    "@types/node": "^17.0.28",
+    "axios": "^0.27.1",
+    "file-saver": "^2.0.5",
+    "pinia": "^2.0.13",
+    "vue": "^3.2.25",
+    "vue-i18n": "^9.1.10",
+    "vue-router": "^4.0.14"
+  },
+  "devDependencies": {
+    "@types/file-saver": "^2.0.5",
+    "@vicons/fluent": "^0.12.0",
+    "@vitejs/plugin-vue": "^2.3.1",
+    "mockjs": "^1.1.0",
+    "naive-ui": "^2.28.0",
+    "prettier": "^2.6.2",
+    "typescript": "^4.7.2",
+    "vue-tsc": "^0.34.7",
+    "vite": "^2.9.5",
+    "vite-plugin-cdn-import": "^0.3.5",
+    "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-mock": "^2.9.6",
+    "highlight.js": "^11.5.0",
+    "rollup": "^2.42.0"
+  }
+}
