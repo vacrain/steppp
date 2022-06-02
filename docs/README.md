@@ -273,6 +273,8 @@ date、from、to、
 
 - [ ] 
 
+- [ ] 做一个server端的判断，如果没有mysql配置，就不连mysql了
+
 - [ ] 重做i18n，可以享受插件的便利
 
 - [ ] 看一下vue项目为啥没有生成 package lock

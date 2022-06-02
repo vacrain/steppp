@@ -20,11 +20,13 @@
   },
   "scripts": {
     "commit": "git-cz",
+    "git-push-both": "git push gitee && git push github",
     "release": "standard-version",
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix",
-    "prepare": "husky install && cd app && pnpm i",
-    "postinstall": "patch-package"
+    "dev": "cd apps && pnpm run dev",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0",
+    "postinstall": "patch-package && cd apps && pnpm i",
+    "prepare": "husky install"
   },
   "devDependencies": {
     "pnpm": "^7.1.7",
