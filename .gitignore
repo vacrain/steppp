@@ -1,26 +1,18 @@
-# normal
-node_modules
-.DS_Store
-dist
-dist-ssr
-coverage
-*.local
-stats.html
-logs
-*.log*
-.env
-
-# frame-work config
-.turbo
-.next
-
-# Editor directories and files
+# local
 .vscode/*
 !.vscode/extensions.json
 !.vscode/settings.json
 .idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.DS_Store
+*.local
+.env
+notia-*
+# steppp-*
+
+# frame-work config
+node_modules
+.turbo
+dist
+dist-ssr
+logs
+*.log*

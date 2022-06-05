@@ -1,6 +1,9 @@
 #!/bin/sh
+
+# 运行husky脚本
 . "$(dirname "$0")/_/husky.sh"
 
+# commit前，进行各种lint，就是代码分析、代码格式化
 pnpm run lint
 
 # 根目录只负责 commit和lint校验 以及 代码自动格式化，type由各个monorepo-demo自行校验

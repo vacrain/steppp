@@ -1,4 +1,6 @@
 #!/bin/sh
+
 . "$(dirname "$0")/_/husky.sh"
 
+# 开始commit时，检查提交信息
 npx --no-install commitlint --edit
