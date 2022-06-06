@@ -6,8 +6,7 @@
     "usernamehw.errorlens",
     "stylelint.vscode-stylelint",
     "yzhang.markdown-all-in-one",
-
-    // easy coding
+    // happy coding
     "JimDong.naive-ui-snippets",
     "fastify.fastify-snippets",
     "abusaidm.html-snippets",
@@ -16,27 +15,24 @@
     "TabNine.tabnine-vscode",
     "christian-kohler.path-intellisense",
     "formulahendry.auto-rename-tag",
-
     // highlight
     "aaron-bond.better-comments",
     "naumovs.color-highlight",
-
     // git
     "eamodio.gitlens",
     "mhutchie.git-graph",
     "donjayamanne.githistory",
-
     // vue
     "jcbuisson.vue",
     "Vue.volar",
     "dariofuzinato.vue-peek",
-
-    // other
+    // others
     "msjsdiag.debugger-for-chrome",
     "humao.rest-client",
     "pranaygp.vscode-css-peek",
     "OBKoro1.korofileheader",
     "WakaTime.vscode-wakatime",
-    "Gruntfuggly.todo-tree"
+    "Gruntfuggly.todo-tree",
+    "PKief.material-icon-theme"
   ]
 }

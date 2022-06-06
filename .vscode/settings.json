@@ -1,41 +1,76 @@
 {
-  "explorer.confirmDragAndDrop": false,
-  "workbench.colorTheme": "Visual Studio Dark",
-  "files.autoSave": "onFocusChange",
-  "files.eol": "\n",
-  "editor.wordWrap": "on",
-  "git.suggestSmartCommit": false,
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "terminal.integrated.enableMultiLinePasteWarning": false,
-  "workbench.editorAssociations": {
-    "*.png": "imagePreview.previewEditor"
+  // hayyp coding
+  "explorer.confirmDragAndDrop": false, //拖动文件时不提示
+  "explorer.confirmDelete": false, // 删除时不提示
+  "editor.suggestSelection": "recentlyUsedByPrefix",
+  "editor.quickSuggestions": {
+    "strings": true
   },
-  "git.ignoredRepositories": ["**/node_modules"],
-  "workbench.editor.enablePreview": false,
-  "explorer.confirmDelete": false,
-  "volar.codeLens.pugTools": true,
-  "volar.autoCompleteRefs": true,
-  "git.autofetch": true,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  "i18n-ally.displayLanguage": "zh",
+  // format settings
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.wordWrap": "on",
+  "editor.tabSize": 2,
   "editor.formatOnSave": true,
-  "prettier.tabWidth": 4,
-  "git.confirmSync": false,
+  "files.autoSave": "onFocusChange",
+  "files.eol": "auto",
   "typescript.updateImportsOnFileMove.enabled": "always",
   "javascript.updateImportsOnFileMove.enabled": "always",
-  "editor.bracketPairColorization.enabled": true,
-  "editor.guides.bracketPairs": "active",
+  // theme settings
+  "workbench.iconTheme": "material-icon-theme",
+  "material-icon-theme.activeIconPack": "vue",
+  "material-icon-theme.folders.associations": {
+    "entry": "config",
+    "enum": "typescript",
+    "enums": "typescript",
+    "store": "context",
+    "stores": "context",
+    "composable": "hook",
+    "composables": "hook",
+    "directive": "tools",
+    "directives": "tools",
+    "business": "core",
+    "request": "api",
+    "adapter": "middleware"
+  },
+  "workbench.colorCustomizations": {
+    // 括号及导轨颜色
+    "editorBracketHighlight.foreground1": "#ffd700",
+    "editorBracketPairGuide.activeBackground1": "#ffd7007f",
+    "editorBracketHighlight.foreground2": "#da70d6",
+    "editorBracketPairGuide.activeBackground2": "#da70d67f",
+    "editorBracketHighlight.foreground3": "#87cefa",
+    "editorBracketPairGuide.activeBackground3": "#87cefa7f",
+    "editorBracketHighlight.foreground4": "#ffd700",
+    "editorBracketPairGuide.activeBackground4": "#ffd7007f",
+    "editorBracketHighlight.foreground5": "#da70d6",
+    "editorBracketPairGuide.activeBackground5": "#da70d67f",
+    "editorBracketHighlight.foreground6": "#87cefa",
+    "editorBracketPairGuide.activeBackground6": "#87cefa7f",
+    "editorBracketHighlight.unexpectedBracket.foreground": "#ff0000"
+  },
+  "editor.bracketPairColorization.enabled": true, // 开启原生括号着色
+  "editor.guides.bracketPairs": "active", // 代码块边缘导轨线着色和bracketPairColorization行为一致
+  // git
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.suggestSmartCommit": false,
+  "git.ignoredRepositories": ["**/node_modules"],
+  // volar
+  "volar.codeLens.pugTools": true,
+  "volar.autoCompleteRefs": true,
   "volar.codeLens.scriptSetupTools": true,
-  "window.zoomLevel": 0,
+  // npm
   "npm.enableRunFromFolder": true,
   "npm.packageManager": "pnpm",
   "npm.scriptExplorerAction": "run",
-  "npm.exclude": "",
-  "workbench.sideBar.location": "left",
-  "i18n-ally.localesPaths": ["src/base/i18n", "src/base/utils/i18n"],
-
-  ////////////////////////////////////////////////////////////////
   // fileheader 头部注释配置
-  // 参考：https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
-  // 头部注释配置 快捷键：window：ctrl+alt+i,mac：ctrl+cmd+i
+  //   参考：https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+  // 快捷键：
+  //   头部 快捷键：window：ctrl+alt+i,mac：ctrl+cmd+i
+  //   函数 快捷键：window：ctrl+alt+t,mac：ctrl+cmd+t
+  //   头部注释配置
   "fileheader.customMade": {
     // "Author": "git config user.name && git config user.email", // 同时获取用户名与邮箱,
     "Author": "git config user.name", // 仅获取用户名
@@ -60,9 +95,8 @@
     // 版权声明 保留文件所有权利 自动替换年份
     // "custom_string_obkoro1_copyright": "Copyright (c) ${now_year} by 用户/公司名, All Rights Reserved. "
   },
-  // 函数注释配置 快捷键：window：ctrl+alt+t,mac：ctrl+cmd+t
+  // 函数注释配置
   "fileheader.cursorMode": {
-    "description": "", // 函数注释生成之后，光标移动到这里
     "param": "", // param 开启函数参数自动提取 需要将光标放在函数行或者函数上方的空白行
     "return": ""
   },
@@ -92,10 +126,7 @@
       "文件后缀": ["头部注释@符号", "函数注释@符号"],
       "js": ["", "@"] // .js文件的头部注释@符号去掉,所有文件的函数注释默认为@
     },
-    "colon": [": ", ": "],
-    "colonObj": {
-      "js": [" ", ": "] // .js文件 头部注释去掉: 留一个空格 函数注释保留冒号
-    },
+    "colon": [" ", ": "],
     // header
     "annotationStr": {
       "head": "/*",
@@ -119,7 +150,6 @@
     "functionBlankSpaceAll": {},
     "functionTypeSymbol": "type", // 参数没有类型时的默认值
     "typeParamOrder": "type param", // 参数显示顺序
-
     // 没啥用
     "autoAddLine": 100,
     "switch": { "newlineAddAnnotation": true },
