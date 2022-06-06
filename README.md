@@ -1,3 +1,3 @@
-# projects management provider
+# Steppp -- provider for apps management & code practice
 
-> [steppp remake 2.0](./docs/steppp-docs/README.md)
+> [项目介绍](./docs/steppp-docs/README.md)

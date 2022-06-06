@@ -6,6 +6,8 @@
 ## now
 
 - [ ] 
+- [ ] apps看看改成projects，然后projects图标改成apps
+- [ ] github 、 gitee action https://zhuanlan.zhihu.com/p/377731593
 - [ ] 整理规范：GitHub搜guideline，或者Google Java/code/database guideline
 - [ ] 用monorepo重构steppp
   - [ ] 保护您的 `develop` 和 `master` 分支，请搜索 分支管理
@@ -23,8 +25,7 @@
 
 ## 2022-05
 
-- [x] ~~.prettierrc.js 文件中  tabWidth 改成2，然后reload window，再将所有文件 代码格式化~~
-  - [x] 4很好，不用改
+- [x] .prettierrc.js 文件中  tabWidth 改成2，然后reload window，再将所有文件 代码格式化
 - [x] 搭建项目 [【快速上手】vite打包配置详解—手把手教你配置vite](https://www.bilibili.com/video/BV1yu411U71S?spm_id_from=333.999.0.0)
 
 

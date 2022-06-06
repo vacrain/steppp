@@ -1,32 +1,20 @@
 # :footprints: Steppp
 
-> 基于monorepo策略， 渐进式学习、实践、开发前后端分离项目
+> Steppp 是一个应用管理与编程实践平台
+> 基于monorepo策略， 渐进式学习、实践、开发TS前后端分离项目
 
 ## 功能介绍（Features）
 
-1.  [web端（web-site）](4-web/README.md) 
-2.  [后端（server-side）](3-server/README.md) 
-3. turborepo + vite2 + vue3 + typescript + naive-ui + fatify
-4. vue3: mvvm 架构，双向绑定，components api，setup 语法糖，更能 hold 住大项目了
-5. vite: 脚手架及打包工具于一体，而且很快是真的。已经配置好了 vite 的基本设置 alias、build、跨域等，还有 eslint、prettier、mock、cdn、gzip 等
-6. naive-ui: vue3 + ts 激动人心的 ui 框架，整合了掌控全局的 provider 及大量实用组件
-7. 常用 layout: 不管你是想做一个宣传用的官网，还是 web2 类型的平台，还是 admin 端系统，all in one，从此一起管理！
-8. 注释全: 可以说是非常适合学习了
-9. 二次封装组件: 嗯，还是要封装的，官方的也不全是拿来就很好用的...
-10. 完全支持 typescript: 静态类型的 js，护航你的项目，并通过 eslint、prettier 等插件使代码更健壮、安全
-11. git 提交管理: 通过 husky、commitlint，好好写提交信息，让版本控制软件的能力最大化
-12. axios: 封装好的 AJAX 框架，支持 rest 风格，api 管理首选
-13. pinia: 由 vuex 核心成员写的，新一代的状态管理框架，现已加入浏览器开发工具中
-14. 国际化: 统一的语种管理，助力你的项目推向国际
-15. 路由: 通过视图内声明式的管理路由及菜单（待定）
-16. mock: 模拟好了数据再上真家伙！
-17. vscode实用插件介绍
+1.  外壳：pnpm、turborepo、typescript、eslint、commit-lint、prettier、[定制补丁](https://blog.csdn.net/qq_32429257/article/details/111051217) 等等
+2.  [web端（web-site）](4-web/README.md) vite2 + vue3 + naive-ui + pinia + axios + router + mock + cdn + gzip + i18n + ...
+3.  [后端（server-side）](3-server/README.md) nestjs + fatify + mysql
+4.  注释全、实用的封装组件、前后端共享常量/配置/工具...
 
 ## 环境准备（env）
 
+-   node 16+
 -   vscode 最新版
 -   vscode 插件请参考 .vscode/extensions.json
--   node 16
 
 ## 相关命令（commands）
 
@@ -53,10 +41,9 @@
 > pnpm i
 ```
 
-- 配置数据库
+- 配置数据库（新建文件/steppp/apps/steppp-server/.env，配置下面内容）
 
 ```
-# /steppp/apps/steppp-server/.env
 DB_HOST = 1.2.3.4
 DB_USER = root
 DB_PASSWORD = root
@@ -70,8 +57,8 @@ DB_PORT = 3306
 > pnpm run dev
 
 # 启动完成之后访问主页即可
-前端首页：http://127.0.0.1:3210 (如果端口号被占用的话，也可能是3211、3212...)
-后端首页：http://127.0.0.1:3000
+前端地址：http://127.0.0.1:3210 (如果端口号被占用的话，也可能是3211、3212...具体看控制台吧 )
+后端地址：http://127.0.0.1:3000
 ```
 
 - 开发用命令
@@ -107,86 +94,78 @@ DB_PORT = 3306
 
 ## 目录说明（Dir）
 
-> 生成目录命令：tree
+> 生成目录命令：tree，执行前先删除所有node_modules，生成完再恢复
 
-- root：提交、代码格式化、lint、脚本管理外壳、[定制补丁](https://blog.csdn.net/qq_32429257/article/details/111051217) 等等lints & prettier, turborepo,
-  - apps
-    - xxx-admin
-    - xxx-web
-    - xxx-mobile
-    - xxx-server
-      - api
-        - web
-        - v1
-        - admin
-    - yyy-admin
-    - yyy-web
-    - yyy-mobile
-    - yyy-server
-      - api
-        - web
-        - v1
-        - admin
-  - packages
-    - xxx-shared
-    - yyy-shared
-    - ui
-      - web-ui
-      - mobile-ui
-    - native
-  - docs
-    - guideline
-    - useful
-    - xxx-docs
-      - todo
-      - web
-      - admin
-      - server
-      - README.md
-    - yyy-docs
-      - todo
-      - web
-      - admin
-      - server
-      - README.md
-    - README.md
+- 目录模板：
+
+<details>
+<summary>展开查看(日期)</summary>
+<pre><code>.
+粘贴目录树结构
+</code></pre>
+</details>
 
 
 
-2022-06-02 大更新
-monorepo
-pinia，及其插件使用
-axios
-server
-fastify
-mysql
-turborepo
+- 生成历史：
 
-
-
-
-  1. apps
-     1. web-template
-            2. web-playground
-                   3. web-web1
-                          4. web-web2
-                                 5. mobile
-                                        6. server
-     1. api
-       1. web
-          1. template
-          2. playground
-          3. web1
-          4. web2
-  2. packages
-         1. shared
-       2. config
-       3. const
-          2. native
-          3. web-ui
-          4. mobile-ui
-
-
+<details>
+<summary>展开查看(2022-06-06)</summary>
+<pre><code>.
+├── README.md
+├── apps
+│   ├── steppp-playground
+│   │   ├── index.html
+│   │   ├── mock
+│   │   ├── package.json
+│   │   ├── src
+│   │   │   ├── App.vue
+│   │   │   ├── api
+│   │   │   ├── assets
+│   │   │   ├── base
+│   │   │   │   ├── components
+│   │   │   │   ├── entry
+│   │   │   │   ├── hooks
+│   │   │   │   ├── i18n
+│   │   │   │   ├── layout
+│   │   │   │   ├── typings
+│   │   │   │   └── utils
+│   │   │   ├── main.ts
+│   │   │   ├── view-playground
+│   │   │   └── view-web
+│   │   ├── tsconfig.json
+│   │   ├── tsconfig.node.json
+│   │   └── vite.config.ts
+│   ├── steppp-provider
+│   └── steppp-server
+│       ├── package.json
+│       ├── plugins
+│       ├── src
+│       │   ├── app.js
+│       │   ├── routes
+│       │   └── utils
+│       └── test
+├── docs
+│   └── steppp-docs
+│       ├── 0-guideline
+│       ├── 1-todo
+│       ├── 2-tools
+│       ├── 3-server
+│       ├── 4-web
+│       ├── 8_Archives
+│       └── README.md
+├── package.json
+├── packages
+│   ├── steppp-shared
+│   │   ├── a.js
+│   │   └── package.json
+│   └── steppp-ui
+│       ├── b.js
+│       └── package.json
+├── pnpm-lock.yaml
+└── pnpm-workspace.yaml
+</code></pre>
+</details>
 
 <details>
 <summary>展开查看(2022/6/2)</summary>
@@ -280,6 +259,38 @@ turborepo
 </details>
 
 
+- 参考（2022-06-06）：
+
+```markdown
+xxx是项目名称
+
+- root // 根目录
+  - apps // 可以运行的应用
+    - xxx-admin/web/desktop/mobile
+    - xxx-server
+      - api
+        - common
+        - admin
+        - web
+        - desktop-v1
+        - mobile-v1
+  - packages // 项目的基础架构、通用ui等
+    - xxx-shared、base
+      - config
+      - const
+      - native
+    - xxx-admin/web/desktop/mobile-ui
+  - docs
+    - common // 开发规范 、测试用例等
+      - guideline
+      - useful
+    - xxx-docs // 某一项目的文档
+      - todo // 开发、开会、测试等计划
+      - admin/web/desktop/mobile/server // 各端设计及实现文档
+      - README.md // 项目介绍
+    - README.md // 公司介绍
+```
+
 
 
 
@@ -289,21 +300,9 @@ turborepo
 - 文档目录，推荐使用 Typora 打开，并进行查看、编辑 ！
 - monorepo：多仓库合并管理策略
 - pnpm：最适合 monorepo 的包管理器
-- turborepo：monorepo 缓存、任务链管理
-- pipeline：管道，建议查一下下水道的剖面图，就很像下面的结构，就是任务的执行、依赖拓扑结构，用于配置任务链
+- turborepo：monorepo 缓存、pipeline任务链管理
+  - 上游：说 A 是 B 的上游，就是 A 中依赖了 B 包
+  - 下游：说 A 是 B 的下游，就是 B 中依赖了 A 包
 
-```
-下面的 | 就像是一个个水管子，下面整个叫pipeline
-        |
-        |
-    一一一一一一
-    |        |
-一一一一一
-|       |
-
-```
-
-- 上游：说 A 是 B 的上游，就是 A 中依赖了 B 包
-- 下游：说 A 是 B 的下游，就是 B 中依赖了 A 包
-- commit-lint：提交校验
+- 。。。
 
