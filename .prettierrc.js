@@ -1,9 +1,16 @@
-// .prettierrc.js
-// 代码自动格式化配置
-// 参考：
-// https://prettier.io/docs/en/options.html
-// https://www.jianshu.com/p/4be58a69b20f
-// https://www.cnblogs.com/wangpenghui522/p/13727990.html
+/*
+ * Author        vacrain
+ * CreateDate    2022-06-02
+ * LastEditor    vacrain
+ * lastEditDate  2022-06-06
+ * RelativePath  /.prettierrc.js
+ * Description   代码自动格式化配置
+ * 参考：
+ * https://prettier.io/docs/en/options.html
+ * https://www.cnblogs.com/wangpenghui522/p/13727990.html
+ * https://www.jianshu.com/p/4be58a69b20f
+ */
+
 module.exports = {
   printWidth: 120, // 超过最大值换行
   tabWidth: 2, // 缩进字节数
@@ -14,7 +21,7 @@ module.exports = {
   bracketSpacing: true, // 是否在对象的{}内部两侧加空格 true - { foo: bar } false - {foo: bar}.
   bracketSameLine: false,
   arrowParens: 'avoid', // (x) => {} 箭头函数参数只有一个时是否要有小括号。avoid：省略括号
-  endOfLine: 'lf', // 结尾是 lf-\n cr-\r lfcr-\n\r  auto-保持现有的行尾设置
+  endOfLine: 'auto', // 结尾是 lf-\n cr-\r lfcr-\n\r  auto-保持现有的行尾设置，必须用auto，因为win和mac系统的换行符不一样，不同系统的人员，格式化效果不同
   htmlWhitespaceSensitivity: 'css', // 是否显示HTML文件中的空格。 有效选项： 'css' - 尊重CSS display属性的设置。 'strict' - 空格被认为是敏感的。 'ignore' - 空格被认为是不敏感的
   embeddedLanguageFormatting: 'auto', // 是否格式化嵌入到JS中的html标记的代码段或者Markdown语法 auto-格式化 off-不格式化
   proseWrap: 'preserve', // 有效选项[always|never|preserve]。当Markdown文本超过printWidth时,是否换行,always-换行 never-不换行 preserve保持原样
