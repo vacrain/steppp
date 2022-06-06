@@ -53,6 +53,17 @@
 > pnpm i
 ```
 
+- 配置数据库
+
+```
+# /steppp/apps/steppp-server/.env
+DB_HOST = 1.2.3.4
+DB_USER = root
+DB_PASSWORD = root
+DB_NAME = 数据库名
+DB_PORT = 3306
+```
+
 - 启动项目
 
 ```sh

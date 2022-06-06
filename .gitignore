@@ -12,6 +12,7 @@ notia-*
 # steppp-*
 
 # frame-work config
+pnpm-lock.yaml
 node_modules
 .turbo
 dist
