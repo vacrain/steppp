@@ -6,6 +6,8 @@
 .DS_Store
 *.local
 .env
+
+# select project group
 notia-*
 # steppp-*
 

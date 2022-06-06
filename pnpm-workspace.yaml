@@ -1,4 +1,3 @@
 packages:
   - 'apps/**'
-  # - 'apps/steppp-*'
-  # - 'packages/**'
+  - 'packages/**'
