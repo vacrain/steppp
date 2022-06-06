@@ -27,17 +27,10 @@
 -   vscode 最新版
 -   vscode 插件请参考 .vscode/extensions.json
 -   node 16
--   pnpm 7
-
-安装 node 后，全局安装 pnpm
-
-```
-npm install pnpm -g
-```
 
 ## 相关命令（commands）
 
-- 下载项目
+- 下载本项目
 
 ```sh
 # 从gitee下载
@@ -105,36 +98,47 @@ npm install pnpm -g
 
 > 生成目录命令：tree
 
-
-
-- apps：主项目
-  - quan：前端项目
-  - server：后端项目
-  - shared：共享配置、工具等
-- docs：项目文档
-
-- 根项目（root provider）：提交、代码格式化、lint、脚本管理外壳、[定制补丁](https://blog.csdn.net/qq_32429257/article/details/111051217)
-  - docs
-    - guideline
-    - todo
-    - useful
+- root：提交、代码格式化、lint、脚本管理外壳、[定制补丁](https://blog.csdn.net/qq_32429257/article/details/111051217) 等等lints & prettier, turborepo,
   - apps
-    - web-playground
-    - mobile
-    - server
+    - xxx-admin
+    - xxx-web
+    - xxx-mobile
+    - xxx-server
       - api
         - web
-          - template
-          - playground
-          - web1
-          - web2
+        - v1
+        - admin
+    - yyy-admin
+    - yyy-web
+    - yyy-mobile
+    - yyy-server
+      - api
+        - web
+        - v1
+        - admin
   - packages
-    - shared
-      - config
-      - const
+    - xxx-shared
+    - yyy-shared
+    - ui
+      - web-ui
+      - mobile-ui
     - native
-    - web-ui
-    - mobile-ui
+  - docs
+    - guideline
+    - useful
+    - xxx-docs
+      - todo
+      - web
+      - admin
+      - server
+      - README.md
+    - yyy-docs
+      - todo
+      - web
+      - admin
+      - server
+      - README.md
+    - README.md
 
 
 
@@ -148,11 +152,9 @@ mysql
 turborepo
 
 
-1. provider: lints & prettier, turborepo,
-  2. docs
-         1. guideline
-                2. todo
-  3. apps
+
+
+  1. apps
      1. web-template
             2. web-playground
                    3. web-web1
@@ -165,7 +167,7 @@ turborepo
           2. playground
           3. web1
           4. web2
-  4. packages
+  2. packages
          1. shared
        2. config
        3. const
@@ -273,7 +275,7 @@ turborepo
 
 ## 其他须知（others）
 
-- docs 文档目录，推荐使用 Typora 打开进行查看编辑 ！
+- 文档目录，推荐使用 Typora 打开，并进行查看、编辑 ！
 - monorepo：多仓库合并管理策略
 - pnpm：最适合 monorepo 的包管理器
 - turborepo：monorepo 缓存、任务链管理
