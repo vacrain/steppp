@@ -21,6 +21,7 @@
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.activeIconPack": "vue",
   "material-icon-theme.folders.associations": {
+    "projects": "app",
     "entry": "config",
     "enum": "typescript",
     "enums": "typescript",

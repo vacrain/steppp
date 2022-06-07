@@ -1,19 +1,24 @@
 {
   "name": "steppp",
   "version": "0.0.1",
+  "license": "MIT",
   "author": "vacrain",
   "description": "",
   "private": true,
-  "engines": {
-    "node": ">=16",
-    "pnpm": ">=7.0.0"
-  },
   "keywords": [
-    "monorepo",
+    "turborepo",
     "vue",
     "naive-ui",
     "fastify"
   ],
+  "homepage": "https://github.com/vacrain/steppp#readme",
+  "bugs": {
+    "url": "https://github.com/vacrain/steppp/issues"
+  },
+  "engines": {
+    "node": ">=16",
+    "pnpm": ">=7.0.0"
+  },
   "packageManager": "pnpm@7.1.7",
   "lint-staged": {
     "*.{vue,js,jsx,ts,tsx}": "eslint --fix"
@@ -61,6 +66,7 @@
     "postinstall": "patch-package",
     "prepare": "husky install"
   },
+  "dependencies": {},
   "devDependencies": {
     "turbo": "^1.0.6",
     "pnpm": "^7.1.7",
