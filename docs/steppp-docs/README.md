@@ -35,6 +35,9 @@
 # 全局卸载 git-cz
 > npm uninstall -g git-cz
 
+# 配置npm注册地址为新的淘宝镜像
+> npm config set registry https://registry.npmmirror.com/
+
 # 全局安装 pnpm 和 commitizen
 > npm install -g pnpm@7.1.7
 > npm install -g commitizen@4.2.4
@@ -101,25 +104,23 @@ DB_PORT = 3306
 
 目录参考（2022-06-06）：
 
-```markdown
-须知：xxx是项目名称
-
-- root // 根目录
-  - apps // 在开发的应用
-    - xxx-[admin/web/desktop/mobile] // 前端
-    - xxx-server/api: [common/admin/web/desktop-v1/mobile-v1] // 后端
-  - packages // 项目依赖包
-    - xxx-shared: base/config/const/native // 基础架构
-    - xxx-[admin/web/desktop/mobile]-ui // 通用ui等
-  - docs
-    - common: guideline/useful // 开发规范 、测试用例等
-    - xxx-docs // 某一项目的文档
-    	- archive // 历史归档
-      - [admin/web/desktop/mobile/server] // 各端设计文档
-      - todo // 开发、开会、测试等计划
-      - README.md // 项目介绍
-    - README.md // 公司介绍
-```
+- root // 外壳
+  1. apps // 在开发的项目
+    1. template-[admin/web/desktop/mobile] // 前端模板项目
+    2. template-server/api: [common/admin/web/desktop-v1/mobile-v1] // 后端模板项目
+  2. packages // 所有项目依赖包
+    1. template-shared: base/config/const/native // 模板项目的基础架构
+    2. template-[admin/web/desktop/mobile]-ui // 模板项目的通用ui等
+  3. docs // 所有项目文档
+    1. template-docs // 模板项目的文档
+       1. archive // 历史归档
+       2. todo // 开发、开会、测试等计划
+       3. [admin/web/desktop/mobile/server] // 各端设计文档
+    2. common: guideline/useful // 公司开发规范 、测试用例等
+    3. README.md // 所有项目介绍
+  4. configs // 外壳配置
+     1. eslint、prettier、commitlint、cz、npm、docker
+  5. README.md // 公司介绍
 
 
 

@@ -6,6 +6,8 @@
 ## now
 
 - [ ] 
+- [ ] 发布prettier，添加到根目录dev依赖中，然后再在package.json里引入，之后删除config目录
+- [ ] eslint写到package.json里，参考https://gist.github.com/richardtallent/d4452bd0aa23020e999dd9410458df46 
 - [x] 参考各个项目的.vscode
 - [ ] monorepo，学一下git tag，整理本地项目
 - [ ] apps看看改成projects，然后projects图标改成apps
