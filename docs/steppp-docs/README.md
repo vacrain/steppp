@@ -1,22 +1,24 @@
 # :footprints: Steppp
 
-> Steppp 是一个应用管理与编程实践平台
-> 基于monorepo策略， 渐进式学习、实践、开发TS前后端分离项目
+> Steppp 是一个**多端应用统一管理** 与 **综合型编程学习实践** 平台
+> 基于monorepo，提供渐进式学习、实践、开发、管理 Typescript 前后端分离项目开箱即用体验
 
 ## 功能介绍（Features）
 
 1.  外壳：pnpm、turborepo、typescript、eslint、commit-lint、prettier、[定制补丁](https://blog.csdn.net/qq_32429257/article/details/111051217) 等等
-2.  [web端（web-site）](4-web/README.md) vite2 + vue3 + naive-ui + pinia + axios + router + mock + cdn + gzip + i18n + ...
-3.  [后端（server-side）](3-server/README.md) nestjs + fatify + mysql
-4.  注释全、实用的封装组件、前后端共享常量/配置/工具...
+2.  注释版：注释全、demo多、实用的封装组件、前后端共享常量/配置/工具...
+    1.  [web端完全注释版（web-site）](4-web/README.md) ：vite2 + vue3 + naive-ui + pinia + axios + router + mock + cdn + gzip + i18n + ...
+    2.  [后端完全注释版（server-side）](3-server/README.md) ：nestjs + fatify + mysql
 
-## 环境准备（env）
+3.  开发版：除了必要的函数注释，其他的注释都没有了，开箱即用~
+
+## 环境准备（ENV）
 
 -   node 16+
 -   vscode 最新版
--   vscode 插件请参考 .vscode/extensions.json
+-   vscode 插件，请参考 `/.vscode/extensions.json`，最好是都安上~
 
-## 相关命令（commands）
+## 开始使用（Start）
 
 - 下载本项目
 
@@ -94,9 +96,34 @@ DB_PORT = 3306
 
 ## 目录说明（Dir）
 
-> 生成目录命令：tree，执行前先删除所有node_modules，生成完再恢复
+> 生成目录命令：tree （win自带、Mac和Linux需自行安装）
+> 执行前先删除所有node_modules，生成完再恢复
 
-- 目录模板：
+目录参考（2022-06-06）：
+
+```markdown
+须知：xxx是项目名称
+
+- root // 根目录
+  - apps // 在开发的应用
+    - xxx-[admin/web/desktop/mobile] // 前端
+    - xxx-server/api: [common/admin/web/desktop-v1/mobile-v1] // 后端
+  - packages // 项目依赖包
+    - xxx-shared: base/config/const/native // 基础架构
+    - xxx-[admin/web/desktop/mobile]-ui // 通用ui等
+  - docs
+    - common: guideline/useful // 开发规范 、测试用例等
+    - xxx-docs // 某一项目的文档
+    	- archive // 历史归档
+      - [admin/web/desktop/mobile/server] // 各端设计文档
+      - todo // 开发、开会、测试等计划
+      - README.md // 项目介绍
+    - README.md // 公司介绍
+```
+
+
+
+目录模板：
 
 <details>
 <summary>展开查看(日期)</summary>
@@ -106,8 +133,7 @@ DB_PORT = 3306
 </details>
 
 
-
-- 生成历史：
+生成历史：
 
 <details>
 <summary>展开查看(2022-06-06)</summary>
@@ -257,40 +283,6 @@ DB_PORT = 3306
 └── steppp-docs // 全部文档（好像就一个文件，bushi
 </code></pre>
 </details>
-
-
-- 参考（2022-06-06）：
-
-```markdown
-xxx是项目名称
-
-- root // 根目录
-  - apps // 可以运行的应用
-    - xxx-admin/web/desktop/mobile
-    - xxx-server
-      - api
-        - common
-        - admin
-        - web
-        - desktop-v1
-        - mobile-v1
-  - packages // 项目的基础架构、通用ui等
-    - xxx-shared、base
-      - config
-      - const
-      - native
-    - xxx-admin/web/desktop/mobile-ui
-  - docs
-    - common // 开发规范 、测试用例等
-      - guideline
-      - useful
-    - xxx-docs // 某一项目的文档
-      - todo // 开发、开会、测试等计划
-      - admin/web/desktop/mobile/server // 各端设计及实现文档
-      - README.md // 项目介绍
-    - README.md // 公司介绍
-```
-
 
 
 

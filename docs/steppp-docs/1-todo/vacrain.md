@@ -6,6 +6,8 @@
 ## now
 
 - [ ] 
+- [x] 参考各个项目的.vscode
+- [ ] monorepo，学一下git tag，整理本地项目
 - [ ] apps看看改成projects，然后projects图标改成apps
 - [ ] github 、 gitee action https://zhuanlan.zhihu.com/p/377731593
 - [ ] 整理规范：GitHub搜guideline，或者Google Java/code/database guideline
