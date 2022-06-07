@@ -1,5 +1,5 @@
 # local
-.vscode/*
+archive
 !.vscode/extensions.json
 !.vscode/settings.json
 .idea
@@ -7,9 +7,8 @@
 *.local
 .env
 
-# select project group
-notia-*
-# steppp-*
+# private projects
+projects
 
 # frame-work config
 pnpm-lock.yaml

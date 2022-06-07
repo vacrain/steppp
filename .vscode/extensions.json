@@ -18,6 +18,7 @@
     // highlight
     "aaron-bond.better-comments",
     "naumovs.color-highlight",
+    "wraith13.background-phi-colors",
     // git
     "eamodio.gitlens",
     "mhutchie.git-graph",

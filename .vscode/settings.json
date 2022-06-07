@@ -23,6 +23,7 @@
   "material-icon-theme.folders.associations": {
     "projects": "app",
     "entry": "config",
+    "_": "base",
     "steppp-config": "config",
     "enum": "typescript",
     "enums": "typescript",
