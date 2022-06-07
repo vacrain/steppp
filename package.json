@@ -13,7 +13,12 @@
   ],
   "homepage": "https://github.com/vacrain/steppp#readme",
   "bugs": {
-    "url": "https://github.com/vacrain/steppp/issues"
+    "url": "https://github.com/vacrain/steppp/issues",
+    "wechat": "j20y25"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "http://example.com/donate"
   },
   "engines": {
     "node": ">=16",
@@ -28,6 +33,7 @@
       "path": "./node_modules/cz-customizable"
     }
   },
+  "prettier": "./config/.prettierrc.js",
   "turbo": {
     "pipeline": {
       "dev": {
