@@ -1,6 +1,12 @@
-// .cz-config.js
-// cz工具配置
-// 参考：https://zhuanlan.zhihu.com/p/69635847
+/*
+ * Author        vacrain
+ * CreateDate    2022-06-02
+ * LastEditor    vacrain
+ * lastEditDate  2022-06-07
+ * RelativePath  /.cz-config.js
+ * Description   cz工具配置
+ * 参考：https://zhuanlan.zhihu.com/p/69635847
+ */
 module.exports = {
   types: [
     { value: 'feat', name: '✨ feat:       新增功能' },

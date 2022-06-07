@@ -1,3 +1,11 @@
+/*
+ * Author        vacrain
+ * CreateDate    2022-06-02
+ * LastEditor    vacrain
+ * lastEditDate  2022-06-07
+ * RelativePath  /.eslintrc.js
+ * Description   eslint配置
+ */
 module.exports = {
   env: {
     browser: true,

@@ -1,5 +1,11 @@
-// .commitlintrc.js
-// 提交校验配置
+/*
+ * Author        vacrain
+ * CreateDate    2022-06-02
+ * LastEditor    vacrain
+ * lastEditDate  2022-06-07
+ * RelativePath  /.commitlintrc.js
+ * Description   提交校验配置
+ */
 module.exports = {
   extends: ['@commitlint/config-conventional'],
 
