@@ -1,4 +1,4 @@
 packages:
-  - 'projects/**'
-  - 'templates/**'
+  - 'apps/**'
+  - 'demos/**'
   - 'packages/**'
