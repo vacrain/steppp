@@ -1,3 +1,3 @@
 # Steppp -- provider for apps management & code practice
 
-> [项目介绍](./docs/steppp-docs/README.md)
+> [文档查看](./docs/README.md)
