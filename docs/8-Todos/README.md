@@ -14,7 +14,11 @@
 
 - [ ] 
 
-- [ ] 
+- [ ] 重做i18n，可以享受插件的便利。。修改配置：.vscode/settings.json，函数适配该插件
+
+- [ ] 学一下git tag，release啥的
+
+- [ ] mysql【我用的顺手的数据库设计工具(推荐)-哔哩哔哩】 https://b23.tv/M1CQ313 
 
 - [ ] 引入工具：https://www.lodashjs.com/docs/lodash.chunk
 
@@ -94,6 +98,7 @@
 > 会议相关
 
 - [ ] 
+- [ ] 讨论是否可以最简做视图，视图是否是菜单、是否是路由，由文件自己决定（或者像是fastify的routes那样，自动匹配，可能不太行）
 - [ ] monorepo说明
 - [ ] nestjs + fatify + mysql使用
 

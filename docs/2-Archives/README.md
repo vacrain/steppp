@@ -16,11 +16,10 @@
 
 -   node 16+
 -   vscode 最新版
--   vscode 插件，请参考 `/.vscode/extensions.json`，最好是都安上~
 
 ## 开始使用（Start）
 
-- 下载本项目
+1. 下载本项目
 
 ```sh
 # 从gitee下载
@@ -29,7 +28,10 @@
 > git clone https://github.com/vacrain/will.git
 ```
 
-- 安装依赖
+2. 安装vscode 推荐插件（下载项目后按照下图点击即可，最好是都安装，高亮类的插件不喜欢可以不安装~）
+   ![image-20220608073451824](https://raw.githubusercontent.com/vacrain/typora_img/main/2022/2022-06-08_07-34-51_image-20220608073451824.png)
+
+3. 安装依赖
 
 ```sh
 # 全局卸载 git-cz
@@ -46,7 +48,7 @@
 > pnpm i
 ```
 
-- 配置数据库（新建文件/steppp/apps/steppp-server/.env，配置下面内容）
+4. 配置后端数据库（后端模板项目中新建文件.env，并配置下面内容，粘贴进去要改的！）
 
 ```
 DB_HOST = 1.2.3.4
@@ -59,33 +61,12 @@ DB_PORT = 3306
 - 启动项目
 
 ```sh
-> pnpm run dev
+# dev运行t0项目
+> pnpm run dev:t0
 
 # 启动完成之后访问主页即可
 前端地址：http://127.0.0.1:3210 (如果端口号被占用的话，也可能是3211、3212...具体看控制台吧 )
 后端地址：http://127.0.0.1:3000
-```
-
-- 开发用命令
-
-```sh
-# 须知：（查看帮助方式 pnpm help add）
-# -r               每个子包都安装
-# -D               安装到dev依赖里，build时不随项目一起打包
-# -w               安装到root，也就是当前workspace
-# --filter=子包名   指定子包
-
-# 想给指定项目安装依赖：
-> cd apps
-> pnpm add A依赖名 B依赖名 --filter=子项目名
-
-# 给每个子项目都来一份：
-> cd apps
-> pnpm add A依赖名 B依赖名 -r
-
-# 其他：
-# 安装所有子项目的依赖
-> pnpm i -r
 ```
 
 - 提交：
