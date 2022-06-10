@@ -30,10 +30,12 @@
     // others
     "msjsdiag.debugger-for-chrome",
     "humao.rest-client",
+    "ritwickdey.LiveServer",
     "pranaygp.vscode-css-peek",
     "OBKoro1.korofileheader",
     "WakaTime.vscode-wakatime",
     "Gruntfuggly.todo-tree",
-    "PKief.material-icon-theme"
+    "PKief.material-icon-theme",
+    "GitHub.vscode-pull-request-github"
   ]
 }

@@ -2,13 +2,14 @@
  * Author        vacrain
  * CreateDate    2022-06-02
  * LastEditor    vacrain
- * lastEditDate  2022-06-07
+ * lastEditDate  2022-06-10
  * RelativePath  /.cz-config.js
  * Description   cz工具配置
  * 参考：https://zhuanlan.zhihu.com/p/69635847
  */
 module.exports = {
   types: [
+    // 修改了的话，需要同步修改 ./.commitlintrc.js ！！！
     { value: 'feat', name: '✨ feat:       新增功能' },
     { value: 'fix', name: '🐛 fix:        修复bug' },
     { value: 'docs', name: '✏️  docs:       文档变更' },
