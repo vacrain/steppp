@@ -1,0 +1,24 @@
+# 同步 .prettierignore 文件
+# files
+.idea
+.DS_Store
+.npmrc
+.eslintignore
+.gitignore
+.prettierignore
+*.sh
+*.md
+*.woff
+*.ttf
+*.svg
+*.ico
+.husky
+LICENSE
+pnpm-lock.yaml
+# dirs
+dist
+/bin
+/public
+/docs
+**/node_modules/**
+**/public/**
