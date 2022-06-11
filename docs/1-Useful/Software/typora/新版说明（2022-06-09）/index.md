@@ -9,32 +9,27 @@
 > - [如何利用 Github 搭建自己的免费图床](https://zhuanlan.zhihu.com/p/353775844) 
 > - [免费CDN：jsDelivr+Github 使用方法](https://zhuanlan.zhihu.com/p/76951130) 
 
-## 安装 正(po jie)版 Typora
+[toc]
+
+## 安装 Typora
 
 > 穷苦的我们。。虽燃八九十就可以买永久，还是以后有钱再说吧哈哈哈
 
 - win
 
-typora1.2.4 win端破解教程：
-
-参考教程（两分钟破解）：https://www.bilibili.com/video/BV1FT4y1e7Do?spm_id_from=333.337.search-card.all.click
+win端 两分钟破解 参考教程：https://www.bilibili.com/video/BV1FT4y1e7Do?spm_id_from=333.337.search-card.all.click
 
 下载:https://liudank.lanzouh.com/igOef02uajuh 密码:184w
 
 - mac
 
-点击下载：https://download.typora.io/mac/Typora-1.2.4.dmg
-
-破解比win简单，不需要覆盖文件啥的~ 打开软件，直接填下面信息就ok！(记得应该是)
-
-邮箱：xiajierluantian@163.com (随便写)
-授权码: E8Q9Y5-KXMTL5-7578SL-4S5XKS
+下载：https://macwk.com/soft/typora
 
 
 
 ## Typora 基本设置
 
-> win和mac设置可能有一丢丢不一样，大体都差不多（有问题再说）
+> 安装都是无脑安装，然后win和mac设置可能有一丢丢不一样，大体都差不多（有问题找我）
 >
 > `设置`在软件左上角，打开设置界面，应该叫`偏好设置`，英文系统找 `Preference`
 
@@ -48,8 +43,6 @@ typora1.2.4 win端破解教程：
 
 ![image-20220609203459799](https://raw.githubusercontent.com/vacrain/typora_img/main/2022/2022-06-09_20-34-59_image-20220609203459799.png)
 
-
-
 ![image-20220609203524941](https://raw.githubusercontent.com/vacrain/typora_img/main/2022/2022-06-09_20-35-25_image-20220609203524941.png)
 
 
@@ -58,9 +51,9 @@ typora1.2.4 win端破解教程：
 
 > 其实就是主题设置
 
-- 设置主题
+- 设置主题方式
 
-最下面，有一个`打开主题文件夹`，一个`获取主题`
+该页最下面，有一个`打开主题文件夹`，一个`获取主题`。。我给的截图是英语的，都一个意思~
 
 点`获取主题`，去下载源文件，就是css文件，别的不用管
 
@@ -72,7 +65,9 @@ typora1.2.4 win端破解教程：
 
 - 推荐主题
 
-都放到了themes文件夹里，去覆盖本地的主题文件夹，然后可以都试试，然后把喜欢的留下~
+都放到了steppp项目的/docs/1-Useful/Software/typora/themes文件夹里
+
+也是一样，里面的文件直接放到 `打开主题文件夹` 打开的那个themes文件夹里就行
 
 - 参考设置
 
