@@ -1,8 +1,8 @@
 /*
  * Author        vacrain
  * CreateDate    2022-06-02
- * LastEditor    vacrain
- * lastEditDate  2022-06-10
+ * LastEditor    Vacrain
+ * lastEditDate  2022-06-11
  * RelativePath  /.cz-config.js
  * Description   cz工具配置
  * 参考：https://zhuanlan.zhihu.com/p/69635847
@@ -23,14 +23,11 @@ module.exports = {
     { value: 'ci', name: '🎡 ci:         修改 CI 配置、脚本' },
   ],
   scopes: [
-    ['projects', '项目搭建'],
-    ['components', '组件相关'],
-    ['utils', 'utils 相关'],
-    ['deps', '项目依赖'],
-    ['hooks', 'hook 相关'],
-    ['types', 'ts类型相关'],
-    ['styles', '样式相关'],
-    ['auth', 'auth 修改'],
+    ['whole', '整体都会受影响'],
+    ['demos', '代码学习与实践'],
+    ['apps', '应用开发'],
+    ['packages', '应用共用'],
+    ['todo', '计划相关'],
     ['other', '其他修改'],
     ['custom', '以上都不是？我要自定义'],
   ].map(([value, description]) => {

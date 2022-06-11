@@ -1,8 +1,8 @@
 /*
  * Author        vacrain
  * CreateDate    2022-06-02
- * LastEditor    vacrain
- * lastEditDate  2022-06-07
+ * LastEditor    Vacrain
+ * lastEditDate  2022-06-11
  * RelativePath  /.commitlintrc.js
  * Description   提交校验配置
  */
@@ -18,19 +18,8 @@ module.exports = {
     'type-enum': [
       2,
       'always',
-      [
-        'feat', // 新特性、新功能（feature）
-        'fix', // 修bug
-        'docs', // 文档构建与修改
-        'style', // 代码格式修改,代码格式化，注意不是 css 修改（不影响代码运行的变动）
-        'perf', // 优化相关，比如提升性能、体验
-        'refactor', // 代码重构（即不是新增功能，也不是修改bug的代码变动）
-        'chore', // 构建过程或辅助工具的变动
-        'release', // 发布新版本
-        'revert', // 回滚 commit
-        'test', // 增加测试、测试用例修改
-        'ci', // 修改 CI 配置、脚本
-      ],
+      // 下列type的含义请查看 ./.cz-config.js
+      ['feat', 'fix', 'docs', 'style', 'perf', 'refactor', 'chore', 'release', 'revert', 'test', 'ci'],
     ],
 
     // header 部分
