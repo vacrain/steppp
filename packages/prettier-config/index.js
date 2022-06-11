@@ -1,9 +1,9 @@
 /*
  * Author        vacrain
  * CreateDate    2022-06-02
- * LastEditor    vacrain
- * lastEditDate  2022-06-06
- * RelativePath  /.prettierrc.js
+ * LastEditor    Vacrain
+ * lastEditDate  2022-06-11
+ * RelativePath  /packages/prettier-config/index.js
  * Description   代码自动格式化配置
  * 参考：
  * https://prettier.io/docs/en/options.html

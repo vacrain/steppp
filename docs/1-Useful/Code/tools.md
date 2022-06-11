@@ -29,7 +29,7 @@ npm --registry https://registry.npm.taobao.org install express
 #### 2.持久使用
 
 ```
-npm config set registry https://registry.npm.taobao.org
+npm config set registry https://registry.npm.taobao.org 这个不能用了哈！请用新版的
 ```
 
 -   配置后可通过下面方式来验证是否成功
@@ -435,13 +435,7 @@ git config --global --list
 git config --global user.name "xxx"
 git config --global user.email "xxx"
 
-查看你的所有分支
-git branch -vv
-
-删除分支
-git branch -d 分支名
-
-查看远程仓库
+查看远端仓库
 git remote -v
 
 查看状态

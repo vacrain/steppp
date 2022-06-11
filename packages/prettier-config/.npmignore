@@ -1,0 +1,15 @@
+aaa.js
+.*.swp
+._*
+.DS_Store
+.git
+.hg
+.npmrc
+.lock-wscript
+.svn
+.wafpickle-*
+config.gypi
+CVS
+npm-debug.log
+node_modules/
+直接在 package.json 文件中配置 files，指定发布哪些文件、目录，优先级高于 .npmignore 和 .gitignore。
