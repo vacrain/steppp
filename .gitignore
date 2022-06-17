@@ -1,15 +1,15 @@
 # local
-archive
 !.vscode/extensions.json
 !.vscode/settings.json
 .idea
 .DS_Store
-*.local
-.env
 
-# private projects
+# private 新clone项目时需要注意别落下这些
+archives
 projects
 notia-*
+.env
+*.local
 
 # frame-work config
 pnpm-lock.yaml

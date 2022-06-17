@@ -9,6 +9,12 @@
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "i18n-ally.displayLanguage": "zh",
   "cSpell.words": ["vacrain"],
+  "files.exclude": {
+    // 设置隐藏文件
+    // "**/.npmrc": true,
+    // "**/.eslint*": true,
+    // "**/.prettier*": true
+  },
   // format settings
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.wordWrap": "on",
