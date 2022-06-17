@@ -15,6 +15,7 @@
     "TabNine.tabnine-vscode",
     "christian-kohler.path-intellisense",
     "formulahendry.auto-rename-tag",
+    "streetsidesoftware.code-spell-checker",
     // highlight
     "aaron-bond.better-comments",
     "naumovs.color-highlight",

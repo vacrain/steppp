@@ -8,6 +8,7 @@
   },
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "i18n-ally.displayLanguage": "zh",
+  "cSpell.words": ["vacrain"],
   // format settings
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.wordWrap": "on",
