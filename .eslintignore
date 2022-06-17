@@ -16,7 +16,7 @@
 LICENSE
 pnpm-lock.yaml
 # dirs
-archive
+archives
 dist
 /bin
 /public
