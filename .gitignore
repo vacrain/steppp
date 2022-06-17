@@ -9,6 +9,7 @@ archive
 
 # private projects
 projects
+notia-*
 
 # frame-work config
 pnpm-lock.yaml
