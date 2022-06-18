@@ -5,8 +5,6 @@
 .DS_Store
 
 # private 新clone项目时需要注意别落下这些
-archives
-projects
 notia-*
 .env
 *.local

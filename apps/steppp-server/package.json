@@ -1,0 +1,19 @@
+{
+  "name": "notia-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "serve": "fastify start -w -l info -P ./src/app.js"
+  },
+  "author": "",
+  "description": "",
+  "dependencies": {
+    "@fastify/autoload": "4.0.0",
+    "@fastify/mysql": "^3.0.0",
+    "faker": "^5.5.3",
+    "fastify": "^3.29.0",
+    "fastify-autoload": "^3.13.0",
+    "fastify-plugin": "^3.0.1"
+  }
+}
