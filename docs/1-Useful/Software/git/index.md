@@ -130,7 +130,20 @@ git --help
 
 
 
-### b、c
+### a、b、c
+
+#### add
+
+```sh
+# 全部放入暂存
+git add .
+
+# 强制放入暂存
+git add -f a.js
+git add -f apps/*
+```
+
+
 
 #### branch
 
