@@ -8,7 +8,7 @@
   },
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "i18n-ally.displayLanguage": "zh",
-  "cSpell.words": ["vacrain"],
+  "cSpell.words": ["steppp", "vacrain"],
   "files.exclude": {
     // 设置隐藏文件
     ".git": true,
