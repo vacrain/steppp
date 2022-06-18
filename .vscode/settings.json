@@ -11,9 +11,11 @@
   "cSpell.words": ["vacrain"],
   "files.exclude": {
     // 设置隐藏文件
-    // "**/.npmrc": true,
-    // "**/.eslint*": true,
-    // "**/.prettier*": true
+    ".git": true,
+    ".husky": true,
+    ".commitlintrc.js": true,
+    ".cz-config.js": true
+    // "**/xxx": true,
   },
   // format settings
   "editor.defaultFormatter": "esbenp.prettier-vscode",
