@@ -11,11 +11,20 @@
   "cSpell.words": ["steppp", "vacrain"],
   "files.exclude": {
     // 设置隐藏文件
+    // 所有目录都隐藏方式："**/xxx": true,
     ".git": true,
     ".husky": true,
     ".commitlintrc.js": true,
-    ".cz-config.js": true
-    // "**/xxx": true,
+    ".cz-config.js": true,
+    "docs": true,
+    "node_modules": true,
+    ".eslintrc.js": true,
+    ".npmrc": true,
+    "pnpm-lock.yaml": true,
+    "pnpm-workspace.yaml": true,
+    // ignore
+    ".prettierignore": true,
+    ".eslintignore": true
   },
   // format settings
   "editor.defaultFormatter": "esbenp.prettier-vscode",
