@@ -1,13 +1,10 @@
-# Steppp -- code practice & provider for apps management
+# Steppp -- a monorepo shell with lots of guidelines, utilities and demos for code practice and app development
 
-## 食用方式
+> Steppp 是一个monorepo外壳，集成了大量实用的开发规范、工具插件，以及参考案例，旨在协助编程实践与应用开发
 
-[查看文档前，请先安装 typora](http://101.43.138.54/typora/index.html)
+- github 仓库: https://github.com/vacrain/steppp
+- gitee 仓库: https://gitee.com/vacrain/steppp
 
-然后查看文档：请用 typora 打开 docs 目录
+[点击查看说明文档](./docs/README.md)
 
-## 本项目仓库地址
-
-github 仓库: https://github.com/vacrain/steppp
-
-gitee 仓库: https://gitee.com/vacrain/steppp
+wechat：j20y25

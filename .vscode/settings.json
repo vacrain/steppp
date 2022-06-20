@@ -8,7 +8,7 @@
   },
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "i18n-ally.displayLanguage": "zh",
-  "cSpell.words": ["steppp", "vacrain"],
+  "cSpell.words": ["steppp", "vacrain", "turborepo", "fastify", "wechat", "pnpm", "gitee", "commitlint", "typora"],
   "files.exclude": {
     // 设置隐藏文件
     // 所有目录都隐藏方式："**/xxx": true,
@@ -22,6 +22,7 @@
     ".npmrc": true,
     "pnpm-lock.yaml": true,
     "pnpm-workspace.yaml": true,
+    "LICENSE": true,
     // ignore
     ".prettierignore": true,
     ".eslintignore": true
