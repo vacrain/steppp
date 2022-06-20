@@ -128,6 +128,30 @@ git --help
 有关系统的概述，查看 'git help git'。
 ```
 
+### 其他
+
+> 也不是不常用哈，都是借助gui工具自动执行了，不需要苦手
+
+```sh
+blame
+rm
+mv
+init
+show			# 显示标签的详细信息 git show v1.0
+log				# 查看日志，一般借助工具查看
+	git log --graph --pretty=oneline --abbrev-commit
+reflog		# 显示你的历史命令
+diff			# 比较文件修改内容 git diff file，一般借助
+status		# 查看修改的文件
+add				# 添加到暂存区，接文件名或.
+commit		# 提交，-a是先自动add全部，-m是添加提交信息
+tag				# 用gitlab上面的工具吧
+
+
+```
+
+
+
 
 
 ### a、b、c
@@ -231,10 +255,17 @@ git config --global user.email "你的邮箱"
 
 ```sh
 # <commitHash>是提交号，是个哈希值
+
+# 并入单条
 git cherry-pick <commitHash>
+
+# 取消之前的操作
+git cherry-pick --quit
+
+# 并入多条
 git cherry-pick <HashA> <HashB>
-git cherry-pick A..B # 提交 A 必须早于提交 B，否则命令将失败，但不会报错。如果要包含提交 A，可以使用下面的语法。
-git cherry-pick A^..B 
+git cherry-pick A..B # A到B的所有提交，不包括A。。提交 A 必须早于提交 B，否则命令将失败，但不会报错。
+git cherry-pick A^..B # A到B的所有提交，包括A
 
 # 假设有如下分支结构
  a - b - c - d   Master
@@ -253,41 +284,14 @@ git cherry-pick f
 
 
 
-### m、p、f
+### f、m、p
 
-#### merge
-
-```
-git merge [选项] 分支名称
-
-选项
---no-ff：禁用Fast forward
--m：merge commit message (for a non-fast-forward merge)
-
-示例
-
-git merge dev
-```
-
-
-
-
-
-#### pull、fetch
+#### fetch
 
 ```sh
-# pull = fetch + merge
-git pull <远程主机名> <远程分支名>:<本地分支名>
-	# 如果将冒号和后面的branchtest去掉，则表示将远程origin仓库的master分支拉取下来与本地当前分支合并。
-git pull <远程主机名> <远程分支名>
-	# 以上的git pull操作如果用 fetch 来表示：
-git fetch origin master:brantest
-git merge brantest
-	# 相比起来，git fetch更安全也更符合实际要求，因为可以在merge前，我们可以查看更新情况，根据实际情况再决定是否合并。
-
 # fetch更新本地仓库的两种用法：
 	# 方法一
-#从远程的origin仓库的master分支下载代码到本地的origin maste
+#从远程的origin仓库的master分支下载代码到本地的origin master
 git fetch origin master
 #比较本地的仓库和远程参考的区别
 git log -p master.. origin/master
@@ -302,6 +306,41 @@ git diff temp
 git merge temp
 # 删除temp
 git branch -d temp
+
+
+```
+
+
+
+#### merge
+
+```sh
+git merge [选项] 分支名称
+
+选项
+--no-ff：禁用Fast forward
+-m：merge commit message (for a non-fast-forward merge)
+
+示例
+git merge dev
+git merge --no-ff -m "merge with no-ff" dev
+```
+
+
+
+
+
+#### pull
+
+```sh
+# pull = fetch + merge
+git pull <远程主机名> <远程分支名>:<本地分支名>
+	# 如果将冒号和后面的branchtest去掉，则表示将远程origin仓库的master分支拉取下来与本地当前分支合并。
+git pull <远程主机名> <远程分支名>
+	# 以上的git pull操作如果用 fetch 来表示：
+git fetch origin master:brantest
+git merge brantest
+	# 相比起来，git fetch更安全也更符合实际要求，因为可以在merge前，我们可以查看更新情况，根据实际情况再决定是否合并。
 
 
 ```
@@ -452,29 +491,6 @@ git tag -a v0.1.0 -m "release 0.1.0 version"
 
 # 将标签推送到远程分支
 git push origin v0.1.0
-```
-
-
-
-### 其他
-
-> 也不是不常用哈，就是都借助gui工具了，不需要苦手
-
-```sh
-blame
-rm
-mv
-init
-show			# 显示标签的详细信息 git show v1.0
-log				# 查看日志，一般借助工具查看
-reflog		# 显示你的历史命令
-diff			# 比较文件修改内容 git diff file，一般借助
-status		# 查看修改的文件
-add				# 添加到暂存区，接文件名或.
-commit		# 提交，-a是先自动add全部，-m是添加提交信息
-tag				# 用gitlab上面的工具吧
-
-
 ```
 
 

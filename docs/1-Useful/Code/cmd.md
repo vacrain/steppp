@@ -379,7 +379,7 @@ npm install -g xxxxxx@a.b.c
 
 
 
-## pnpm
+### pnpm
 
 ```
 # 须知：（查看帮助方式 pnpm help add）
