@@ -8,24 +8,39 @@
   },
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "i18n-ally.displayLanguage": "zh",
-  "cSpell.words": ["steppp", "vacrain", "turborepo", "fastify", "wechat", "pnpm", "gitee", "commitlint", "typora"],
+  "cSpell.words": [
+    "steppp",
+    "vacrain",
+    "turborepo",
+    "fastify",
+    "wechat",
+    "pnpm",
+    "gitee",
+    "commitlint",
+    "typora",
+    "nestjs"
+  ],
   "files.exclude": {
     // 设置隐藏文件
     // 所有目录都隐藏方式："**/xxx": true,
-    ".git": true,
-    ".husky": true,
+
+    // configs
+    ".npmrc": true,
     ".commitlintrc.js": true,
     ".cz-config.js": true,
+    ".eslintrc.js": true,
+    "tsconfig.build.json": true,
+    "tsconfig.json": true,
+
+    // others
+    ".husky": true,
+    "pnpm-workspace.yaml": true,
+    ".prettierignore": true,
+    ".git": true,
     "docs": true,
     "node_modules": true,
-    ".eslintrc.js": true,
-    ".npmrc": true,
     "pnpm-lock.yaml": true,
-    "pnpm-workspace.yaml": true,
-    "LICENSE": true,
-    // ignore
-    ".prettierignore": true,
-    ".eslintignore": true
+    "LICENSE": true
   },
   // format settings
   "editor.defaultFormatter": "esbenp.prettier-vscode",

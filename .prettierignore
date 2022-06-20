@@ -1,4 +1,7 @@
-# 同步 .eslintignore 文件
+# 同步作用于 .eslintrc.js
+# https://cn.eslint.org/docs/user-guide/configuring#ignoring-files-and-directories
+# https://cn.eslint.org/docs/user-guide/configuring#ignoring-files-and-directories
+
 # files
 .idea
 .DS_Store

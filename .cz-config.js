@@ -2,14 +2,16 @@
  * Author        vacrain
  * CreateDate    2022-06-02
  * LastEditor    vacrain
- * lastEditDate  2022-06-20
+ * lastEditDate  2022-06-21
  * RelativePath  /.cz-config.js
  * Description   cz工具配置
  * 参考：https://zhuanlan.zhihu.com/p/69635847
  */
 module.exports = {
   types: [
-    // 修改了的话，需要同步修改 ./.commitlintrc.js 中的type-enum ！！！
+    // 修改了的话，需要同步修改以下内容：
+    //  .commitlintrc.js 中的type-enum
+    //  本文件中的 allowBreakingChanges
     { value: ':sparkles: feat', name: '✨ feat:       新增功能' },
     { value: ':bug: fix', name: '🐛 fix:        修复bug' },
     { value: ':memo: docs', name: '📝 docs:       文档变更' },
@@ -48,9 +50,9 @@ module.exports = {
   },
   */
   messages: {
-    type: '确保本次提交遵循 Angular 规范！\n选择你要提交的类型：',
-    scope: '\n选择一个 scope（可选）：',
-    customScope: '请输入自定义的 scope：',
+    type: '确保本次提交遵循 Angular 规范！\n选择你要提交的类型（type）：',
+    scope: '\n选择一个影响范围（scpoe可选）：',
+    customScope: '请输入自定义的影响范围（custom scpoe）：',
     subject: '填写简短精炼的变更描述：\n',
     body: '填写更加详细的变更描述（body可选）。使用 "|" 换行：\n',
     breaking: '列举非兼容性重大的变更（可选）：\n',
