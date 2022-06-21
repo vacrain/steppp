@@ -3,13 +3,12 @@
 !.vscode/settings.json
 .idea
 .DS_Store
-
-# demos 里的template用于参考，不上传，所以忽略
-demos/*-template
+*-template
 
 # private 新clone项目时需要注意别落下这些
 .env
 *.local
+
 
 # frame-work config
 pnpm-lock.yaml
@@ -25,7 +24,6 @@ logs
 # compiled output
 **/dist
 **/node_modules
-
 # Logs
 logs
 *.log
@@ -34,14 +32,11 @@ pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
-
 # OS
 .DS_Store
-
 # Tests
 /coverage
 /.nyc_output
-
 # IDEs and editors
 /.idea
 .project
@@ -50,10 +45,32 @@ lerna-debug.log*
 *.launch
 .settings/
 *.sublime-workspace
-
 # IDE - VSCode
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+
+
+################################
+vite2 + vue3 ignore
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

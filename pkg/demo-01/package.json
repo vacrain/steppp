@@ -1,6 +1,6 @@
 {
-  "name": "@steppp/prettier-config",
-  "version": "0.0.1",
+  "name": "demo-01",
+  "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {

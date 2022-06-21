@@ -1,9 +1,9 @@
 /*
  * Author        vacrain
  * CreateDate    2022-06-02
- * LastEditor    Vacrain
- * lastEditDate  2022-06-11
- * RelativePath  /packages/prettier-config/index.js
+ * LastEditor    vacrain
+ * lastEditDate  2022-06-22
+ * RelativePath  /.prettierrc.js
  * Description   代码自动格式化配置
  * 参考：
  * https://prettier.io/docs/en/options.html
@@ -31,8 +31,8 @@ module.exports = {
   requirePragma: false, // 若为true，文件顶部加了 /*** @prettier */或/*** @format */的文件才会被格式化
   insertPragma: false, // 当requirePragma参数为true时,此参数为true将向@format标记后面添加一个换行符
   // jsx
-  // jsxSingleQuote: false, // 在jsx中使用单引号代替双引号
-  // jsxBracketSameLine: false, // 在jsx中把'>' 是否单独放一行
+  jsxSingleQuote: true, // 在jsx中使用单引号代替双引号
+  jsxBracketSameLine: false, // 在jsx中把'>' 是否单独放一行
   // vue
   vueIndentScriptAndStyle: false, // 是否给vue中的 <script> and <style>标签加缩进
 

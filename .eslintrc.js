@@ -2,12 +2,12 @@
  * Author        vacrain
  * CreateDate    2022-06-02
  * LastEditor    vacrain
- * lastEditDate  2022-06-21
+ * lastEditDate  2022-06-22
  * RelativePath  /.eslintrc.js
  * Description   steppp全局eslint配置
  * 参考 https://cn.eslint.org/docs/user-guide/configuring
  */
-const { readGitignoreFiles, readPrettierignoreFiles } = require('eslint-gitignore')
+const { readGitignoreFiles } = require('eslint-gitignore')
 
 const offRules = {
   'object-curly-newline': 'off',
@@ -74,7 +74,7 @@ module.exports = {
   // https://cn.eslint.org/docs/user-guide/configuring#using-configuration-files-1
   root: true,
 
-  ignorePatterns: [...readGitignoreFiles(), ...readPrettierignoreFiles(), '.eslintrc.js'],
+  ignorePatterns: [...readGitignoreFiles(), '.eslintrc.js'],
 
   // https://cn.eslint.org/docs/user-guide/configuring#configuring-plugins
   // https://cn.eslint.org/docs/user-guide/configuring#using-the-configuration-from-a-plugin
