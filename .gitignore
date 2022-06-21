@@ -4,8 +4,10 @@
 .idea
 .DS_Store
 
+# demos 里的template用于参考，不上传，所以忽略
+demos/*-template
+
 # private 新clone项目时需要注意别落下这些
-notia-*
 .env
 *.local
 
@@ -21,8 +23,8 @@ logs
 ################################
 # nestjs gitignore
 # compiled output
-/dist
-/node_modules
+**/dist
+**/node_modules
 
 # Logs
 logs
