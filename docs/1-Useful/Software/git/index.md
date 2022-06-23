@@ -8,7 +8,9 @@
 
 ## 概念说明
 
-### 仓库
+
+
+### 仓库、工作区、暂存区
 
 ![img](https://raw.githubusercontent.com/vacrain/typora_img/main/2022/2022-06-16_13-06-07_git-command.jpg)
 
@@ -136,7 +138,7 @@ git --help
 blame
 rm
 mv
-init
+init			# git init [<dir_name>]
 show			# 显示标签的详细信息 git show v1.0
 log				# 查看日志，一般借助工具查看
 	git log --graph --pretty=oneline --abbrev-commit
@@ -314,6 +316,10 @@ git branch -d temp
 
 #### merge
 
+> dev整合进main时使用
+
+<img src="https://raw.githubusercontent.com/vacrain/typora_img/main/2022/2022-06-22_11-18-55_v2-6252a37ed1cd89a361c694a5f64d8070_1440w.jpg" alt="为什么我用 merge 而不用 rebase" style="zoom:50%;" />
+
 ```sh
 git merge [选项] 分支名称
 
@@ -378,26 +384,43 @@ git push origin :refs/tags/v1.0
 
 #### rebase
 
-> 合并提交、合并分支，也叫变基
+> 修改提交、调整顺序、合并提交、合并分支，也叫变基
+>
+> 在feat分支上，需要拉进来dev变化时使用
 
 ```sh
-# 压缩n个提交 n是要自己改一下的！表示压缩前n个提交
+# -i 是交互式变基
+# 调整n个提交 n是要自己改一下的！表示最近的n个提交
 git rebase -i HEAD~n
-# 然后进入 vi 操作界面，pick是采用，s是压缩
-# wq保存退出后，还会问你的改不改提交信息
+# 一个 ~ 表示一次提交，如下是编辑最新的三次提交
+git rebase -i HEAD~~~
+# 在feat分支上运行
+git reabse -i dev
 
-# -i 选项说明
-# -i, --interactive     let the user edit the list of commits to rebase
+# 运行上面的这些命令，会进入 vi 操作界面，也就是去编辑一个rebase的todo-list
+# 具体原理可以看下图
+# 其中 pick 是采用这个，squash 是将指定压缩到前一个提交中，还有其他很多选项，不过就这两个常用
+# vi 保存退出后，还会问你的改不改提交信息
 
-# 在 a 分支上，把 b 分支上的提交合进来
-git checkout a
-git rebase b
+# 取消合并
+rm -fr ".git/rebase-merge"
 
-# 在 a 分支上，把 b 分支合并进来
-git checkout a
-git merge b
-
+# 在 feat1 分支上，把 main 分支上的新提交，合进来，并将feat1中的新提交提到最上面
+git checkout feat1
+git rebase main
 ```
+
+参考：https://www.bilibili.com/video/BV1Xb4y1773F?spm_id_from=333.337.search-card.all.click&vd_source=7825461e6c819872003a60230789cbfe
+
+![image-20220622125213250](https://raw.githubusercontent.com/vacrain/typora_img/main/2022/2022-06-22_12-52-13_image-20220622125213250.png)
+
+![image-20220622112921318](https://raw.githubusercontent.com/vacrain/typora_img/main/2022/2022-06-22_11-29-21_image-20220622112921318.png)
+
+![image-20220622113459782](https://raw.githubusercontent.com/vacrain/typora_img/main/2022/2022-06-22_11-34-59_image-20220622113459782.png)
+
+![image-20220622113605621](https://raw.githubusercontent.com/vacrain/typora_img/main/2022/2022-06-22_11-36-05_image-20220622113605621.png)
+
+![image-20220622113733047](https://raw.githubusercontent.com/vacrain/typora_img/main/2022/2022-06-22_11-37-33_image-20220622113733047.png)
 
 
 
@@ -624,17 +647,14 @@ rc （正式版本的候选版本）  Release Candiate
 ## 参考
 
 - [ ] 一个比较全的说明：[关于 Git 这一篇就够了](https://blog.csdn.net/bjbz_cxy/article/details/116703787)
+- [ ] [【阿云出品】15分钟学会如何找到对象！阿里云程序员详解Git对象和引用原理](https://www.bilibili.com/video/BV1a44y1b7tm?spm_id_from=333.999.0.0&vd_source=7825461e6c819872003a60230789cbfe)
 - [ ] [如何将代码同时提交到Github和码云Gitee上](https://blog.csdn.net/gozhuyinglong/article/details/113861993)
 - [ ] [b站上讲的不错的git flow](https://www.bilibili.com/video/BV1bp4y1k7KH?spm_id_from=333.337.search-card.all.click&vd_source=7825461e6c819872003a60230789cbfe)
 - [ ] [git 中的 --no-ff 参数是什么意思](https://blog.csdn.net/Destiny_shine/article/details/109674635)
 - [ ] [b站学习 git 项目](https://www.bilibili.com/video/BV1pR4y1s79B?p=2&spm_id_from=pageDriver&vd_source=7825461e6c819872003a60230789cbfe) 
-  
 - [ ] linux mac [生成SSH key](https://blog.csdn.net/fish_skyyyy/article/details/119213714)
-  
 - [ ] Learn Git Branch：https://learngitbranching.js.org/?NODEMO=&locale=zh_CN
-  
 - [ ] 仓库地址(可直接fork使用)：https://github.com/yd-organization/github-flow-work
-  
 - [x] https://segmentfault.com/a/1190000020280903
 - [x] https://www.google.com/search?client=firefox-b-d&q=git+%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5
 - [x] https://blog.51cto.com/u_12179846/3193110
