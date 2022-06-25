@@ -9,15 +9,12 @@
     // happy coding
     "JimDong.naive-ui-snippets",
     "fastify.fastify-snippets",
-    "abusaidm.html-snippets",
     "xabikos.JavaScriptSnippets",
     "VisualStudioExptTeam.vscodeintellicode",
     "TabNine.tabnine-vscode",
     "christian-kohler.path-intellisense",
     "formulahendry.auto-rename-tag",
-    "streetsidesoftware.code-spell-checker",
     // highlight
-    "aaron-bond.better-comments",
     "naumovs.color-highlight",
     "wraith13.background-phi-colors",
     // git
@@ -25,15 +22,12 @@
     "mhutchie.git-graph",
     "donjayamanne.githistory",
     // vue
-    "jcbuisson.vue",
     "Vue.volar",
-    "dariofuzinato.vue-peek",
     // remote
     "ms-vscode-remote.remote-containers",
     "ms-vscode-remote.remote-ssh",
     // others
     "ms-azuretools.vscode-docker",
-    "msjsdiag.debugger-for-chrome",
     "humao.rest-client",
     "ritwickdey.LiveServer",
     "pranaygp.vscode-css-peek",

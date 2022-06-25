@@ -2,6 +2,7 @@
   // hayyp coding
   "explorer.confirmDragAndDrop": false, //拖动文件时不提示
   "explorer.confirmDelete": false, // 删除时不提示
+  "window.restoreWindows": "none", // 打开编辑器默认是不打开任何目录
   "editor.suggestSelection": "recentlyUsedByPrefix",
   "editor.quickSuggestions": {
     "strings": true
