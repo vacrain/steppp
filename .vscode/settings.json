@@ -1,5 +1,7 @@
 {
-  // hayyp coding
+  /******************************************************************************
+   * misc
+   *******************************************************************************/
   "explorer.confirmDragAndDrop": false, //拖动文件时不提示
   "explorer.confirmDelete": false, // 删除时不提示
   "window.restoreWindows": "none", // 打开编辑器默认是不打开任何目录
@@ -9,23 +11,35 @@
   },
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   "i18n-ally.displayLanguage": "zh",
-  "cSpell.words": [
-    "steppp",
-    "vacrain",
-    "turborepo",
-    "fastify",
-    "wechat",
-    "pnpm",
-    "gitee",
-    "commitlint",
-    "typora",
-    "nestjs"
-  ],
-  "files.exclude": {
-    // 设置隐藏文件
-    // 所有目录都隐藏方式："**/xxx": true,
 
-    // configs
+  // format settings
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.wordWrap": "on",
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "files.autoSave": "onFocusChange",
+  "files.eol": "auto",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+
+  // git
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.suggestSmartCommit": false,
+  "git.ignoredRepositories": ["**/node_modules"],
+
+  // volar
+  "volar.codeLens.pugTools": true,
+  "volar.autoCompleteRefs": true,
+  "volar.codeLens.scriptSetupTools": true,
+
+  // npm
+  "npm.enableRunFromFolder": true,
+  "npm.packageManager": "pnpm",
+  "npm.scriptExplorerAction": "run",
+
+  // 隐藏文件
+  "files.exclude": {
     ".npmrc": true,
     ".commitlintrc.js": true,
     ".cz-config.js": true,
@@ -44,16 +58,10 @@
     "pnpm-lock.yaml": true,
     "LICENSE": true
   },
-  // format settings
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "editor.wordWrap": "on",
-  "editor.tabSize": 2,
-  "editor.formatOnSave": true,
-  "files.autoSave": "onFocusChange",
-  "files.eol": "auto",
-  "typescript.updateImportsOnFileMove.enabled": "always",
-  "javascript.updateImportsOnFileMove.enabled": "always",
-  // theme settings
+
+  /******************************************************************************
+   * 视觉增强配置
+   *******************************************************************************/
   "workbench.iconTheme": "material-icon-theme",
   "material-icon-theme.activeIconPack": "vue",
   "material-icon-theme.folders.associations": {
@@ -79,25 +87,15 @@
   },
   "editor.bracketPairColorization.enabled": true, // 开启原生括号着色
   "editor.guides.bracketPairs": "active", // 代码块边缘导轨线着色和bracketPairColorization行为一致
-  // git
-  "git.autofetch": true,
-  "git.confirmSync": false,
-  "git.suggestSmartCommit": false,
-  "git.ignoredRepositories": ["**/node_modules"],
-  // volar
-  "volar.codeLens.pugTools": true,
-  "volar.autoCompleteRefs": true,
-  "volar.codeLens.scriptSetupTools": true,
-  // npm
-  "npm.enableRunFromFolder": true,
-  "npm.packageManager": "pnpm",
-  "npm.scriptExplorerAction": "run",
-  // fileheader 头部注释配置
-  //   参考：https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
+
+  /******************************************************************************
+   * KoroFileHeader 注释配置
+   *******************************************************************************/
+  // 参考：https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE//
   // 快捷键：
-  //   头部 快捷键：window：ctrl+alt+i,mac：ctrl+cmd+i
-  //   函数 快捷键：window：ctrl+alt+t,mac：ctrl+cmd+t
-  //   头部注释配置
+  //  头部 快捷键：window：ctrl+alt+i,mac：ctrl+cmd+i
+  //  函数 快捷键：window：ctrl+alt+t,mac：ctrl+cmd+t
+  // 头部注释配置
   "fileheader.customMade": {
     // "Author": "git config user.name && git config user.email", // 同时获取用户名与邮箱,
     "Author": "git config user.name", // 仅获取用户名

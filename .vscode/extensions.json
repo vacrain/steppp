@@ -16,7 +16,8 @@
     "formulahendry.auto-rename-tag",
     // highlight
     "naumovs.color-highlight",
-    "wraith13.background-phi-colors",
+    // "wraith13.background-phi-colors", // 这个高亮的有点邪乎, 取消推荐了,下面的是代替的
+    "oderwat.indent-rainbow",
     // git
     "eamodio.gitlens",
     "mhutchie.git-graph",
